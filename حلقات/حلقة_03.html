@@ -3,150 +3,904 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الحلقة 3 - فقه الإخلاص - فقه الإخلاص</title>
+<title>فقه الإخلاص | المجلس الثالث</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --gold:#b8860b;
-    --gold-light:#d4a537;
-    --green-deep:#1f4d3a;
-    --green-mid:#2e6b52;
-    --brown-dark:#3a2c1f;
-    --cream:#faf6ec;
-    --cream-dark:#f0e8d4;
+    --gold:#b8893f;
+    --gold-light:#e8c98a;
+    --brown-dark:#2b1e12;
+    --brown:#4a3320;
+    --brown-mid:#6b4b2c;
+    --green:#3f6b4a;
+    --green-dark:#2a4a33;
+    --cream:#faf6ee;
+    --cream-2:#f2e9d8;
+    --paper:#fffdf8;
     --ink:#2b241a;
-    --card-border:#e3d6b0;
+    --muted:#7a6b52;
+    --shadow: 0 8px 30px rgba(43,30,18,.12);
   }
-  *{box-sizing:border-box; margin:0; padding:0;}
+  *{box-sizing:border-box;}
   body{
-    font-family:'Cairo', sans-serif;
-    background:var(--cream);
+    margin:0;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(184,137,63,.08), transparent 40%),
+      radial-gradient(circle at 90% 10%, rgba(63,107,74,.08), transparent 40%),
+      var(--cream);
     color:var(--ink);
+    font-family:'Cairo', sans-serif;
     line-height:1.9;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
   }
+  .amiri{ font-family:'Amiri', serif; }
+
+  /* ===== Header ===== */
   header{
-    background:linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 55%, var(--brown-dark) 100%);
-    color:#fdf8ec;
-    padding:40px 20px 32px;
-    text-align:center;
     position:relative;
+    background: linear-gradient(160deg, var(--brown-dark) 0%, var(--brown) 55%, var(--brown-mid) 100%);
+    color:var(--cream);
+    padding:56px 20px 46px;
+    text-align:center;
     overflow:hidden;
     border-bottom:6px solid var(--gold);
   }
   header::before{
     content:"";
-    position:absolute;
-    inset:0;
+    position:absolute; inset:0;
     background-image:
-      repeating-linear-gradient(45deg, rgba(212,165,55,0.05) 0, rgba(212,165,55,0.05) 2px, transparent 2px, transparent 30px);
+      repeating-linear-gradient(45deg, rgba(232,201,138,.05) 0 2px, transparent 2px 22px),
+      repeating-linear-gradient(-45deg, rgba(232,201,138,.05) 0 2px, transparent 2px 22px);
     pointer-events:none;
   }
   .series-badge{
     display:inline-block;
-    background:rgba(212,165,55,0.18);
+    background:rgba(232,201,138,.12);
     border:1px solid var(--gold-light);
     color:var(--gold-light);
-    padding:6px 20px;
-    border-radius:30px;
-    font-size:0.9rem;
-    font-weight:600;
+    padding:6px 18px;
+    border-radius:999px;
+    font-size:.85rem;
+    letter-spacing:.5px;
     margin-bottom:18px;
-    letter-spacing:0.5px;
+    position:relative;
+    z-index:2;
   }
   header h1{
-    font-size:2rem;
-    font-weight:900;
-    text-shadow:0 2px 10px rgba(0,0,0,0.25);
+    font-family:'Amiri', serif;
+    font-size:2.5rem;
+    margin:0 0 12px;
+    position:relative; z-index:2;
+    text-shadow: 0 2px 10px rgba(0,0,0,.3);
   }
-  .back-link{
-    display:inline-block;
-    margin-top:18px;
-    color:var(--gold-light);
-    text-decoration:none;
-    font-weight:600;
-    font-size:0.95rem;
-    border:1px solid var(--gold-light);
-    padding:8px 18px;
-    border-radius:8px;
-    transition:background 0.15s, color 0.15s;
-  }
-  .back-link:hover{
-    background:var(--gold-light);
-    color:var(--brown-dark);
-  }
-
-  main{
-    flex:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:60px 20px;
-  }
-  .empty-card{
-    background:#fff;
-    border:1px dashed var(--card-border);
-    border-radius:18px;
-    padding:50px 40px;
-    max-width:520px;
-    text-align:center;
-    box-shadow:0 8px 24px rgba(59,44,20,0.07);
-  }
-  .empty-card .icon{
-    font-size:3rem;
-    margin-bottom:18px;
-    display:block;
-    color:var(--gold);
-  }
-  .empty-card h2{
-    color:var(--green-deep);
-    font-size:1.3rem;
-    margin-bottom:12px;
-  }
-  .empty-card p{
-    color:#6b6152;
-    font-size:0.98rem;
+  header p.desc{
+    max-width:640px;
+    margin:0 auto;
+    color:var(--cream-2);
+    font-size:1.05rem;
+    position:relative; z-index:2;
   }
   .header-ornament{
-    margin-top:16px;
+    margin:22px auto 0;
+    width:120px; height:3px;
+    background:linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    position:relative; z-index:2;
+  }
+  .anki-banner{
+    margin-top:26px;
+    position:relative; z-index:2;
+  }
+  .anki-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:linear-gradient(135deg, var(--gold), #a2752f);
+    color:#2b1e12;
+    font-weight:700;
+    border:none;
+    padding:13px 26px;
+    border-radius:12px;
+    font-size:1rem;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    font-family:'Cairo', sans-serif;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .anki-btn:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.3); }
+
+  /* ===== Container ===== */
+  .wrap{ max-width:880px; margin:0 auto; padding:0 18px 60px; }
+
+  /* ===== TOC ===== */
+  .toc{
+    background:var(--paper);
+    border:1px solid var(--cream-2);
+    border-radius:18px;
+    padding:26px 26px 18px;
+    margin:-34px auto 40px;
+    box-shadow:var(--shadow);
+    position:relative;
+    z-index:5;
+  }
+  .toc h2{
+    margin:0 0 14px;
+    color:var(--brown);
     font-size:1.2rem;
-    color:var(--gold-light);
-    letter-spacing:8px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .toc ol{
+    list-style:none;
+    counter-reset:tocnum;
+    margin:0; padding:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 18px;
+  }
+  .toc li{
+    counter-increment:tocnum;
+    margin-bottom:6px;
+  }
+  .toc a{
+    text-decoration:none;
+    color:var(--ink);
+    font-size:.95rem;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 10px;
+    border-radius:8px;
+    transition:background .15s ease;
+  }
+  .toc a::before{
+    content:counter(tocnum);
+    background:var(--green);
+    color:#fff;
+    width:24px;height:24px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:.78rem;
+    flex-shrink:0;
+  }
+  .toc a:hover{ background:var(--cream-2); }
+
+  /* ===== Sections ===== */
+  section{
+    background:var(--paper);
+    border:1px solid var(--cream-2);
+    border-radius:18px;
+    padding:32px 28px;
+    margin-bottom:26px;
+    box-shadow:var(--shadow);
+    scroll-margin-top:20px;
+  }
+  section h2{
+    font-family:'Amiri', serif;
+    color:var(--brown);
+    font-size:1.6rem;
+    margin:0 0 20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border-bottom:2px solid var(--cream-2);
+    padding-bottom:14px;
+  }
+  section h2 .icon{
+    width:42px;height:42px;
+    background:linear-gradient(135deg, var(--green), var(--green-dark));
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.3rem;
+    flex-shrink:0;
+    box-shadow:0 4px 10px rgba(63,107,74,.3);
+  }
+  section h3{
+    color:var(--brown-mid);
+    font-size:1.2rem;
+    margin:26px 0 12px;
+  }
+  section p{ margin:0 0 14px; color:var(--ink); }
+
+  /* ===== Blocks ===== */
+  .definition-box{
+    background:linear-gradient(135deg, #f5efe0, #ede0c4);
+    border-right:5px solid var(--gold);
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+  }
+  .definition-box .label{
+    font-weight:800;
+    color:var(--brown);
+    display:block;
+    margin-bottom:6px;
+    font-size:.9rem;
   }
 
-  footer{
-    background:linear-gradient(135deg, var(--brown-dark) 0%, var(--green-deep) 100%);
-    color:#f0e8d4;
+  .quote-block{
+    background:#f4f8f4;
+    border-right:5px solid var(--green);
+    border-radius:10px;
+    padding:18px 22px;
+    margin:16px 0;
+    position:relative;
+  }
+  .quote-block .arabic-text{
+    font-family:'Amiri', serif;
+    font-size:1.25rem;
+    color:var(--green-dark);
+    line-height:2.1;
+    margin-bottom:8px;
+  }
+  .quote-block .source{
+    font-size:.85rem;
+    color:var(--muted);
+    font-weight:600;
+  }
+
+  .evidence-block{
+    background:#fbf9f2;
+    border:1px dashed var(--gold);
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+  }
+  .evidence-block .arabic-text{
+    font-family:'Amiri', serif;
+    font-size:1.15rem;
+    color:var(--brown-dark);
+  }
+  .evidence-block .source{
+    font-size:.85rem;
+    color:var(--muted);
+    margin-top:8px;
+    font-weight:600;
+  }
+
+  .key-point{
+    background:#fff;
+    border:1px solid var(--cream-2);
+    border-right:5px solid var(--brown-mid);
+    border-radius:10px;
+    padding:14px 20px;
+    margin:14px 0;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .key-point .kp-icon{ font-size:1.2rem; flex-shrink:0; margin-top:2px; }
+
+  .warning-box{
+    background:#fdf1e8;
+    border-right:5px solid #c0622a;
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+  }
+  .warning-box .label{
+    color:#c0622a;
+    font-weight:800;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  .action-card{
+    background:linear-gradient(135deg, #eef4ee, #e2ede2);
+    border-right:5px solid var(--green-dark);
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+  }
+  .action-card .label{
+    color:var(--green-dark);
+    font-weight:800;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  .story-card{
+    background:var(--cream);
+    border-radius:14px;
+    padding:20px 22px;
+    margin:16px 0;
+    border:1px solid var(--cream-2);
+  }
+  .story-card .story-title{
+    font-weight:800;
+    color:var(--brown);
+    margin-bottom:8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  .poetry-card{
+    background:linear-gradient(160deg, var(--brown-dark), var(--brown));
+    color:var(--cream-2);
+    border-radius:14px;
+    padding:26px 30px;
+    margin:18px 0;
     text-align:center;
-    padding:22px 20px;
-    font-size:0.85rem;
-    opacity:0.85;
+  }
+  .poetry-card .verse{
+    font-family:'Amiri', serif;
+    font-size:1.3rem;
+    line-height:2.4;
+    margin:0;
+  }
+  .poetry-card .poet{
+    margin-top:14px;
+    font-size:.85rem;
+    color:var(--gold-light);
+    font-weight:700;
+  }
+
+  .comparison-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:16px 0;
+    font-size:.92rem;
+    overflow:hidden;
+    border-radius:10px;
+  }
+  .comparison-table th{
+    background:var(--brown);
+    color:#fff;
+    padding:12px;
+    text-align:right;
+  }
+  .comparison-table td{
+    padding:12px;
+    border-bottom:1px solid var(--cream-2);
+    background:#fff;
+    vertical-align:top;
+  }
+  .comparison-table tr:nth-child(even) td{ background:var(--cream); }
+
+  .flow-list{
+    counter-reset:flownum;
+    list-style:none;
+    padding:0;
+    margin:16px 0;
+  }
+  .flow-list li{
+    counter-increment:flownum;
+    position:relative;
+    padding:12px 18px 12px 0;
+    padding-right:52px;
+    margin-bottom:10px;
+    background:#fff;
+    border:1px solid var(--cream-2);
+    border-radius:10px;
+  }
+  .flow-list li::before{
+    content:counter(flownum);
+    position:absolute;
+    right:12px; top:50%; transform:translateY(-50%);
+    background:var(--gold);
+    color:#2b1e12;
+    width:26px;height:26px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;
+    font-size:.85rem;
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:linear-gradient(160deg, var(--brown-dark), var(--brown));
+    color:var(--cream-2);
+    text-align:center;
+    padding:50px 20px 60px;
+    margin-top:20px;
+  }
+  footer .dua{
+    font-family:'Amiri', serif;
+    font-size:1.3rem;
+    max-width:600px;
+    margin:0 auto 24px;
+    line-height:2.2;
+    color:var(--gold-light);
+  }
+  footer .verse-final{
+    font-family:'Amiri', serif;
+    font-size:1.1rem;
+    color:var(--cream-2);
+    margin-bottom:28px;
+  }
+
+  @media (max-width:640px){
+    header h1{ font-size:1.7rem; }
+    .toc ol{ grid-template-columns:1fr; }
+    section{ padding:22px 16px; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="series-badge">الدرس 3 &middot; سلسلة فقه الإخلاص</div>
-  <h1>الحلقة 3 - فقه الإخلاص</h1>
-  <div class="header-ornament">﴾ ۝ ﴿</div>
-  <a class="back-link" href="../index.html">→ الرجوع لفهرس الحلقات</a>
+  <span class="series-badge">فقه الإخلاص — سلسلة علمية</span>
+  <h1>المجلس الثالث: نصوص نبوية وسِيَر السلف في الإخلاص</h1>
+  <p class="desc">جولة في الأحاديث النبوية والقصص الصادقة من حياة الصحابة والتابعين والعلماء، تكشف صور الإخلاص الخفي، ومداخل الرياء والشهرة التي تفسد العمل الصالح.</p>
+  <div class="header-ornament"></div>
+  <div class="anki-banner">
+    <button class="anki-btn" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  </div>
 </header>
 
-<main>
-  <div class="empty-card">
-    <span class="icon">🕊️</span>
-    <h2>هذه الحلقة لم تُضَف بعد</h2>
-    <p>سيتم رفع محتوى هذه الحلقة قريبًا بإذن الله، بنفس منهجية التلخيص التعليمي وبطاقات المراجعة (أنكي) المعتمدة في السلسلة.</p>
+<div class="wrap">
+
+  <nav class="toc">
+    <h2>📑 محتويات المجلس</h2>
+    <ol>
+      <li><a href="#s1">مراجعة سريعة للمجلسين السابقين</a></li>
+      <li><a href="#s2">أحاديث النبي ﷺ في البكاء من خشية الله</a></li>
+      <li><a href="#s3">حديث السبعة الذين يظلهم الله</a></li>
+      <li><a href="#s4">حديث الصدقة الخفية وقصة الرجل من أهل الجنة</a></li>
+      <li><a href="#s5">آثار السلف في إخفاء العمل الصالح</a></li>
+      <li><a href="#s6">آفة حب الشهرة والرئاسة</a></li>
+      <li><a href="#s7">قصة الإمام الغزالي مع نفسه</a></li>
+      <li><a href="#s8">أبيات شعرية في الإخلاص</a></li>
+      <li><a href="#s9">مراجع للاستزادة</a></li>
+    </ol>
+  </nav>
+
+  <!-- SECTION 1 -->
+  <section id="s1">
+    <h2><span class="icon">📖</span> مراجعة سريعة للمجلسين السابقين</h2>
+    <p>افتتح الشيخ المجلس الثالث من سلسلة "فقه الإخلاص" بتذكير موجز بما سبق تقريره في المجلسين الأولين، قبل الانتقال إلى نصوص جديدة.</p>
+
+    <div class="flow-list">
+      <li><strong>المجلس الأول:</strong> تمهيد لأهمية موضوع الإخلاص، وبيان أنه يدخل في كل تفصيل من تفاصيل حياة المسلم، من منظور "فقه النفس" — أي دخوله في الإقرار والاعتراف الباطني قبل العمل الظاهر.</li>
+      <li><strong>المجلس الثاني:</strong> تعريف الإخلاص لغة واصطلاحًا، بالرجوع إلى المعاجم والقرآن والسنة، ثم استقراء أقوال أهل العلم في المعنى الاصطلاحي.</li>
+      <li><strong>المجلس الثالث (الحالي):</strong> استعراض أحاديث نبوية إضافية في الإخلاص، ثم الانتقال إلى قصص وآثار من حياة السلف الصالح، ويُختم بأبيات شعرية في الموضوع.</li>
+    </div>
+
+    <div class="key-point">
+      <span class="kp-icon">🎯</span>
+      <div><strong>هدف المرحلة الحالية:</strong> بناء "قراءة صحيحة" لمعنى الإخلاص من خلال النصوص والسِّيَر، تمهيدًا للانتقال لاحقًا إلى مجالس عملية بعنوان "كيف أُخلص؟" ومعوقات الإخلاص في الحياة اليومية.</div>
+    </div>
+
+    <div class="warning-box">
+      <span class="label">⚠️ تنبيه منهجي مهم</span>
+      كثير من الناس يقفزون مباشرة لسؤال "كيف أخلص؟" قبل أن يتخلصوا من الجهل بحقيقة الإخلاص أولًا. الجهل هنا خطير لأنه يجعل بعض الناس يتأثرون بقصص شاذة أو أحاديث موضوعة عن الإخلاص فيقعون في وسواس مرضي، فيظنون أن كل عمل ظاهر أمام الناس مرفوض، أو يبالغون في اتهام نياتهم لدرجة تصل بهم للقنوط.
+    </div>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="s2">
+    <h2><span class="icon">😢</span> أحاديث النبي ﷺ في البكاء من خشية الله</h2>
+    <p>ابتدأ الشيخ بحديث أم المؤمنين عائشة رضي الله عنها، الذي يصف حال النبي ﷺ في قيام الليل، ثم انتقل لأحاديث تربط بين البكاء من خشية الله والعمل في سبيله.</p>
+
+    <h3>حديث عائشة رضي الله عنها</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"افتقدت النبي ﷺ ذات ليلة، فظننت أنه ذهب إلى بعض نسائه، فتحسسته، ثم رجعت فإذا هو راكع أو ساجد، يقول: سبحانك وبحمدك، لا إله إلا أنت. فقلت: بأبي أنت وأمي، إني لفي شأن وإنك لفي آخر."</p>
+      <p class="source">صحيح مسلم</p>
+    </div>
+    <p>يلفت الشيخ إلى أن في الرواية ملمحين مهمين: الأول أن عائشة رضي الله عنها لم تخفِ حديثها عن نفسها ("إني لفي شأن")، وهذا لا يقدح في إخلاصها، لأن مقصدها كان توصيل خير عظيم للناس عن حال النبي ﷺ، لا مدح نفسها. والثاني أن النبي ﷺ كان يقوم الليل بعيدًا عن أعين أهله، وهذا أصل مهم سيُبنى عليه لاحقًا في الحديث عن "العمل الخاص" الذي لا يطّلع عليه أحد.</p>
+
+    <div class="key-point">
+      <span class="kp-icon">💡</span>
+      <div>لا بد أن يكون للمسلم — مهما انشغل بأهله وعمله ودعوته — نصيب من العمل الخاص به وبربه، لا يشاركه فيه أحد ولا يعلم به أحد.</div>
+    </div>
+
+    <h3>حديث عبد الله بن الشخير رضي الله عنه</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"أتيتُ رسول الله ﷺ وهو يُصلّي، ولجوفه أزيزٌ كأزيز المِرجَل من البكاء."</p>
+      <p class="source">رواه أبو داود والترمذي</p>
+    </div>
+    <div class="definition-box">
+      <span class="label">تعريف: أزيز المِرجَل</span>
+      "المِرجَل" هو الإناء الذي يُغلى فيه الماء على النار، و"الأزيز" هو الصوت الذي يصدر منه عند الغليان. شبّه الصحابي صوت بكاء النبي ﷺ في الصلاة بهذا الصوت، للدلالة على شدة الخشوع والبكاء الذي كان يعتمل في صدره.
+    </div>
+
+    <h3>حديث أبي هريرة: عينان لا تمسهما النار</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"عينانِ لا تمسّهما النار: عينٌ بكت من خشية الله، وعينٌ باتت تحرس في سبيل الله."</p>
+      <p class="source">رواه الترمذي</p>
+    </div>
+    <p>يربط الشيخ بين الحالتين: من يبكي من خشية الله في خلوته، ومن يبيت ساهرًا حارسًا في سبيل الله — كلاهما بذل مجهودًا خفيًا لا يراه الناس غالبًا، وكلاهما ناله نفس الأجر العظيم.</p>
+
+    <h3>حديث أبي أمامة: القطرتان والأثران</h3>
+    <div class="evidence-block">
+      <p class="arabic-text">"ليس شيء أحبّ إلى الله من قطرتين وأثرين: قطرة دموع من خشية الله، وقطرة دم تُهراق في سبيل الله. وأما الأثران: فأثر في سبيل الله، وأثر في فريضة من فرائض الله."</p>
+      <p class="source">رواه الترمذي</p>
+    </div>
+
+    <h3>حديث ابن عباس: مَن سمَّع سمَّع الله به</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"من سمَّع سمَّع الله به، ومن يُرائي يُرائي الله به."</p>
+      <p class="source">متفق عليه</p>
+    </div>
+    <div class="definition-box">
+      <span class="label">تعريف: التسميع</span>
+      أن يتحدث الإنسان بعمله الصالح أمام الناس ليسمعوه ويمدحوه به، فيكون جزاؤه من الله أن يفضحه ويكشف حقيقة نيته يوم القيامة أمام الخلق، جزاءً من جنس عمله.
+    </div>
+    <div class="definition-box">
+      <span class="label">تعريف: الرياء</span>
+      أن يُحسّن الإنسان عمله الظاهر ليراه الناس ويمدحوه عليه، وهو ضد الإخلاص الذي يُراد به وجه الله وحده.
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="s3">
+    <h2><span class="icon">☀️</span> حديث السبعة الذين يُظلّهم الله في ظلّه</h2>
+    <div class="quote-block">
+      <p class="arabic-text">"سبعةٌ يُظلّهم الله في ظلّه يوم لا ظلّ إلا ظلّه: الإمام العادل، وشابٌّ نشأ في عبادة الله، ورجلٌ قلبه معلَّق بالمساجد، ورجلان تحابّا في الله اجتمعا عليه وتفرّقا عليه، ورجلٌ دعته امرأةٌ ذات منصب وجمال فقال: إني أخاف الله، ورجلٌ تصدّق بصدقة فأخفاها حتى لا تعلم شماله ما تنفق يمينه، ورجلٌ ذكر الله خاليًا ففاضت عيناه."</p>
+      <p class="source">متفق عليه</p>
+    </div>
+
+    <p>يشير الشيخ إلى أن هؤلاء السبعة يجمعهم مقام عالٍ في يوم عصيب على الناس جميعًا، وأن الله تعالى اختصّهم بهذا الفضل لأن أعمالهم — رغم اختلافها — تشترك في صفة الإخلاص والصدق مع الله في أحلك الظروف.</p>
+
+    <table class="comparison-table">
+      <tr><th>الصنف</th><th>موضع الإخلاص فيه</th></tr>
+      <tr><td>الإمام العادل</td><td>يملك سلطة تمكّنه من الظلم، لكنه يكفّ نفسه خوفًا من الله لا خوفًا من الناس</td></tr>
+      <tr><td>الشاب الناشئ في العبادة</td><td>يقاوم دواعي الشهوة في عمر تكون فيه أقوى ما تكون</td></tr>
+      <tr><td>المتعلق قلبه بالمسجد</td><td>يجد أنسه وسكونه في العبادة رغم مغريات الدنيا من حوله</td></tr>
+      <tr><td>المتحابّان في الله</td><td>رابطهما الإيمان لا المصلحة، فاجتماعهما وفراقهما لله</td></tr>
+      <tr><td>من دعته امرأة ذات منصب وجمال</td><td>يترك شهوة قوية في خلوة تامة، خوفًا من الله وحده</td></tr>
+      <tr><td>المتصدق سرًّا</td><td>يخفي عمله حتى عن أقرب الناس إليه</td></tr>
+      <tr><td>الذاكر الله خاليًا</td><td>يبكي في خلوته دون أن يراه أحد أو يسمعه أحد</td></tr>
+    </table>
+
+    <div class="key-point">
+      <span class="kp-icon">📌</span>
+      <div>الرابط بين هؤلاء السبعة كلهم هو: عملٌ خفي أو مقاومة داخلية لا يطّلع عليها إلا الله سبحانه وتعالى، وهذا هو جوهر الإخلاص.</div>
+    </div>
+
+    <div class="warning-box">
+      <span class="label">⚠️ تنبيه لغوي</span>
+      نبّه الشيخ إلى أن كلمة "رجل" في النصوص الشرعية إذا أُطلقت ولم تُقيّد، فإنها تشمل الذكر والأنثى معًا بحسب سياق اللغة العربية الأصيل، وهذا معروف في كثير من اللغات، ولم يكن هذا محل إشكال عند السلف من الصحابة والتابعين، وإنما طرأ الاعتراض على هذا الأصل اللغوي مؤخرًا مع بعض التيارات الفكرية الحديثة.
+    </div>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="s4">
+    <h2><span class="icon">🤫</span> الصدقة الخفية وقصة الرجل من أهل الجنة</h2>
+
+    <h3>معنى "حتى لا تعلم شماله ما تنفق يمينه"</h3>
+    <p>يوضح الشيخ أن هذا التعبير لا يُراد به المعنى الحرفي المستحيل (أن يد الإنسان تجهل ما تفعله يده الأخرى)، وإنما هو تصوير بليغ لشدة حرص المتصدق على إخفاء صدقته حتى عن أقرب الناس إليه، حتى لو كان زوجه أو شريك حياته.</p>
+
+    <div class="story-card">
+      <div class="story-title">🕯️ قصة صحابة الغار</div>
+      <p>يذكّر الشيخ بقصة أصحاب الغار المشهورة، حيث كان أحدهم يخفي بره بوالديه، وحديث الصدقة الخفية يذكّر بنفس المعنى: أن يكون العمل الصالح سرًّا بين العبد وربه، لدرجة أن الشيخ يذكر أنه يعرف في واقعه أزواجًا وزوجات ينفق أحدهما دون علم الآخر، تحقيقًا لهذا المعنى النبوي.</p>
+    </div>
+
+    <h3>حديث "يطّلع عليكم الآن رجل من أهل الجنة"</h3>
+    <div class="story-card">
+      <div class="story-title">👤 القصة</div>
+      <p>كان النبي ﷺ جالسًا مع أصحابه فقال: "يطّلع عليكم الآن رجل من أهل الجنة"، فطلع رجل من الأنصار، تنطف لحيته من ماء الوضوء، قد علّق نعليه بيده الشمال. فتكرر هذا القول ثلاثة أيام متتالية، وفي كل مرة يطلع نفس الرجل بنفس الهيئة البسيطة، دون أي مظهر استثنائي ظاهر يميزه عن غيره.</p>
+    </div>
+
+    <div class="key-point">
+      <span class="kp-icon">🔍</span>
+      <div>عبد الله بن عمرو رضي الله عنهما تعجّب من الأمر وأراد أن يعرف سرّ هذا الرجل، فبات عنده ثلاث ليالٍ يراقب عبادته الظاهرة، فلم يجد شيئًا استثنائيًا في قيام ليل أو كثرة صيام. فسأله عن السبب، فأخبره أنه لا يجد في نفسه على أحد من المسلمين غِلًّا أو حسدًا، وينام كل ليلة وقد طهّر قلبه من ذلك تجاه كل مسلم.</div>
+    </div>
+
+    <div class="action-card">
+      <span class="label">✅ الدرس المستفاد</span>
+      لم يبلغ هذا الرجل منزلة "المشهود له بالجنة" بكثرة العبادة الظاهرة التي تُرى وتُصوَّر، بل بعمل قلبي خفي تمامًا: سلامة الصدر تجاه المسلمين. هذا يدل على أن الأعمال القلبية الخفية قد تكون أعظم قدرًا عند الله من الأعمال الظاهرة المشهودة.
+    </div>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="s5">
+    <h2><span class="icon">🌙</span> آثار السلف في إخفاء العمل الصالح</h2>
+    <p>ينتقل الشيخ من النصوص النبوية إلى آثار الصحابة والتابعين والعلماء، التي تُظهر كيف طبّق السلف هذا المعنى عمليًا في حياتهم اليومية.</p>
+
+    <h3>ابن عمر رضي الله عنهما</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"لأن أدمع من خشية الله أحبّ إليّ من أن أتصدّق بألف دينار."</p>
+      <p class="source">أثر عن عبد الله بن عمر</p>
+    </div>
+    <p>يعلّق الشيخ أن هذا يبيّن الوزن العظيم لدمعة الخشية الخفية عند الله، مقارنة حتى بالصدقة المالية الكبيرة، لأن الدمعة تدل على حال قلبي حقيقي صعب أن يتصنّعه إنسان لفترة طويلة.</p>
+
+    <h3>كعب الأحبار</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"من خشية الله فتسيل دموعي على وجنتي، أحبّ إليّ من أن أتصدّق بوزني ذهبًا."</p>
+      <p class="source">أثر عن كعب الأحبار</p>
+    </div>
+
+    <h3>الحسن البصري</h3>
+    <div class="story-card">
+      <div class="story-title">😔 كتمان العَبْرة</div>
+      <p>كان الرجل من التابعين يجلس في المجلس فتأتيه عبرته (رغبته في البكاء)، فيحاول أن يمسكها ويكتمها، فإذا خشي أن تسبقه وتظهر أمام الناس، قام من مجلسه وانصرف حتى لا يُرى باكيًا.</p>
+    </div>
+
+    <h3>أيوب السختياني</h3>
+    <div class="story-card">
+      <div class="story-title">🤧 تمويه سبب الدمعة</div>
+      <p>كان إذا سالت دمعته في عينه أثناء البكاء من خشية الله، تظاهر بأنه مصاب بزكام، فيمسح وجهه ويقول: "ما أشدّ هذا الزكام!" حتى لا يظن الناس أنه يبكي خشوعًا، لأنه أراد أن يبقى الأمر حقيقيًا بينه وبين الله وحده.</p>
+    </div>
+
+    <h3>ابن سيرين</h3>
+    <div class="story-card">
+      <div class="story-title">😄 الضحك بالنهار والبكاء بالليل</div>
+      <p>كان يتحدث بالنهار فيُضحك جلساءه، فإذا جاء الليل وقام يصلي، كأنه رجل قتل أهل قرية بأكملها من شدة الندم والبكاء. يوضح الشيخ أن هذا يهدم صورة نمطية شائعة بأن المتدين لا بد أن يكون عابس الوجه دائمًا؛ فالانبساط مع الناس نهارًا لا يتعارض مع الخشوع الخفي بالليل.</p>
+    </div>
+
+    <h3>محمد بن واسع</h3>
+    <div class="story-card">
+      <div class="story-title">🛏️ الدمعة في الفراش</div>
+      <p>"لقد أدركتُ رجالًا كان الرجل يكون رأسه مع رأس امرأته على وسادة واحدة، فتسيل دموعه من خشية الله فلا تشعر به امرأته." وذكر أيضًا رجالًا يقومون في صفوف الصلاة فتسيل دموعهم على خدودهم، ولا يشعر بهم من بجانبهم.</p>
+    </div>
+
+    <h3>سفيان بن عُيينة</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"اكتم حسناتك كما تكتم سيئاتك."</p>
+      <p class="source">أثر عن سفيان بن عيينة</p>
+    </div>
+
+    <h3>الإمام أبو حنيفة رحمه الله</h3>
+    <div class="story-card">
+      <div class="story-title">🌙 قيام سرّي</div>
+      <p>عندما مدحه الناس بأنه صاحب قيام ليل، قال: "والله لا يتحدّث عني بما لم أفعل" — أي لم ينفِ التهمة مباشرة، بل خشي أن يُنسب له فضل لم يفعله. ومع ذلك، ولخشيته أن يُتحدّث عنه بأمر ليس بينه وبين الله حقيقة، صار يقوم الليل فعلًا بعد ذلك.</p>
+    </div>
+
+    <h3>الإمام الشافعي رحمه الله</h3>
+    <div class="story-card">
+      <div class="story-title">👀 دمعة الوحدة أفضل</div>
+      <p>مرّ برجل يبكي في المسجد أمام الناس، فقال: "ما أطيب هذه الدموع لو كانت وحدها!" أي: لو كان بكاؤك في خلوتك بعيدًا عن أعين الناس، لكان أزكى وأطيب من بكائك أمام الجمع.</p>
+    </div>
+
+    <h3>الإمام أحمد بن حنبل رحمه الله</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"من أحبّ أن يُذكر، لم يُخبَره الله."</p>
+      <p class="source">أثر منسوب إلى الإمام أحمد بن حنبل، عن معناه</p>
+    </div>
+
+    <h3>الفضيل بن عياض رحمه الله</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"خير العمل أخفاه عن الشيطان، وأبعده عن الرياء."</p>
+      <p class="source">أثر عن الفضيل بن عياض</p>
+    </div>
+    <div class="definition-box">
+      <span class="label">تعريف: الإخلاص والصواب</span>
+      قال الفضيل بن عياض في تفسير قوله تعالى: "ليبلوكم أيّكم أحسن عملًا" (سورة الملك، آية 2): أحسن عملًا أي أخلصه وأصوبه. فإن كان العمل خالصًا ولم يكن صوابًا (موافقًا للسنة) لم يُقبل، وإن كان صوابًا ولم يكن خالصًا لم يُقبل، حتى يكون خالصًا وصوابًا معًا. والخالص: ما كان لله، والصواب: ما كان على السنة.
+    </div>
+
+    <h3>سفيان الثوري رحمه الله</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"إياك أن تكون ممن يحبّ أن يُعمل بقوله، أو يُنشر قوله، أو يُسمع كلامه. وإياكم والرئاسة، فإنّ الرجل يكون حبّ الرئاسة أحبّ إليه من الذهب والفضة، وهو باب غامض لا يُبصره إلا المصير من العلماء الأمناء."</p>
+      <p class="source">من كتاب سفيان الثوري لعبّاد بن عبّاد</p>
+    </div>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section id="s6">
+    <h2><span class="icon">🎤</span> آفة حبّ الشهرة والرئاسة</h2>
+    <p>يخصّص الشيخ محورًا كاملًا لآفة الشهرة، باعتبارها من أخفى الآفات التي تنخر الإخلاص في زمن وسائل التواصل الاجتماعي.</p>
+
+    <div class="warning-box">
+      <span class="label">⚠️ خطر حب الشهرة في العصر الحديث</span>
+      حذّر الشيخ من أن كثيرًا من الدعاة والعاملين في الحقل الدعوي اليوم قد يقعون في فخّ متابعة الأرقام (عدد المشاهدات، عدد المتابعين) دون أن يشعروا، فتتحول النية من "نفع الناس" إلى "زيادة الانتشار"، وهذا مدخل خفي للرياء.
+    </div>
+
+    <h3>ابن المبارك رحمه الله</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"إذا عرفتَ نفسك، لم يضرّك ما قيل فيك."</p>
+      <p class="source">أثر عن عبد الله بن المبارك</p>
+    </div>
+
+    <h3>عبد الرحمن بن مهدي رحمه الله</h3>
+    <div class="story-card">
+      <div class="story-title">🕌 مجلس الجمعة</div>
+      <p>كان يجلس يوم الجمعة، فإذا كثُر الحاضرون فرح، وإذا قلّوا حزن. فلاحظ هذا في نفسه، وقال لمن استشارهم من أصحابه، فنصحوه بترك هذا المجلس، فقال: "هذا مجلسٌ سوف لا أعود إليه مرة ثانية" وترك المجلس فعلًا خشية أن يكون قد دخله حبّ ازدياد العدد لا إخلاص العمل.</p>
+    </div>
+
+    <h3>قصة استشارة أبي حامد الغزالي (منقولة عن غيره)</h3>
+    <div class="story-card">
+      <div class="story-title">📈 الفرح بزيادة العدد</div>
+      <p>يذكر الشيخ قصة رجل استشار صاحبه فوجد في نفسه أنه يفرح إذا زاد عدد الحاضرين في مجلسه، ويحزن إذا قلّوا. فنصحه صاحبه بأن يترك هذا المجلس، فامتنع عن الاستمرار خشية أن يكون الدافع الحقيقي هو حبّ الظهور لا نفع الناس.</p>
+    </div>
+
+    <h3>بشر بن الحارث رحمه الله</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"أخمِل ذكرك، ولا تسعَ إلى أن تكون مشهورًا."</p>
+      <p class="source">وصية بشر بن الحارث لمن استوصاه</p>
+    </div>
+
+    <h3>الفضيل بن عياض رحمه الله (في الشهرة)</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"إن قدرتَ ألّا تُعرف فافعل، وما عليك ألّا تُعرف؟ وما عليك أن تكون مذمومًا عند الناس إذا كنتَ محمودًا عند الله تعالى؟"</p>
+      <p class="source">أثر عن الفضيل بن عياض</p>
+    </div>
+
+    <h3>الحسن البصري رحمه الله</h3>
+    <div class="story-card">
+      <div class="story-title">👥 مضايقة الشهرة للفقيه</div>
+      <p>"إن الرجل ليكون فقيهًا جالسًا مع القوم، يرى بعضهم أن به عيًّا (عجزًا عن الكلام)، وما به من عيّ، إلا كراهية أن يشتهر." أي: كان بعض العلماء يتعمّد السكوت وعدم إظهار علمه في بعض المجالس، خشية أن يقع في حبّ الظهور.</p>
+    </div>
+
+    <h3>الإمام ابن الوردي رحمه الله (بيت شعري)</h3>
+    <div class="poetry-card">
+      <p class="verse">واتقِ الله فتقوى الله ما &nbsp;&nbsp; خاب من كان بها مستمسِكا</p>
+      <p class="poet">— ابن الوردي</p>
+    </div>
+
+    <div class="action-card">
+      <span class="label">✅ الفرق الدقيق بين إخبار الناس بالنعمة والرياء</span>
+      نبّه الشيخ إلى أن ليس كل حديث عن نعمة الله على العبد يُعتبر رياءً؛ فقد يتحدث الإنسان بنعمة الله عليه (كما ورد "وأما بنعمة ربك فحدّث") لغرض تعليمي أو تحفيزي مشروع. لكن الميزان هو: هل الدافع هو إظهار النعمة شكرًا لله وتعليمًا للناس، أم إظهار الذات وطلب المدح؟
+    </div>
+  </section>
+
+  <!-- SECTION 7 -->
+  <section id="s7">
+    <h2><span class="icon">📚</span> قصة الإمام أبي حامد الغزالي مع نفسه</h2>
+    <p>يخصّص الشيخ جزءًا مطوّلًا لتجربة الإمام أبي حامد الغزالي رحمه الله كما رواها بنفسه في كتابه "المنقذ من الضلال"، باعتبارها من أصدق الشهادات الذاتية على صراع الإخلاص عند كبار العلماء.</p>
+
+    <div class="definition-box">
+      <span class="label">من هو أبو حامد الغزالي؟</span>
+      عالم مسلم بارز في الفلسفة وعلم الكلام والفقه، وصل إلى قمة الشهرة العلمية في عصره، وكان يدير المدرسة النظامية ببغداد، ويحضر مجلس درسه نحو أربعمائة من كبار طلاب العلم، وكان معروفًا بشدة حجته في المناظرات، حتى إن دخله كان يُقدَّر بخمسمائة دينار.
+    </div>
+
+    <h3>لحظة المواجهة مع النفس</h3>
+    <div class="quote-block">
+      <p class="arabic-text">"ثم لاحظتُ حالي، فإذا أنا منغمس في العلائق، وقد أحدقت بي من الجوانب: الشهرة، المنصب، الأموال، الزوجة والأولاد... ولاحظتُ أعمالي، وأحسنها التدريس والتعليم، فإذا أنا فيها مُقبلٌ على علومٍ غير مهمة ولا نافعة في طريق الآخرة."</p>
+      <p class="source">من كتاب المنقذ من الضلال</p>
+    </div>
+
+    <div class="key-point">
+      <span class="kp-icon">💔</span>
+      <div>ثم جاء الاعتراف الأصعب: "ثم تفكّرتُ في نيّتي في التدريس، فإذا هي غير خالصة لوجه الله تعالى، بل باعثها ومحرّكها طلب الجاه وانتشار الصِّيت." هذا اعتراف عالِم مشهور بأن دافعه الحقيقي في أشرف الأعمال (التعليم) لم يكن خالصًا لله.</div>
+    </div>
+
+    <h3>المرض النفسي والجسدي</h3>
+    <div class="story-card">
+      <div class="story-title">🛑 توقف اللسان</div>
+      <p>يصف الغزالي كيف تحول هذا الصراع الداخلي إلى أزمة جسدية حقيقية: انقطع لسانه عن الكلام رغم محاولاته، فلم يستطع التدريس، وأصابه حزن أثّر على قدرته على الهضم والطعام والشراب، حتى عجز الأطباء عن علاجه وقالوا: "هذا أمرٌ نزل بالقلب، ومنه سرى إلى المزاج، فلا سبيل إليه بالعلاج إلا أن يتروّح السر عن الهمّ المُلمّ."</p>
+    </div>
+
+    <div class="action-card">
+      <span class="label">✅ اللجوء إلى الله</span>
+      "ثم لما أحسستُ بعجزي، وسقط بالكلية اختياري، التجأتُ إلى الله تعالى التجاء المضطر الذي لا حيلة له، فأجابني الذي يجيب المضطر إذا دعاه، وسهّل على قلبي الإعراض عن الجاه والمال والأهل والولد."
+    </div>
+
+    <h3>الخروج من بغداد</h3>
+    <p>غادر الغزالي بغداد سرًّا متجهًا نحو الشام، متعمدًا إخفاء وجهته الحقيقية عن الخليفة وأصحابه (بإظهار عزمه على الحج بدل الشام) حتى لا يُلحقوا به أو يمنعوه من هذا الانقطاع. ترك معظم ماله ولم يُبقِ إلا قدر كفاف قوته وأطفاله.</p>
+
+    <div class="story-card">
+      <div class="story-title">🚶 لقاء القاضي ابن العربي</div>
+      <p>يروي القاضي أبو بكر بن العربي أنه رأى الإمام الغزالي في البرية بيده عكازة وعليه ثوب بسيط، بعدما كان يحضر مجلس درسه أربعمائة من كبار الناس. فسأله: "أليس تدريس العلم ببغداد خير من هذا؟" فأجابه الغزالي ببيت شعري (انظر القسم التالي) يصف فيه تحوّله من طلب الجاه إلى طلب الإخلاص.</p>
+    </div>
+
+    <div class="key-point">
+      <span class="kp-icon">⚖️</span>
+      <div>ينبّه الشيخ إلى أن ذكر قصة الغزالي هنا لا يعني الموافقة على كل ما انتهى إليه فكريًا أو عقديًا لاحقًا، وإنما المقصود أخذ العبرة من صدق تجربته الذاتية في محاسبة النفس على الإخلاص، بصرف النظر عن تفاصيل مساره الفكري بعدها.</div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 -->
+  <section id="s8">
+    <h2><span class="icon">🖋️</span> أبيات شعرية في الإخلاص</h2>
+
+    <h3>الإمام الذهبي رحمه الله</h3>
+    <div class="poetry-card">
+      <p class="verse">إذا رأيتَ الإمام في المحراب &nbsp;&nbsp; لهِجًا بالقراءات وتتبّع غريبها</p>
+      <p class="poet">— الإمام الذهبي (في التحذير من التصنّع في العبادة الظاهرة لأجل الظهور)</p>
+    </div>
+    <p>يشرح الشيخ أن هذا البيت يصف من يتعمد إظهار مهارته في القراءات المتعددة أثناء الإمامة ليقول الناس عنه "ما شاء الله"، فيكون ذلك دليلًا على مفارقته للخشوع الحقيقي إلى حب الظهور.</p>
+
+    <h3>ابن العربي (رد الغزالي)</h3>
+    <div class="poetry-card">
+      <p class="verse">تركتُها وليلى وسُعدى بمعزلٍ &nbsp;&nbsp; وعُدتُ إلى تصحيح أوّل منزلي</p>
+      <p class="poet">— أبو حامد الغزالي، جوابًا لابن العربي</p>
+    </div>
+    <p>وصف فيه الغزالي تركه لكل ما كان يشغله من جاه وشهرة ("ليلى وسعدى" رمز لمطالب الدنيا)، وعودته لتصحيح أساس علاقته بالله من جديد.</p>
+
+    <h3>قصيدة "مع الله" (منسوبة لمحمد العزاوي)</h3>
+    <div class="poetry-card">
+      <p class="verse">
+        مع الله في القلب لمّا انكسر &nbsp;&nbsp; مع الله في الدمع لمّا انهمر<br>
+        مع الله في الذنب لمّا استتر &nbsp;&nbsp; مع الله في الجسم عند السحر<br>
+        مع الله في النوم بعد السهر &nbsp;&nbsp; مع الله سرًّا ومع الله جهرا
+      </p>
+      <p class="poet">— من قصيدة "مع الله"</p>
+    </div>
+    <p>ختم الشيخ القصيدة بالتعليق أن جوهر الإخلاص هو أن يكون العبد "مع الله" حاضرًا بقلبه في كل حال من أحواله: في الفرح والحزن، في العلن والسر، في القوة والضعف — لا في لحظات العبادة الظاهرة فقط.</p>
+
+    <div class="key-point">
+      <span class="kp-icon">🎓</span>
+      <div>يوصي الشيخ بحفظ مثل هذه الأبيات لأنها تختصر معاني كبيرة في كلمات مركّزة يسهل استحضارها وقت الغفلة.</div>
+    </div>
+  </section>
+
+  <!-- SECTION 9 -->
+  <section id="s9">
+    <h2><span class="icon">📕</span> مراجع للاستزادة</h2>
+    <p>أوصى الشيخ في نهاية المجلس بكتابين للراغبين في التعمق أكثر في سير السلف وقصص الإخلاص عندهم:</p>
+
+    <div class="flow-list">
+      <li><strong>حِلية الأولياء لأبي نُعيم الأصبهاني</strong> (ويُفضَّل نسخة "التهذيب الموضوعي" المرتبة ألفبائيًا لتسهيل الرجوع لموضوع الإخلاص تحديدًا) — كتاب جامع لقصص وآثار الأولياء والصالحين.</li>
+      <li><strong>حياة السلف بين القول والعمل</strong> — كتاب يجمع مواقف عملية من حياة السلف تُظهر كيف طبّقوا القيم التي كانوا يدعون إليها.</li>
+    </div>
+
+    <div class="action-card">
+      <span class="label">✅ لماذا هذه الكتب تحديدًا؟</span>
+      شدّد الشيخ على أن قيمة هذه الكتب في أنها تعرّف القارئ على "أناس حقيقيين عاشوا هذه المعاني على أرض الواقع"، لا مجرد كلام نظري، مما يساعد على الاقتداء العملي بدل الاكتفاء بالتنظير.
+    </div>
+
+    <div class="warning-box">
+      <span class="label">📌 ملاحظة على المستقبل</span>
+      أشار الشيخ إلى توقف مؤقت لدروس هذه السلسلة بسبب انشغاله ببرنامج صيفي لليافعين، على أن تُستأنف لاحقًا بمجالس حول: "كيف أُخلص؟"، ومعوقات الإخلاص في الحياة اليومية، والضوابط النفسية المتعلقة بالإخلاص.
+    </div>
+  </section>
+
+  <div style="text-align:center; margin: 30px 0 10px;">
+    <button class="anki-btn" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
   </div>
-</main>
+
+</div>
 
 <footer>
-  سلسلة فقه الإخلاص &middot; الحلقة 3 - فقه الإخلاص
+  <p class="dua">اللهم اجعل أعمالنا كلها صالحة، واجعلها لوجهك خالصة، ولا تجعل لأحدٍ فيها شيئًا</p>
+  <p class="verse-final">"وَالْعَصْرِ ۝ إِنَّ الْإِنسَانَ لَفِي خُسْرٍ ۝ إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ وَتَوَاصَوْا بِالْحَقِّ وَتَوَاصَوْا بِالصَّبْرِ"</p>
+  <div style="opacity:.7; font-size:.85rem;">فقه الإخلاص — المجلس الثالث</div>
 </footer>
+
+<script>
+const ankiCards = [
+  // تعريفات ومفاهيم
+  ["ما معنى \"أزيز المِرجَل\" الذي ورد في حديث عبد الله بن الشخير؟", "المِرجَل إناء يُغلى فيه الماء، والأزيز صوت غليانه. شُبّه به صوت بكاء النبي ﷺ في الصلاة للدلالة على شدة خشوعه."],
+  ["ما تعريف التسميع؟", "أن يتحدث الإنسان بعمله الصالح أمام الناس ليسمعوه ويمدحوه به، فيفضحه الله يوم القيامة جزاءً من جنس عمله."],
+  ["ما تعريف الرياء؟", "أن يُحسّن الإنسان عمله الظاهر ليراه الناس ويمدحوه عليه، وهو ضد الإخلاص."],
+  ["بحسب الفضيل بن عياض، متى يُقبل العمل؟", "إذا كان خالصًا (لله) وصوابًا (موافقًا للسنة) معًا؛ فإن فقد أحدهما لم يُقبل."],
+  ["ما معنى \"الخالص\" و\"الصواب\" عند الفضيل بن عياض؟", "الخالص: ما كان لله. الصواب: ما كان على السنة."],
+  ["في اللغة العربية، إذا أُطلقت كلمة \"رجل\" ولم تُقيّد، فماذا تشمل؟", "تشمل الذكر والأنثى معًا بحسب سياق اللغة العربية الأصيل."],
+  ["من هو أبو حامد الغزالي؟", "عالم مسلم بارز في الفلسفة وعلم الكلام والفقه، أدار المدرسة النظامية ببغداد وكان يحضر درسه أربعمائة طالب."],
+  ["ما اسم الكتاب الذي روى فيه الغزالي تجربته الذاتية مع أزمة الإخلاص؟", "كتاب \"المنقذ من الضلال\"."],
+
+  // أدلة ومراجع
+  ["أكمل الحديث: \"عينانِ لا تمسّهما النار: عينٌ بكت من خشية الله، و...\"", "عينٌ باتت تحرس في سبيل الله. (رواه الترمذي)"],
+  ["ما الحديث الذي يربط بين قطرتين وأثرين أحبهما إلى الله؟", "\"ليس شيء أحبّ إلى الله من قطرتين وأثرين: قطرة دموع من خشية الله، وقطرة دم تُهراق في سبيل الله. وأما الأثران: فأثر في سبيل الله، وأثر في فريضة من فرائض الله.\" (رواه الترمذي)"],
+  ["ما الحديث الذي يبيّن جزاء من يسمّع بعمله أو يرائي به؟", "\"من سمَّع سمَّع الله به، ومن يُرائي يُرائي الله به.\" (متفق عليه)"],
+  ["اذكر نص حديث عبد الله بن الشخير في وصف بكاء النبي ﷺ في الصلاة.", "\"أتيتُ رسول الله ﷺ وهو يُصلّي، ولجوفه أزيزٌ كأزيز المِرجَل من البكاء.\" (رواه أبو داود والترمذي)"],
+  ["اذكر السبعة الذين يُظلّهم الله في ظلّه يوم لا ظلّ إلا ظلّه.", "الإمام العادل، وشابّ نشأ في عبادة الله، ورجل قلبه معلَّق بالمساجد، ورجلان تحابّا في الله، ورجل دعته امرأة ذات منصب وجمال فقال إني أخاف الله، ورجل تصدّق فأخفاها، ورجل ذكر الله خاليًا ففاضت عيناه."],
+  ["ما دليل عائشة رضي الله عنها على قيام النبي ﷺ الليل سرًّا؟", "\"افتقدت النبي ﷺ ذات ليلة... فإذا هو راكع أو ساجد، يقول: سبحانك وبحمدك، لا إله إلا أنت.\" (صحيح مسلم)"],
+  ["ما قول ابن عمر رضي الله عنهما في فضل دمعة الخشية؟", "\"لأن أدمع من خشية الله أحبّ إليّ من أن أتصدّق بألف دينار.\""],
+  ["ما قول كعب الأحبار في دمعة الخشية؟", "\"من خشية الله فتسيل دموعي على وجنتي، أحبّ إليّ من أن أتصدّق بوزني ذهبًا.\""],
+  ["ما قول سفيان بن عُيينة في كتمان الحسنات؟", "\"اكتم حسناتك كما تكتم سيئاتك.\""],
+  ["ما قول الفضيل بن عياض في خير العمل؟", "\"خير العمل أخفاه عن الشيطان، وأبعده عن الرياء.\""],
+  ["ما قول ابن المبارك في معرفة النفس؟", "\"إذا عرفتَ نفسك، لم يضرّك ما قيل فيك.\""],
+  ["ما وصية بشر بن الحارث لمن استوصاه؟", "\"أخمِل ذكرك، ولا تسعَ إلى أن تكون مشهورًا.\""],
+  ["ما قول الفضيل بن عياض في عدم طلب الشهرة؟", "\"إن قدرتَ ألّا تُعرف فافعل، وما عليك ألّا تُعرف؟ وما عليك أن تكون مذمومًا عند الناس إذا كنتَ محمودًا عند الله؟\""],
+  ["ما تحذير سفيان الثوري من حب الرئاسة؟", "\"إياك أن تكون ممن يحبّ أن يُعمل بقوله... وإياكم والرئاسة، فإنّ الرجل يكون حبّ الرئاسة أحبّ إليه من الذهب والفضة.\""],
+  ["اذكر نص اعتراف الغزالي عن نيّته في التدريس.", "\"ثم تفكّرتُ في نيّتي في التدريس، فإذا هي غير خالصة لوجه الله تعالى، بل باعثها ومحرّكها طلب الجاه وانتشار الصِّيت.\""],
+  ["بماذا وصف الغزالي لحظة لجوئه إلى الله بعد عجزه؟", "\"التجأتُ إلى الله تعالى التجاء المضطر الذي لا حيلة له، فأجابني الذي يجيب المضطر إذا دعاه، وسهّل على قلبي الإعراض عن الجاه والمال والأهل والولد.\""],
+  ["أكمل بيت الغزالي: \"تركتُها وليلى وسُعدى بمعزلٍ...\"", "وعُدتُ إلى تصحيح أوّل منزلي."],
+  ["ما مطلع قصيدة \"مع الله\" التي ختم بها الشيخ المجلس؟", "\"مع الله في القلب لمّا انكسر، مع الله في الدمع لمّا انهمر.\""],
+
+  // فوائد ونقاط مهمة
+  ["ما الملمحان المهمان في حديث عائشة عن قيام النبي ﷺ؟", "الأول: صدقها في نقل الخبر رغم ذكرها لنفسها لأن قصدها نفع الناس. الثاني: أن النبي ﷺ كان يقوم الليل بعيدًا عن أعين أهله، دليلًا على أهمية وجود عمل خاص خفي بين العبد وربه."],
+  ["ما الرابط المشترك بين أصحاب الأعمال السبعة الذين يُظلّهم الله في ظلّه؟", "عملٌ خفي أو مقاومة داخلية لا يطّلع عليها إلا الله سبحانه وتعالى."],
+  ["بم تميّز الرجل الذي بُشِّر بأنه من أهل الجنة في حديث عبد الله بن عمرو، رغم عدم وجود عبادة ظاهرة استثنائية له؟", "بسلامة صدره؛ فهو لا يجد في نفسه غِلًّا أو حسدًا على أحد من المسلمين."],
+  ["ماذا فعل أيوب السختياني عندما سالت دمعته من خشية الله أمام الناس؟", "تظاهر بأنه مصاب بزكام، ومسح وجهه قائلًا: \"ما أشدّ هذا الزكام!\" حتى لا يُظن أنه يبكي خشوعًا."],
+  ["كيف كان حال ابن سيرين بين النهار والليل؟", "كان يضحك مع جلسائه بالنهار، فإذا جاء الليل وقام يصلي كأنه رجل قتل أهل قرية من شدة الندم والبكاء."],
+  ["لماذا ترك عبد الرحمن بن مهدي مجلسه يوم الجمعة؟", "لأنه لاحظ في نفسه أنه يفرح إذا كثر الحاضرون ويحزن إذا قلّوا، فخشي أن يكون ذلك حبًا في العدد لا إخلاصًا لله."],
+  ["ما رد الإمام الشافعي على من رآه يبكي أمام الناس في المسجد؟", "قال: \"ما أطيب هذه الدموع لو كانت وحدها!\" إشارة إلى أن البكاء في الخلوة أزكى من البكاء أمام الناس."],
+  ["كيف تعامل أبو حنيفة مع مدح الناس له بالعبادة والقيام؟", "لم ينفِ التهمة مباشرة بل قال: \"والله لا يتحدّث عني بما لم أفعل\"، ثم صار يقوم الليل فعلًا خشية أن يُنسب إليه فضل لم يفعله."],
+  ["ما الأثر الجسدي الذي أصاب الغزالي بسبب صراعه الداخلي حول الإخلاص؟", "انقطع لسانه عن الكلام، وأصابه حزن أثّر على هضمه وطعامه وشرابه، حتى عجز الأطباء عن علاجه."],
+  ["كيف غادر الغزالي بغداد؟", "غادرها سرًّا متجهًا للشام، مُظهرًا عزمه على الحج بدلًا من ذلك حتى لا يمنعه الخليفة وأصحابه."],
+  ["بماذا أوصى الشيخ للاستزادة في قصص السلف والإخلاص؟", "بكتاب \"حِلية الأولياء\" لأبي نُعيم (ويفضَّل نسخة التهذيب الموضوعي)، وكتاب \"حياة السلف بين القول والعمل\"."],
+  ["ما الخطر الذي حذّر منه الشيخ من الجهل بحقيقة الإخلاص؟", "أن يتأثر بعض الناس بقصص شاذة أو أحاديث موضوعة عن الإخلاص فيقعون في وسواس مرضي أو مبالغة تصل بهم للقنوط."]
+];
+
+function downloadAnkiDeck() {
+  let content = ankiCards.map(([q, a]) => {
+    const clean = s => s.replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+    return `${clean(q)}\t${clean(a)}`;
+  }).join('\n');
+  const BOM = '\uFEFF';
+  const blob = new Blob([BOM + content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'بطاقات_أنكي_فقه_الإخلاص_المجلس_الثالث.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
 
 </body>
 </html>

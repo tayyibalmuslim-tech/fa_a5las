@@ -3,150 +3,912 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الحلقة 5 - فقه الإخلاص - فقه الإخلاص</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<title>فقه النفس (٥) — معوقات الصدق والإخلاص</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --gold:#b8860b;
-    --gold-light:#d4a537;
-    --green-deep:#1f4d3a;
-    --green-mid:#2e6b52;
-    --brown-dark:#3a2c1f;
-    --cream:#faf6ec;
-    --cream-dark:#f0e8d4;
-    --ink:#2b241a;
-    --card-border:#e3d6b0;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    font-family:'Cairo', sans-serif;
-    background:var(--cream);
-    color:var(--ink);
-    line-height:1.9;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-  }
-  header{
-    background:linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 55%, var(--brown-dark) 100%);
-    color:#fdf8ec;
-    padding:40px 20px 32px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    border-bottom:6px solid var(--gold);
-  }
-  header::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-      repeating-linear-gradient(45deg, rgba(212,165,55,0.05) 0, rgba(212,165,55,0.05) 2px, transparent 2px, transparent 30px);
-    pointer-events:none;
-  }
-  .series-badge{
-    display:inline-block;
-    background:rgba(212,165,55,0.18);
-    border:1px solid var(--gold-light);
-    color:var(--gold-light);
-    padding:6px 20px;
-    border-radius:30px;
-    font-size:0.9rem;
-    font-weight:600;
-    margin-bottom:18px;
-    letter-spacing:0.5px;
-  }
-  header h1{
-    font-size:2rem;
-    font-weight:900;
-    text-shadow:0 2px 10px rgba(0,0,0,0.25);
-  }
-  .back-link{
-    display:inline-block;
-    margin-top:18px;
-    color:var(--gold-light);
-    text-decoration:none;
-    font-weight:600;
-    font-size:0.95rem;
-    border:1px solid var(--gold-light);
-    padding:8px 18px;
-    border-radius:8px;
-    transition:background 0.15s, color 0.15s;
-  }
-  .back-link:hover{
-    background:var(--gold-light);
-    color:var(--brown-dark);
-  }
+:root{
+  --bg:#faf7f0;
+  --bg-alt:#f3ede0;
+  --paper:#fffdf8;
+  --ink:#2b2318;
+  --ink-soft:#5a4d3a;
+  --brown:#6b4226;
+  --brown-dark:#4a2c17;
+  --gold:#b8860b;
+  --gold-light:#d4a72c;
+  --gold-soft:#f0dfa8;
+  --green:#2f5233;
+  --green-light:#4a7a52;
+  --green-soft:#e2ede2;
+  --border:#e0d3b0;
+  --shadow:0 4px 20px rgba(75,44,23,.08);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Cairo',sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.9;
+  background-image:
+    radial-gradient(circle at 10% 10%, var(--gold-soft) 0%, transparent 20%),
+    radial-gradient(circle at 90% 90%, var(--green-soft) 0%, transparent 25%);
+  background-attachment:fixed;
+}
+.wrap{max-width:920px;margin:0 auto;padding:0 18px 60px}
 
-  main{
-    flex:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:60px 20px;
-  }
-  .empty-card{
-    background:#fff;
-    border:1px dashed var(--card-border);
-    border-radius:18px;
-    padding:50px 40px;
-    max-width:520px;
-    text-align:center;
-    box-shadow:0 8px 24px rgba(59,44,20,0.07);
-  }
-  .empty-card .icon{
-    font-size:3rem;
-    margin-bottom:18px;
-    display:block;
-    color:var(--gold);
-  }
-  .empty-card h2{
-    color:var(--green-deep);
-    font-size:1.3rem;
-    margin-bottom:12px;
-  }
-  .empty-card p{
-    color:#6b6152;
-    font-size:0.98rem;
-  }
-  .header-ornament{
-    margin-top:16px;
-    font-size:1.2rem;
-    color:var(--gold-light);
-    letter-spacing:8px;
-  }
+/* ===== Header ===== */
+header{
+  background:linear-gradient(135deg, var(--brown-dark) 0%, var(--brown) 55%, var(--green) 130%);
+  color:#fdf6e3;
+  padding:46px 24px 40px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  border-bottom:6px solid var(--gold);
+}
+header::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.03) 0 2px, transparent 2px 40px),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.03) 0 2px, transparent 2px 40px);
+  pointer-events:none;
+}
+.eyebrow{
+  font-size:.95rem;
+  letter-spacing:2px;
+  color:var(--gold-soft);
+  opacity:.9;
+  margin-bottom:10px;
+}
+.lecture-badge{
+  display:inline-block;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.35);
+  padding:5px 18px;
+  border-radius:30px;
+  font-size:.9rem;
+  margin-bottom:16px;
+  backdrop-filter:blur(4px);
+}
+header h1{
+  font-family:'Amiri',serif;
+  font-size:2.5rem;
+  font-weight:700;
+  margin-bottom:14px;
+  text-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+header p.desc{
+  max-width:640px;
+  margin:0 auto;
+  font-size:1.05rem;
+  color:#f0e6c8;
+  opacity:.95;
+}
+.header-btns{
+  margin-top:26px;
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 24px;
+  border-radius:30px;
+  font-family:'Cairo',sans-serif;
+  font-weight:700;
+  font-size:.95rem;
+  cursor:pointer;
+  border:none;
+  transition:.25s;
+  text-decoration:none;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:#3a2a08;
+  box-shadow:0 4px 14px rgba(184,134,11,.4);
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(184,134,11,.55)}
+.btn-outline{
+  background:transparent;
+  border:1.5px solid rgba(255,255,255,.5);
+  color:#fdf6e3;
+}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
 
-  footer{
-    background:linear-gradient(135deg, var(--brown-dark) 0%, var(--green-deep) 100%);
-    color:#f0e8d4;
-    text-align:center;
-    padding:22px 20px;
-    font-size:0.85rem;
-    opacity:0.85;
-  }
+/* ===== TOC ===== */
+.toc{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:26px 28px;
+  margin:-30px auto 34px;
+  box-shadow:var(--shadow);
+  position:relative;
+  z-index:5;
+}
+.toc h2{
+  font-family:'Amiri',serif;
+  color:var(--brown-dark);
+  font-size:1.3rem;
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.toc ol{
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px 20px;
+}
+.toc a{
+  color:var(--ink-soft);
+  text-decoration:none;
+  font-size:.95rem;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 0;
+  border-bottom:1px dashed transparent;
+  transition:.2s;
+}
+.toc a:hover{color:var(--brown);border-bottom-color:var(--gold)}
+.toc a .num{
+  background:var(--gold-soft);
+  color:var(--brown-dark);
+  width:24px;height:24px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.78rem;font-weight:700;
+  flex-shrink:0;
+}
+@media(max-width:600px){.toc ol{grid-template-columns:1fr}}
+
+/* ===== Sections ===== */
+section{
+  background:var(--paper);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px 30px;
+  margin-bottom:28px;
+  box-shadow:var(--shadow);
+  scroll-margin-top:20px;
+}
+.sec-head{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:22px;
+  padding-bottom:16px;
+  border-bottom:2px solid var(--gold-soft);
+}
+.sec-icon{
+  width:52px;height:52px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;
+  flex-shrink:0;
+  box-shadow:0 3px 10px rgba(47,82,51,.3);
+}
+section h2{
+  font-family:'Amiri',serif;
+  color:var(--brown-dark);
+  font-size:1.55rem;
+}
+section h3{
+  font-family:'Amiri',serif;
+  color:var(--green);
+  font-size:1.2rem;
+  margin:24px 0 12px;
+  display:flex;align-items:center;gap:8px;
+}
+section h3::before{content:"◆";color:var(--gold);font-size:.85rem}
+p{margin-bottom:14px;color:var(--ink)}
+strong{color:var(--brown-dark)}
+
+/* ===== Blocks ===== */
+.definition-box{
+  background:var(--green-soft);
+  border-right:4px solid var(--green);
+  border-radius:10px;
+  padding:16px 20px;
+  margin:16px 0;
+  position:relative;
+}
+.definition-box .label{
+  font-weight:800;
+  color:var(--green);
+  font-size:.85rem;
+  margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;
+}
+.quote-block, .evidence-block{
+  background:linear-gradient(135deg,#fdf9ef,var(--gold-soft) 180%);
+  border:1px solid var(--gold-light);
+  border-radius:10px;
+  padding:18px 22px;
+  margin:16px 0;
+  position:relative;
+}
+.quote-block::before{
+  content:"❝";
+  font-family:Georgia,serif;
+  font-size:2.2rem;
+  color:var(--gold);
+  position:absolute;
+  top:-6px;
+  right:14px;
+  opacity:.5;
+}
+.quote-block p, .evidence-block p{margin-bottom:6px}
+.evidence-block .src{
+  font-size:.85rem;
+  color:var(--brown);
+  font-weight:700;
+  margin-top:8px;
+}
+.key-point{
+  background:#fff;
+  border:1px solid var(--border);
+  border-right:4px solid var(--gold);
+  border-radius:10px;
+  padding:14px 20px;
+  margin:14px 0;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+.key-point .ic{font-size:1.3rem;flex-shrink:0}
+.warning-box{
+  background:#fdf1ec;
+  border:1px solid #e8b89a;
+  border-right:4px solid #c1502e;
+  border-radius:10px;
+  padding:16px 20px;
+  margin:16px 0;
+}
+.warning-box .label{
+  font-weight:800;
+  color:#a63d1f;
+  margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;
+}
+.comparison-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:18px 0;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  font-size:.94rem;
+}
+.comparison-table th{
+  background:var(--brown);
+  color:#fdf6e3;
+  padding:12px 14px;
+  text-align:right;
+  font-weight:700;
+}
+.comparison-table td{
+  padding:11px 14px;
+  border-bottom:1px solid var(--border);
+  background:var(--paper);
+}
+.comparison-table tr:nth-child(even) td{background:var(--bg-alt)}
+.flow-card{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  background:var(--bg-alt);
+  border-radius:10px;
+  padding:14px 18px;
+  margin:10px 0;
+  border-right:3px solid var(--green-light);
+}
+.flow-card .fnum{
+  width:30px;height:30px;
+  background:var(--green);
+  color:#fff;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;
+  flex-shrink:0;
+  font-size:.9rem;
+}
+.action-card{
+  background:linear-gradient(135deg,#fdf9ef,#fff);
+  border:1.5px solid var(--gold-light);
+  border-radius:10px;
+  padding:16px 20px;
+  margin:14px 0;
+}
+.action-card .label{
+  font-weight:800;
+  color:var(--gold);
+  font-size:.85rem;
+  margin-bottom:6px;
+}
+.kaffat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;
+  margin:18px 0;
+}
+.kaffa-card{
+  background:var(--bg-alt);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px;
+  text-align:center;
+  transition:.2s;
+}
+.kaffa-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.kaffa-card .icon{font-size:1.8rem;margin-bottom:8px}
+.kaffa-card h4{color:var(--brown-dark);font-family:'Amiri',serif;font-size:1.05rem;margin-bottom:6px}
+.kaffa-card p{font-size:.87rem;color:var(--ink-soft);margin:0}
+
+.qa-item{
+  background:var(--bg-alt);
+  border-radius:10px;
+  padding:14px 18px;
+  margin:10px 0;
+}
+.qa-item .q{font-weight:800;color:var(--brown-dark);margin-bottom:6px;display:flex;gap:8px}
+.qa-item .a{color:var(--ink-soft);font-size:.95rem}
+
+/* ===== Footer ===== */
+footer{
+  text-align:center;
+  padding:40px 24px;
+  background:linear-gradient(135deg, var(--brown-dark), var(--green));
+  color:#f0e6c8;
+  border-radius:var(--radius);
+  margin-top:10px;
+}
+footer .dua{
+  font-family:'Amiri',serif;
+  font-size:1.3rem;
+  margin-bottom:16px;
+  line-height:2;
+}
+footer .sub{opacity:.8;font-size:.9rem;margin-bottom:22px}
+
+@media(max-width:600px){
+  header h1{font-size:1.9rem}
+  section{padding:22px 18px}
+  .sec-icon{width:44px;height:44px;font-size:1.3rem}
+}
 </style>
 </head>
 <body>
+<div class="wrap" style="padding-top:0">
 
 <header>
-  <div class="series-badge">الدرس 5 &middot; سلسلة فقه الإخلاص</div>
-  <h1>الحلقة 5 - فقه الإخلاص</h1>
-  <div class="header-ornament">﴾ ۝ ﴿</div>
-  <a class="back-link" href="../index.html">→ الرجوع لفهرس الحلقات</a>
+  <div class="eyebrow">سلسلة فقه النفس</div>
+  <div class="lecture-badge">المحاضرة الخامسة</div>
+  <h1>معوقات الصدق والإخلاص</h1>
+  <p class="desc">الثلاثية النفسية التي تصرف الإنسان عن الصدق مع نفسه ومع ربه: الجهل، الهوى، والغفلة — تعريفها، أدلتها، وصورها في واقعنا اليومي.</p>
+  <div class="header-btns">
+    <button class="btn btn-gold" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+    <a href="#toc" class="btn btn-outline">↓ محتويات المحاضرة</a>
+  </div>
 </header>
 
-<main>
-  <div class="empty-card">
-    <span class="icon">🕊️</span>
-    <h2>هذه الحلقة لم تُضَف بعد</h2>
-    <p>سيتم رفع محتوى هذه الحلقة قريبًا بإذن الله، بنفس منهجية التلخيص التعليمي وبطاقات المراجعة (أنكي) المعتمدة في السلسلة.</p>
+<nav class="toc" id="toc">
+  <h2>📑 محتويات المحاضرة</h2>
+  <ol>
+    <li><a href="#intro"><span class="num">١</span> المدخل: لماذا الصدق قبل الإخلاص؟</a></li>
+    <li><a href="#jahl"><span class="num">٢</span> المعوق الأول: الجهل</a></li>
+    <li><a href="#hawa"><span class="num">٣</span> المعوق الثاني: الهوى</a></li>
+    <li><a href="#kaffat"><span class="num">٤</span> الكفّات الخمس للهوى</a></li>
+    <li><a href="#ghafla"><span class="num">٥</span> المعوق الثالث: الغفلة (اللعب واللغو)</a></li>
+    <li><a href="#qa"><span class="num">٦</span> أسئلة وتطبيقات من المجلس</a></li>
+    <li><a href="#khatima"><span class="num">٧</span> خلاصة وتكليف المجلس القادم</a></li>
+  </ol>
+</nav>
+
+<section id="intro">
+  <div class="sec-head">
+    <div class="sec-icon">🕊️</div>
+    <h2>المدخل: لماذا الصدق قبل الإخلاص؟</h2>
   </div>
-</main>
+
+  <p>افتتح الشيخ المجلس بربط "فقه النفس" بموضوعات إنسانية عامة، موضّحًا أن هذه الموضوعات لا تُختزل في كونها "دينية" بمعزل عن الصحة النفسية، ولا هي مجرد "رقية" تُقرأ على المستمع، بل هي أعمق من ذلك: فهم دقيق لآليات النفس التي تصرفها عن الصدق مع ذاتها.</p>
+
+  <div class="key-point">
+    <span class="ic">💡</span>
+    <div><strong>لماذا "الصدق" مدخلًا للإخلاص؟</strong> لأن الإخلاص أصلًا نوع من الصدق — صدق النية مع الله. فموضوع المحاضرة "معوقات الإخلاص" يُطرح من زاوية "الصوارف عن الصدق"، لأن من لا يصدق مع نفسه لن يستطيع أن يُخلص لربه.</div>
+  </div>
+
+  <h3>حادثة حنان ترك ونموذج "من صدَق"</h3>
+  <p>استشهد الشيخ بمادة سبق أن كتبها بعنوان "قصص من صدق"، وفيها نماذج لأشخاص من عالم الفن والإعلام أعلنوا تعلّقهم بالحجاب أو دافعوا عنه رغم عدم التزامهم به شخصيًا. من أبرز الأمثلة: إعلامية ظهرت في حلقة تناقش الحجاب مع شيخ أزهري، وانتهت الحلقة وهي تبكي قائلة إنها تشتاق لحجابها لكنها لا تملك القوة على ارتدائه الآن، داعيةً الله ألا يقبضها إلا وهي مرتديته.</p>
+
+  <div class="warning-box">
+    <div class="label">⚠️ تنبيه من المحاضِر</div>
+    <p>رغم صدق تلك اللحظة، ظلت صاحبتها على حالها سنوات بعدها. والعبرة المستفادة: <strong>لحظة الصدق ليست ضمانًا للثبات</strong>، وقد تتكرر اللحظة الصادقة دون أن تتحول إلى التزام. الشيخ ربط هذا بمثال حنان ترك في حوارها الشهير مع الإعلامي نيشان، حيث مارست درجة غير عادية من الصدق أمام شخص "غير ملتزم"، فكان هذا الحوار جسرًا لها نحو التغيير — أي أن الصدق قد يأتي من أقرب الأبواب وأبعدها توقعًا.</p>
+  </div>
+
+  <div class="definition-box">
+    <div class="label">📖 تعريف: الصدق مقابل الكذب</div>
+    <p>وصف الشيخ <strong>الصدق بأنه "قوة في ذاته"</strong> — أي أنه لا يحتاج إلى ساند خارجي ليقوم، بينما <strong>الكذب "ضعف في ذاته"</strong> لأنه يحتاج دائمًا إلى غطاء ومبرر وتلفيق يسنده. من هنا فإن أهل الصدق غالبًا "مزعجون" لغيرهم لأن صدقهم يفتقر إلى المجاملة التجميلية التي اعتاد الناس عليها.</p>
+  </div>
+
+  <p>على هذا الأساس، حدد الشيخ ثلاثة معوقات رئيسية تصرف الإنسان عن الصدق (وبالتالي عن الإخلاص)، اختصرها في ثلاثية: <strong>الجهل — الهوى — الغفلة</strong>، ووعد بتفصيلها عبر المجلس، على أن يكون التطبيق العملي (كيف نُسقطها على واقعنا) موضوع المجلس القادم.</p>
+
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>المعوق</th><th>جوهره</th><th>مثال سريع</th></tr>
+      <tr><td><strong>الجهل</strong></td><td>عدم العلم بالشيء أصلًا</td><td>لا أعرف أن هذا التصرف خطأ</td></tr>
+      <tr><td><strong>الهوى</strong></td><td>الميل الذي يُسقط الإنسان رغم علمه</td><td>أعرف أنه خطأ لكن أفعله لأني أميل إليه</td></tr>
+      <tr><td><strong>الغفلة</strong></td><td>الانشغال بما لا يستحق عمّا هو أَولى</td><td>اللعب واللغو يُنسيان الأهم</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="jahl">
+  <div class="sec-head">
+    <div class="sec-icon">📚</div>
+    <h2>المعوق الأول: الجهل</h2>
+  </div>
+
+  <div class="definition-box">
+    <div class="label">📖 تعريف الجهل</div>
+    <p><strong>الجهل هو عدم العلم بالشيء</strong> — أي عدم حضور تصوّر الأمر في الذهن من الأساس. الإنسان الجاهل بأمرٍ ما لا يملك حتى المعلومة التي يُبنى عليها القرار.</p>
+  </div>
+
+  <h3>الفرق الدقيق بين "الجهل" و"الجهالة"</h3>
+  <p>فرّق الشيخ بين مصطلحين قد يُظن أنهما مترادفان:</p>
+
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>المصطلح</th><th>التعريف</th><th>الحكم عليه</th></tr>
+      <tr><td><strong>الجهل</strong></td><td>عدم العلم بالشيء</td><td>قد يُعذر به صاحبه أحيانًا</td></tr>
+      <tr><td><strong>الجهالة</strong></td><td>عدم العمل بالعلم — أي أن يعلم الحق ولا يلتزم به</td><td>لفظ مذموم دائمًا في القرآن</td></tr>
+    </table>
+  </div>
+
+  <div class="evidence-block">
+    <p>استدل الشيخ بأن لفظ "الجاهل" المفرد جاء في القرآن أحيانًا بصيغة قد تُبرَّر، كما في قوله تعالى (بمعنى الآية): يظنهم من لا يعرف حالهم أغنياء من شدة تعففهم عن السؤال. أما لفظ "الجاهلين" بالجمع، فلا يأتي في القرآن إلا مقترنًا بالذم.</p>
+    <p class="src">— استشهاد الشيخ بأسلوب القرآن في التفريق بين الجهل الفردي المعذور والجهالة الجماعية المذمومة</p>
+  </div>
+
+  <div class="quote-block">
+    <p>استشهد الشيخ بآيتين توضحان أثر "الجهالة" حين تتحول إلى تقليد أعمى: قول المشركين إنهم وجدوا آباءهم على طريقة معينة فهم سائرون على أثرهم مقتدين بهم ومهتدين — وهذا نموذج للجهل الذي يتحول إلى جهالة حين يُصرّ عليه صاحبه رغم قيام الحجة.</p>
+    <p class="src">— من سورتي البقرة والزخرف (بحسب سياق كلام الشيخ)</p>
+  </div>
+
+  <h3>كيف يتحول الجهل إلى جهالة؟</h3>
+  <div class="flow-card">
+    <div class="fnum">١</div>
+    <div><strong>مرحلة الجهل:</strong> الإنسان لا يعلم أن تصرفه خطأ (مثال: أب لا يدرك خطورة تدليل ولده الزائد).</div>
+  </div>
+  <div class="flow-card">
+    <div class="fnum">٢</div>
+    <div><strong>التنبيه/العلم:</strong> يأتيه من ينصحه ويوضح له الخطأ بالأدلة والقرائن.</div>
+  </div>
+  <div class="flow-card">
+    <div class="fnum">٣</div>
+    <div><strong>الإصرار رغم العلم = جهالة:</strong> يكرر نفس الفعل رغم علمه بخطئه — وهنا يخرج من دائرة "العذر بالجهل" إلى "الجهالة" المذمومة.</div>
+  </div>
+
+  <div class="key-point">
+    <span class="ic">🎯</span>
+    <div><strong>مثال توضيحي من المحاضِر:</strong> شخص يكرر تصرفًا يعلم خطأه (كالتحايل على القانون أو خداع من حوله)، ورغم مواجهته بالأدلة والمناظرة إلا أنه يصرّ على موقفه — هذا "جاهل غير مؤدَّب" يُخشى عليه أن يأتي يوم القيامة من زمرة المخادعين الكذابين، لأن الجهل هنا صار اختيارًا لا قصورًا.</div>
+  </div>
+
+  <h3>وجه الجهل النافع</h3>
+  <p>لفت الشيخ إلى أن هناك جانبًا إيجابيًا من "عدم الانشغال بالمعرفة": فبعض الأمور لا فائدة من الانشغال بتحصيلها لأنها تستهلك وقتًا وطاقة نفسية كان يمكن توجيهها لما هو أنفع. فـ"جهل" بعض التفاصيل غير المفيدة أفضل من ملء الذهن بها.</p>
+
+  <div class="action-card">
+    <div class="label">✅ التطبيق العملي</div>
+    <p>حين تشعر أنك "لا تعرف كيف تتصرف" في موقف ديني أو أخلاقي، اسأل نفسك: هل المشكلة أنني حقًا لا أعرف الحكم (جهل)، أم أنني أعرفه ولا ألتزم به (جهالة)؟ التشخيص الصحيح يحدد العلاج: الأول علاجه "طلب العلم"، والثاني علاجه مراجعة النفس ومحاسبتها، وقد يحتاج أحيانًا استشارة متخصصة إذا تجاوز الأمر مجرد "عدم المعرفة".</p>
+  </div>
+</section>
+
+<section id="hawa">
+  <div class="sec-head">
+    <div class="sec-icon">🌪️</div>
+    <h2>المعوق الثاني: الهوى</h2>
+  </div>
+
+  <div class="definition-box">
+    <div class="label">📖 تعريف الهوى</div>
+    <p>أصل كلمة "الهوى" في اللغة هو <strong>"الميل"</strong>، وهي مشتقة من نفس جذر "يهوي" أي يسقط. فالهوى في جوهره ميل قد يُسقط صاحبه، تمامًا كسقوط الشيء في الهواء.</p>
+  </div>
+
+  <h3>الهوى ليس مذمومًا دائمًا</h3>
+  <p>نبّه الشيخ إلى دقة مهمة: الهوى في اللغة قد يأتي بمعنى محايد أو حتى ممدوح إذا كان متعلقًا بالخير — كأن يقول شخص "أنا أهوى الصلاة في المساجد"، وهذا هوى محمود. ودليل ذلك حديث: <strong>"لا يؤمن أحدكم حتى يكون هواه تبعًا لما جئت به"</strong> — فهذا يعني أن الهوى يمكن أن يصبح موافقًا للحق حين يُصبح تابعًا للوحي لا سابقًا عليه.</p>
+
+  <div class="quote-block">
+    <p>استشهد الشيخ بحديث عمر بن الخطاب رضي الله عنه بعد غزوة بدر: "فهوى النبي صلى الله عليه وسلم أمرًا، وهويت أنا أمرًا" — فاستخدام كلمة "هوى" هنا لم يكن مذمومًا، بل وصفًا لميل طبيعي.</p>
+    <p class="src">— أثر عمر بن الخطاب رضي الله عنه، ذكره الشيخ في سياق التفريق بين الهوى الممدوح والمذموم</p>
+  </div>
+
+  <div class="quote-block">
+    <p>وذكر أيضًا موقف عائشة رضي الله عنها اللطيف حين نزلت آيات سورة الأحزاب في شأنها، فقالت معلّقة: "ما أرى ربك إلا يسارع في هواك" — وهي كلمة تدل على أن الهوى هنا استُخدم بمعنى "الميل" دون قصد الذم المطلق للفظ.</p>
+    <p class="src">— أثر عائشة رضي الله عنها</p>
+  </div>
+
+  <div class="key-point">
+    <span class="ic">⚖️</span>
+    <div><strong>القاعدة الفاصلة:</strong> إذا أُطلقت كلمة "الهوى" دون قيد في سياق الذم، فالأصل فيها الميل عن الحق. وهي عادةً ما تُذكر في القرآن في مقابل كلمة <strong>"الوحي"</strong> — أي أن الهوى المذموم هو ما يُتَّبع من غير دليل من الوحي، كما في قوله تعالى: "ولا تتبع الهوى فيضلك عن سبيل الله".</div>
+  </div>
+
+  <div class="evidence-block">
+    <p>استشهد الشيخ بسورة العصر كنموذج قرآني شامل: إن الإنسان لفي خسر إلا من آمن وعمل الصالحات وتواصوا بالحق وتواصوا بالصبر — فالإنسان الذي يفقد بوصلة الوحي (الإيمان والعمل الصالح) يتحول مصدر قراراته إلى الهوى وحده.</p>
+    <p class="src">— سورة العصر</p>
+  </div>
+
+  <p>ثم بيّن الشيخ أن موضوع الهوى واسع جدًا، ولذلك اختصره "فقه النفس" في خماسية أسماها <strong>"الكفّات الخمس"</strong>، وهي: الكبر، الكذب، الكلف (التعلق الزائد بالأشياء)، الكمال الموهوم — إضافة إلى المخادعة/الحيلة التي فُصّلت ضمن باب الكذب.</p>
+</section>
+
+<section id="kaffat">
+  <div class="sec-head">
+    <div class="sec-icon">🎭</div>
+    <h2>الكفّات الخمس للهوى</h2>
+  </div>
+
+  <div class="kaffat-grid">
+    <div class="kaffa-card"><div class="icon">👑</div><h4>الكِبر</h4><p>بطر الحق وازدراء الناس</p></div>
+    <div class="kaffa-card"><div class="icon">🗣️</div><h4>الكذب</h4><p>مخالفة الظاهر للباطن أو القول للواقع</p></div>
+    <div class="kaffa-card"><div class="icon">🎭</div><h4>المخادعة/الحيلة</h4><p>وسيلة لتخفيف التوتر قد تتحول لخداع النفس</p></div>
+    <div class="kaffa-card"><div class="icon">😴</div><h4>الكسل والكَلَف</h4><p>ضعف العزيمة والتعلق المرضي بالأشياء</p></div>
+    <div class="kaffa-card"><div class="icon">✨</div><h4>الكمال الموهوم</h4><p>تصور الأمور بمثالية خارج الطاقة البشرية</p></div>
+  </div>
+
+  <h3>١) الكِبر</h3>
+  <div class="quote-block">
+    <p>جاء رجل إلى النبي صلى الله عليه وسلم فقال: يا رسول الله، إني مما أنعم الله علي أن أحب أن يكون ثوبي حسنًا ونعلي حسنة، أفمن الكِبر ذلك؟ فقال صلى الله عليه وسلم: <strong>"إن الله جميل يحب الجمال، ولكن الكِبر بطَر الحق وغَمْط الناس"</strong> (أي ازدراؤهم واحتقارهم).</p>
+    <p class="src">— حديث نبوي شريف، رواه مسلم</p>
+  </div>
+
+  <div class="definition-box">
+    <div class="label">📖 تعريف الكِبر</div>
+    <p><strong>الكِبر هو أن يرى الإنسان الحق فيردّه، ويزدري من يقدّمه له</strong> — أي أنه لا يقبل النصيحة لأنه يرى نفسه أعلى من أن يحتاجها، ويحتقر من يجرؤ على تقديمها له.</p>
+  </div>
+
+  <div class="warning-box">
+    <div class="label">⚠️ تحذير نبوي</div>
+    <p>"لا يدخل الجنة من كان في قلبه مثقال ذرة من كِبر" — وحين سأل الصحابة رضي الله عنهم عن حب الرجل أن يكون ثوبه حسنًا (خشية أن يكون هذا من الكِبر)، وضّح النبي صلى الله عليه وسلم أن حب الجمال شيء، والكِبر (وهو رد الحق واحتقار الناس) شيء آخر تمامًا.</p>
+  </div>
+
+  <div class="key-point">
+    <span class="ic">💡</span>
+    <div><strong>الفرق بين الكِبر والعُجب:</strong> العُجب أن يرى الإنسان في نفسه ما يجعله لا يرى ما عند الآخرين (أي مشغول بنفسه لا محتقرًا لهم)، أما الكِبر فمرحلة أعلى: أن يرى نفسه أفضل، وبالتالي يرفض الحق ويزدري قائله. العُجب مرحلة أدنى قد يقع فيها الإنسان دون أن يصل لمرحلة الكِبر الكاملة.</div>
+  </div>
+
+  <div class="action-card">
+    <div class="label">✅ التطبيق العملي</div>
+    <p>نصح الشيخ بأن أخطر لحظة يدخل فيها الكِبر هي حين يشعر الإنسان في نفسه برغبة في "الرد" على نصيحة موجهة له بدل تدبرها — فالإصرار على تبرير الذات لحظة تلقي النصيحة قد يكون مؤشرًا خفيًا على الكِبر يستحق المراجعة الفورية.</p>
+  </div>
+
+  <h3>٢) الكذب</h3>
+  <p>خصص الشيخ الجزء الأكبر من حديثه لتعريف الكذب من عدة زوايا لغوية:</p>
+
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>وجه المعنى</th><th>التوضيح</th></tr>
+      <tr><td>عدم قول الحق</td><td>الامتناع عن التصريح بالحقيقة</td></tr>
+      <tr><td>إخفاء الحقائق</td><td>مختلف عن عدم قول الحق بفارق دقيق (كتمان لا يُصرَّح فيه بضده)</td></tr>
+      <tr><td>عدم مطابقة القول للفعل</td><td>أن يقول شيئًا ويفعل خلافه</td></tr>
+      <tr><td>الإخبار عن الشيء بخلاف ما هو عليه في الواقع</td><td>المعنى الأشهر: مخالفة القول للواقع</td></tr>
+      <tr><td>مخالفة الظاهر للباطن</td><td>أن يُظهر خلاف ما في داخله</td></tr>
+    </table>
+  </div>
+
+  <div class="definition-box">
+    <div class="label">📖 هل الكذب غير المتعمَّد "كذب"؟</div>
+    <p>ضرب الشيخ مثالًا: لو سُئل شخص "هل توجد سيارة بالخارج؟" فقال "لا" بناءً على أنه نظر ولم يرَ، ثم تبيّن أن هناك سيارة — فإن الوصف العام لِما صدر عنه هو "كذب" (لأنه خالف الواقع)، لكنه <strong>لم يتعمد الكذب</strong>، بل بنى على ظنه الصادق في تلك اللحظة. لذا فالأصل أن يقول الإنسان في مثل هذه الحالات "لا أعلم" بدل الجزم المبني على استعجال.</p>
+  </div>
+
+  <div class="key-point">
+    <span class="ic">⚖️</span>
+    <div><strong>الكذب "ضعف في ذاته":</strong> بيّن الشيخ أن جماعة اللغة يصفون الكذب بأنه ضعف في ذاته، في مقابل الصدق الذي هو قوة في ذاته. فالكذب يحتاج دومًا إلى بناء غير متماسك (مقدمة لا تلزم عنها نتيجة، قول لا يطابقه واقع)، بينما الصدق لا يحتاج إلى تلك التركيبة الهشة.</div>
+  </div>
+
+  <h3>التوريّة: المخرج المشروع</h3>
+  <div class="definition-box">
+    <div class="label">📖 تعريف التورية</div>
+    <p><strong>التورية هي استخدام قول له وجهان: ظاهر يفهمه السامع، وباطن يقصده المتكلم</strong>، دون أن يكون فيه تصريح كاذب. وهي جائزة شرعًا في حالات معينة مثل الإصلاح بين اثنين، أو في الحرب.</p>
+  </div>
+
+  <div class="flow-card">
+    <div class="fnum">✔</div>
+    <div><strong>مثال على التورية الجائزة:</strong> إن فتحت لك صاحبة البيت الباب وأشارت إلى مكان معين للجلوس، ثم قلتَ "هنا" مشيرًا لمكان آخر — هذا ليس كذبًا شرعًا لأنك لم تُصرِّح بخلاف الواقع، بل أشرتَ بيدك فقط.</div>
+  </div>
+  <div class="flow-card">
+    <div class="fnum">✘</div>
+    <div><strong>مثال على الكذب الصريح:</strong> إذا طرق شخص الباب يسأل عن فلان وهو موجود بالفعل، فقيل "لا، غير موجود" بلفظ صريح — فهذا كذب واقع في الإثم، لأن التصريح باللفظ لا مجال فيه للتورية.</div>
+  </div>
+
+  <h3>الكذب بين الزوجين ومسألة "القوة"</h3>
+  <p>طرح الشيخ سؤالًا: ما الذي يدفع الزوج أحيانًا للكذب على زوجته (كأن يقول إنه كان عند فلان وهو لم يكن)؟ الجواب: <strong>الضعف أمام موقف أقوى منه</strong> — فالشريعة تعطي مساحة من "المندوحة" (التورية) لمن لا يملك القوة على مواجهة الحقيقة كاملة، لكنها لا تُبيح الكذب الصريح.</p>
+
+  <div class="action-card">
+    <div class="label">✅ الفرق بين المجاملة المقبولة والنفاق</div>
+    <p>مثال "الحمد لله، الأمور طيبة" حين يُسأل شخص عن حاله وهو لا يريد أن يفتح باب التفاصيل — هذا ليس كذبًا لأنه لم يُصرِّح بخلاف الواقع، بل اختار عدم البَوح الكامل، وهذا حقه. لكن الخط الفاصل بين هذه "المجاملة المقبولة" والنفاق هو: هل يوصل هذا القول السامع لفهم مخالف تمامًا للواقع بقصد الخداع؟ إن كان كذلك، فهو داخل في المذموم.</p>
+  </div>
+
+  <div class="warning-box">
+    <div class="label">⚠️ ظاهرة اجتماعية خطيرة: تربية أجيال على الكذب الاجتماعي</div>
+    <p>حذّر الشيخ من مجتمعات "المجاملة الزائفة" التي تُعوّد الأطفال على الكذب الاجتماعي منذ الصغر (كأن يُطلب من الطفل أن "يجامل" في كلامه رغم معرفته أن ما يقوله غير حقيقي)، محذرًا من أن هذا يُنشئ جيلًا كاملًا لا يفرّق بين الصدق والمجاملة، ويصل لمرحلة يعلم فيها الجميع أن الجميع يكذب ويتقبّلون ذلك كأمر عادي — من أمثلته: بعض المؤتمرات الرسمية والاحتفالات الشكلية التي يعلم الجميع أنها كذب متفق عليه.</p>
+  </div>
+
+  <h3>٣) الحيلة والمخادَعة (فرق دقيق ومهم)</h3>
+  <div class="definition-box">
+    <div class="label">📖 تعريف الحيلة</div>
+    <p><strong>الحيلة هي وسيلة تلجأ إليها النفس لتهدئة التوتر الحاصل فيها</strong>، دون أن تنطوي على خداع مؤذٍ. مثل الابتسامة عند موقف مزعج بدل الانفعال، أو الصبر والتغافل عند كلمة جارحة بدل الرد الفوري.</p>
+  </div>
+
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>المعيار</th><th>الحيلة (مقبولة)</th><th>المخادَعة (مذمومة)</th></tr>
+      <tr><td>الهدف</td><td>تخفيف توتر لحظي</td><td>خداع النفس أو الآخر بشكل ممتد</td></tr>
+      <tr><td>الأثر على النفس</td><td>لا يراكم ضررًا</td><td>يراكم ضررًا ينفجر لاحقًا</td></tr>
+      <tr><td>الأثر على العلاقة</td><td>يحفظها</td><td>يهدمها حين ينكشف</td></tr>
+      <tr><td>مثال</td><td>ابتسامة عند إساءة عابرة</td><td>كتمان مشاكل متراكمة حتى الانفجار المفاجئ</td></tr>
+    </table>
+  </div>
+
+  <div class="key-point">
+    <span class="ic">🎯</span>
+    <div><strong>مثال من واقع المجلس:</strong> ذكر الشيخ مثال صاحبة تمزح بطريقة غير لطيفة بشكل متكرر، فيتراكم الانزعاج داخل صديقتها دون أن تُفصح عنه (حيلة تحوّلت إلى تراكم)، حتى تنفجر فجأة أو تنسحب بصمت (حظر، عدم الرد) دون تفسير واضح — وهذا مؤشر على أن ما بدأ "حيلة" لتخفيف الموقف تحوّل إلى مخادعة للنفس وللطرف الآخر.</div>
+  </div>
+
+  <div class="warning-box">
+    <div class="label">⚠️ خطورة المخادَعة الذاتية</div>
+    <p>وصف الشيخ المخادعة بأنها "مرض لا يُعالَج إلا إذا أنار الله بصيرة صاحبه"، لأن المخادِع لنفسه غالبًا لا يقتنع بالنصح لأنه أصلًا مكذِّب لواقعه. ولذلك نصح بأن أقصى ما يمكن فعله مع من هذا حاله هو الدعاء له بالهداية، لا الاستمرار في مجادلته.</p>
+  </div>
+
+  <h3>٤) الكسل والكَلَف</h3>
+  <div class="definition-box">
+    <div class="label">📖 تعريف الكسل</div>
+    <p><strong>الكسل هو أن يعلم الإنسان الشيء ويريده لكنه لا يملك القدرة أو العزيمة على فعله</strong> — بخلاف الجهل (عدم العلم) والهوى بمعناه العام. من مرادفاته: العجز، الفتور، الضعف، الخَوَر.</p>
+  </div>
+
+  <div class="definition-box">
+    <div class="label">📖 تعريف الكَلَف</div>
+    <p><strong>الكَلَف هو التعلق الزائد والمبالغ فيه بالأشياء</strong>، من أصل لغوي يحمل معنى "المبالغة والتجاوز"، كما في قوله تعالى: "لا يُكلِّف الله نفسًا إلا وسعها" — أي لا يُحمِّلها فوق طاقتها.</p>
+  </div>
+
+  <p>أمثلة الشيخ على الكَلَف: التعلق المفرط بالطعام (كالرغبة الملحّة في وجبة معينة رغم الإدراك بضررها)، أو التعلق بالتصفيق والمدح والاحتفاظ بصور معينة — وهذا كله تعبير عن "انغماس" النفس في شيء تجاوزت فيه الحاجة الطبيعية إلى الإفراط.</p>
+
+  <div class="key-point">
+    <span class="ic">💭</span>
+    <div><strong>رأي الشيخ الشخصي (أشار إليه كوجهة نظر لا حكمًا قطعيًا):</strong> عبّر عن تحفظه على ظاهرة "تقديس" الصور والاحتفاظ المفرط بها دون ضرورة حقيقية، معتبرًا أن هذا قد يقترب من تقديس الذات أكثر من كونه توثيقًا بريئًا — لكنه أكد أن هذا اجتهاد شخصي لا فتوى قاطعة، وأن الأصل عدم إعادة تصنيف كل الأمور المباحة إلى "حلال/حرام" بلا دليل واضح.</div>
+  </div>
+
+  <h3>٥) الكمال الموهوم</h3>
+  <div class="definition-box">
+    <div class="label">📖 تعريف الكمال الموهوم</div>
+    <p><strong>هو تصوّر الإنسان الأمور بمنطق "إما أبيض أو أسود" دون قبول للمساحة الرمادية</strong> — أي تخيّل درجة من الكمال تتجاوز حدود الطاقة البشرية (الحاجة، الضعف، الفقر، النقص)، ثم محاسبة النفس أو الآخرين على أساس هذا المعيار المستحيل.</p>
+  </div>
+
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>النوع</th><th>التعريف</th><th>الحكم</th></tr>
+      <tr><td>الكمال البشري</td><td>أن يتفوق شخص في مجال معين ضمن حدود الطاقة البشرية (كحفظ كمّ كبير أو التفوق الرياضي)</td><td>ممكن ومقبول</td></tr>
+      <tr><td>الكمال الموهوم</td><td>تصور كمال يتجاوز طبيعة البشر الناقصة أصلًا (لا ضعف ولا حاجة ولا خطأ)</td><td>وهمٌ يُنتج إحباطًا أو نفاقًا</td></tr>
+    </table>
+  </div>
+
+  <div class="warning-box">
+    <div class="label">⚠️ أثر الكمال الموهوم على الصدق</div>
+    <p>من يتبنى معيار "الكمال الموهوم" يجد نفسه مضطرًا للكذب لإخفاء أي نقص، لأنه لا يقبل من نفسه (ولا من الآخرين) أن يكون العمل "لله" في لحظة و"مختلطًا بدافع آخر" في لحظة أخرى — بينما الواقع البشري مزيج دائم يحتاج مجاهدة مستمرة لا كمالًا فوريًا.</p>
+  </div>
+
+  <p>أشار الشيخ إلى أن "الكمال الموهوم" له علاقة وثيقة بالوسواس، وأنه فصّله في خمسة مجالس منفصلة ضمن سلسلة "مجالس التربية"، مكتفيًا هنا بالتعريف الأساسي لربطه بموضوع معوقات الصدق.</p>
+</section>
+
+<section id="ghafla">
+  <div class="sec-head">
+    <div class="sec-icon">💤</div>
+    <h2>المعوق الثالث: الغفلة (اللعب واللغو)</h2>
+  </div>
+
+  <p>وصف الشيخ منظومة الغفلة بأنها المعوق الثالث بعد الجهل والهوى، وفصّلها في مفهومين متلازمين: <strong>اللعب</strong> و<strong>اللغو</strong>.</p>
+
+  <h3>اللعب</h3>
+  <div class="definition-box">
+    <div class="label">📖 تعريف اللعب</div>
+    <p><strong>اللعب هو كل فعل زائد لا حاجة فيه</strong>، من أصله اللغوي المرتبط بـ"لعاب الطفل" (كل ما يصدر من الطفل عفويًا بلا غاية جدية).</p>
+  </div>
+
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>الحالة</th><th>الحكم</th><th>مثال</th></tr>
+      <tr><td>لعب لا يشغل عن الأولى، بل قد يُعين عليه (كالترويح المنظّم)</td><td>مقبول</td><td>رياضة خفيفة للاستعداد لعمل مهم بعدها</td></tr>
+      <tr><td>لعب يشغل عن ما هو أولى</td><td>مذموم</td><td>الانغماس فيه حتى يصبح شغل الإنسان الشاغل</td></tr>
+    </table>
+  </div>
+
+  <div class="key-point">
+    <span class="ic">🎮</span>
+    <div><strong>الفيصل ليس في "اللعب" ذاته:</strong> بل في تحوّله من وسيلة ترويح إلى غاية بحد ذاتها تُخرِج "النية" من موضعها الصحيح، كأن يتحول اللعب إلى عبادة للاعب نفسه (السعي وراء الإعجاب والمتابعة والشهرة) بدل كونه استراحة تُعين على الجد.</div>
+  </div>
+
+  <h3>اللغو</h3>
+  <div class="definition-box">
+    <div class="label">📖 تعريف اللغو</div>
+    <p><strong>اللغو أخصّ من اللعب</strong>، وهو الكلام الذي لا حاجة فيه ولا فائدة منه — كالثرثرة الاجتماعية السطحية التي تنتهي دون أن يعرف أحد الطرفين اسم الآخر أو يستفيد شيئًا.</p>
+  </div>
+
+  <div class="quote-block">
+    <p>ضرب الشيخ مثالًا مقارنًا مؤثرًا: أحد طلاب العلم قال إن معلمه "ما سألني مرة في غير الدرس، إلا مرة واحدة عن حال أمي حين علم بمرضها الذي غيّبني عن الدرس" — استمر هذا التركيز والجدية لثلاثين عامًا من العلاقة العلمية.</p>
+    <p class="src">— أثر عن أحد طلاب العلم، ذكره الشيخ في سياق التحذير من اللغو</p>
+  </div>
+
+  <div class="key-point">
+    <span class="ic">🎯</span>
+    <div><strong>معيار تمييز اللغو المذموم:</strong> ليس مجرد كون الحديث "خفيفًا"، بل كونه <strong>"يشغلك عمّا هو أولى في ذلك الوقت"</strong>. فاللغو يُشغل صاحبه عن الأهم دون أن يقدّم بديلًا نافعًا، بخلاف اللعب المنظّم الذي قد يُعين على الجد لاحقًا.</div>
+  </div>
+
+  <div class="warning-box">
+    <div class="label">⚠️ اللغو الحديث: منصات المحتوى الاستهلاكي</div>
+    <p>حذّر الشيخ من ظاهرة إضاعة الوقت في متابعة محتوى مختصر بلا فائدة حقيقية (كملخصات الأفلام والمقاطع السريعة)، ومن السوق الاستهلاكي الذي يستدرج الناس لقضاء ساعات في أماكن ترفيهية باهظة تُشعرهم بأنهم "مميزون" بينما هم في حقيقة الأمر "غفلة مموَّلة".</p>
+  </div>
+
+  <h3>اللعب واللغو: بوابة مزدوجة للجهل والهوى</h3>
+  <p>ختم الشيخ هذا الجزء موضحًا أن اللعب واللغو ليسا معوقين مستقلين تمامًا بذاتهما، بل هما <strong>"منظومة تُعزِّز الجهل وتُعزِّز الهوى"</strong> — أي أنهما يُشكّلان البيئة الحاضنة التي تجعل الإنسان أبعد عن العلم (لانشغاله باللغو عن التعلم) وأقرب لاتباع الهوى (لأن اللعب الزائد يُضعف قوة العزيمة والانضباط).</p>
+
+  <div class="action-card">
+    <div class="label">✅ سؤال تشخيصي عملي</div>
+    <p>اقترح الشيخ سؤالًا بسيطًا لقياس مدى وقوعك في اللغو: "كم نسبة اللغو في حياتي اليومية؟" — وضرب مثالًا بمن يسأل عن مسألة تستحق عشر دقائق دراسة جادة فقط، لكنه يقضي ساعة في لغو حولها دون أن يصل لجواب.</p>
+  </div>
+</section>
+
+<section id="qa">
+  <div class="sec-head">
+    <div class="sec-icon">💬</div>
+    <h2>أسئلة وتطبيقات من المجلس</h2>
+  </div>
+
+  <p>في نهاية المجلس، فتح الشيخ باب الأسئلة من الحضور المباشر والمتابعين عبر الإنترنت. اخترنا أبرز الأسئلة ذات الصلة المباشرة بموضوع المحاضرة:</p>
+
+  <div class="qa-item">
+    <div class="q">❓ ما الفرق بين اللعب والذي يشغل عمّا هو أولى؟</div>
+    <div class="a">اللعب قد لا يشغلك عن الأولى، بل قد يُعينك عليه (كالترويح قبل مهمة مهمة). لكن حين يتحول إلى شغل شاغل بذاته يُنسي الأولويات (كالانشغال به عن الأهل أو العبادة)، عندها يتحول إلى "لعب مذموم".</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="q">❓ كيف أعرف أنني وقعت في الجهل أو الهوى الخفي؟</div>
+    <div class="a">اسأل نفسك سؤالًا مباشرًا: هل أعرف الحكم فعلًا أم لا؟ إن كنت لا تعرف، فالمشكلة معرفية (جهل) وعلاجها طلب العلم. أما إن كنت تعرف الحكم ولا تلتزم به رغم علمك، فالمشكلة أعمق (جهالة أو هوى)، وقد تحتاج مراجعة نفسية أعمق، وربما استشارة متخصصة إذا تجاوز الأمر مجرد المعرفة.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="q">❓ أخاف من الحسد فأحكي غير الواقع (أخفي نعمي بالكذب) — ما الحكم؟</div>
+    <div class="a">هذا خلط بين "جهل" بحدود العلاج الشرعي للحسد (كالمعوذات والأذكار الثابتة عن النبي صلى الله عليه وسلم) وبين اللجوء لحلول غير مشروعة (الكذب). العلاج الصحيح: تعلّم الوارد الشرعي الصحيح في الوقاية من الحسد، لا تحريف الحقائق.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="q">❓ كيف يكون الحال مع شخص أعيش معه ويكثر النفاق والغيبة، فأخادعه حتى لا أواجهه؟</div>
+    <div class="a">التصريح مهم حتى لو لم يستجب الطرف الآخر، لأن الاستمرار في تلقي هذه "المدخلات" (الغيبة والنفاق) دون اعتراض قد يُؤثر فيك دون قصد بمرور الوقت. مع مراعاة استثناءات كالوالدين أو من له عذر خاص (كالمرض)، حيث تُنصح بوضع حدود بلطف دون قطيعة.</div>
+  </div>
+
+  <div class="qa-item">
+    <div class="q">❓ ما علاج من يخادع نفسه ويبرر أخطاءه باستمرار رغم بساطة المطلوب منه (كالاعتذار فقط)؟</div>
+    <div class="a">خففوا عليه اللوم ولا تُحمّلوه أسوأ الاحتمالات دائمًا — فمن وصل لهذه الدرجة من ضعف مواجهة أخطائه غالبًا ما يكون في حالة نفسية هشة تحتاج تعاملًا حانيًا لا مزيدًا من الضغط الذي قد يُعمّق دفاعاته النفسية.</div>
+  </div>
+</section>
+
+<section id="khatima">
+  <div class="sec-head">
+    <div class="sec-icon">🌙</div>
+    <h2>خلاصة وتكليف المجلس القادم</h2>
+  </div>
+
+  <p>لخّص الشيخ ثلاثية معوقات الصدق والإخلاص التي تناولها المجلس:</p>
+
+  <div class="flow-card">
+    <div class="fnum">١</div>
+    <div><strong>الجهل:</strong> يصرف عن الصدق والإخلاص لأنه غياب أصل المعرفة.</div>
+  </div>
+  <div class="flow-card">
+    <div class="fnum">٢</div>
+    <div><strong>الهوى:</strong> يصرف عن الصدق والإخلاص بميل يُسقط الإنسان رغم علمه، وينقسم إلى الكفّات الخمس: الكِبر، الكذب، الحيلة/المخادعة، الكسل/الكَلَف، الكمال الموهوم.</div>
+  </div>
+  <div class="flow-card">
+    <div class="fnum">٣</div>
+    <div><strong>الغفلة:</strong> تصرف عن الصدق والإخلاص عبر اللعب واللغو، اللذين يُعززان الجهل والهوى معًا.</div>
+  </div>
+
+  <div class="action-card">
+    <div class="label">📝 التكليف المطلوب قبل المجلس القادم</div>
+    <p>طلب الشيخ من الحضور والمتابعين التفكير الكتابي في: <strong>"كيف تُسقَط منظومة الجهل، الهوى، اللعب، واللغو على تحقيق الإخلاص؟"</strong> — أي كيف تصبح هذه المعوقات الأربعة تحديدًا حواجز أمام إخلاص النية لله في العبادات والأعمال اليومية، على أن تُناقَش الإجابات وتُعلَّق عليها في مطلع المجلس القادم.</p>
+  </div>
+
+  <div class="key-point">
+    <span class="ic">🔮</span>
+    <div><strong>ما القادم؟</strong> وعد الشيخ بأن المجلس القادم سيتناول التطبيق العملي لهذه الثلاثية على "الصدق والإخلاص" تحديدًا، بعد أن اكتفى هذا المجلس بتشخيص المعوقات وتعريفها.</div>
+  </div>
+</section>
+
+<div style="text-align:center;margin:20px 0 30px">
+  <button class="btn btn-gold" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+</div>
 
 <footer>
-  سلسلة فقه الإخلاص &middot; الحلقة 5 - فقه الإخلاص
+  <p class="dua">اللهم اجعلنا من أهل الصدق مع أنفسنا قبل أن نصدق مع خلقك<br>واجعل أعمالنا كلها خالصة لوجهك الكريم<br>ونجّنا من الجهل والهوى والغفلة يا رب العالمين</p>
+  <p class="sub">من سلسلة فقه النفس — المحاضرة الخامسة: معوقات الصدق والإخلاص</p>
 </footer>
 
+</div>
+
+<script>
+const ankiCards = [
+  // ===== تعريفات ومفاهيم =====
+  ["ما تعريف الجهل؟", "عدم العلم بالشيء — أي عدم حضور تصور الأمر في الذهن من الأساس."],
+  ["ما تعريف الجهالة؟", "عدم العمل بالعلم، أي أن يعلم الإنسان الحق ولا يلتزم به رغم علمه."],
+  ["ما الفرق الأساسي بين الجهل والجهالة؟", "الجهل عدم علم قد يُعذر به صاحبه، أما الجهالة فهي عدم التزام بعلم موجود، وهي لفظ مذموم دائمًا."],
+  ["لماذا جاء لفظ 'الجاهلين' بالجمع في القرآن مقترنًا بالذم دائمًا؟", "لأن الجمع يدل على جهالة جماعية (إصرار على الباطل رغم قيام الحجة)، بخلاف الجهل الفردي الذي قد يُعذر."],
+  ["ما تعريف الهوى في اللغة؟", "الميل، وهو مشتق من نفس جذر 'يهوي' أي يسقط."],
+  ["هل الهوى مذموم دائمًا في اللغة؟", "لا، الهوى قد يكون ممدوحًا إذا كان ميلًا للخير، ويصبح مذمومًا حين يُتَّبع دون دليل من الوحي ويكون في مقابله."],
+  ["في مقابل أي شيء يُذكر 'الهوى المذموم' غالبًا في القرآن؟", "في مقابل الوحي، أي اتباع الهوى بدل اتباع الوحي."],
+  ["ما هي 'الكفّات الخمس' التي اختصر بها الشيخ باب الهوى؟", "الكِبر، الكذب، الحيلة/المخادعة، الكسل والكَلَف، الكمال الموهوم."],
+  ["ما تعريف الكِبر كما جاء في الحديث النبوي؟", "بطَر الحق (رده وعدم قبوله) وغَمْط الناس (ازدراؤهم واحتقارهم)."],
+  ["ما الفرق بين العُجب والكِبر؟", "العُجب أن يرى الإنسان في نفسه ما يجعله لا يرى ما عند الآخرين (مشغول بذاته)، والكِبر أعلى منه: أن يرى نفسه أفضل فيرفض الحق ويزدري قائله."],
+  ["اذكر أحد المعاني اللغوية لكلمة الكذب.", "الإخبار عن الشيء بخلاف ما هو عليه في الواقع (من أبرز معانيه)."],
+  ["ما تعريف التورية؟", "استخدام قول له وجهان: ظاهر يفهمه السامع، وباطن يقصده المتكلم، دون تصريح كاذب."],
+  ["ما تعريف الحيلة كما ذكرها الشيخ؟", "وسيلة تلجأ إليها النفس لتهدئة التوتر الحاصل فيها، دون خداع مؤذٍ ممتد."],
+  ["ما الفرق الجوهري بين الحيلة والمخادَعة؟", "الحيلة تخفف توترًا لحظيًا دون تراكم ضرر، أما المخادعة فتراكم يهدم العلاقة أو النفس حين ينكشف."],
+  ["ما تعريف الكسل؟", "أن يعلم الإنسان الشيء ويريده لكنه لا يملك القدرة أو العزيمة على فعله."],
+  ["ما تعريف الكَلَف؟", "التعلق الزائد والمبالغ فيه بالأشياء، من أصل لغوي يحمل معنى المبالغة والتجاوز."],
+  ["ما تعريف الكمال الموهوم؟", "تصور الإنسان الأمور بمنطق إما أبيض أو أسود، وتخيّل درجة كمال تتجاوز حدود الطاقة البشرية."],
+  ["ما الفرق بين الكمال البشري والكمال الموهوم؟", "الكمال البشري تفوق ضمن حدود الطاقة البشرية (ممكن ومقبول)، أما الكمال الموهوم فتجاوز لطبيعة النقص البشري أصلًا (وهم يورث إحباطًا أو نفاقًا)."],
+  ["ما تعريف اللعب؟", "كل فعل زائد لا حاجة فيه، من أصله اللغوي المرتبط بلعاب الطفل."],
+  ["ما تعريف اللغو؟", "كلام لا حاجة فيه ولا فائدة منه، وهو أخصّ من اللعب."],
+  ["ما المعيار الذي يميز اللغو المذموم عن الكلام العابر المقبول؟", "أن يشغل صاحبه عمّا هو أولى في ذلك الوقت دون أن يقدم بديلًا نافعًا."],
+  ["كيف وصف الشيخ العلاقة بين اللعب واللغو من جهة والجهل والهوى من جهة أخرى؟", "بأنهما منظومة تُعزز الجهل وتُعزز الهوى — أي بيئة حاضنة تُبعد عن العلم وتُقرّب من اتباع الميل."],
+
+  // ===== أدلة ومراجع =====
+  ["أكمل الحديث: 'إن الله جميل...'", "يحب الجمال."],
+  ["أكمل الحديث: 'لا يدخل الجنة من كان في قلبه...'", "مثقال ذرة من كِبر."],
+  ["ما هو الحديث الذي يوضح أن الكِبر هو بطَر الحق وغمط الناس؟", "حديث الرجل الذي سأل النبي صلى الله عليه وسلم عن حبه لحسن الثوب والنعل، فأجابه صلى الله عليه وسلم: إن الله جميل يحب الجمال، ولكن الكِبر بطَر الحق وغَمْط الناس."],
+  ["من قال: 'فهوى النبي صلى الله عليه وسلم أمرًا، وهويت أنا أمرًا'؟", "عمر بن الخطاب رضي الله عنه، في أثر متعلق بما بعد غزوة بدر."],
+  ["ماذا قالت عائشة رضي الله عنها حين نزلت آيات في شأنها في سورة الأحزاب؟", "ما أرى ربك إلا يسارع في هواك."],
+  ["أكمل الحديث: 'لا يؤمن أحدكم حتى يكون هواه...'", "تبعًا لما جئت به."],
+  ["ما الآية التي تصف حال من يتبع تقليد الآباء الأعمى قائلًا 'إنا وجدنا آباءنا على أمة'؟", "من سياق آيات في سورتي البقرة والزخرف، تصف المشركين الذين قلّدوا آباءهم مدّعين الاهتداء بأثرهم."],
+  ["ما السورة التي استشهد بها الشيخ لوصف خسارة من يفقد بوصلة الوحي؟", "سورة العصر: إن الإنسان لفي خسر إلا من آمن وعمل الصالحات وتواصوا بالحق وتواصوا بالصبر."],
+  ["ما القصة التي ذكرها الشيخ عن إعلامية أعلنت شوقها للحجاب وهي تبكي في ختام حلقتها؟", "إعلامية كانت تدير حلقة تناقش الحجاب مع شيخ أزهري، فبكت في نهاية الحلقة قائلة إنها تشتاق لحجابها وتدعو ألا يقبضها الله إلا وهي مرتديته، رغم بقائها على حالها لاحقًا."],
+  ["ماذا قال أحد طلاب العلم عن معلمه فيما يخص اللغو؟", "قال: ما سألني مرة في غير الدرس، إلا مرة واحدة عن حال أمي حين علم بمرضها الذي غيبني عن الدرس — استمر ذلك لثلاثين عامًا."],
+
+  // ===== فوائد ونقاط مهمة =====
+  ["لماذا وُصف الصدق بأنه 'قوة في ذاته'؟", "لأنه لا يحتاج إلى غطاء أو تلفيق يسنده، بخلاف الكذب الذي يحتاج دائمًا إلى بناء وتبرير."],
+  ["لماذا وُصف الكذب بأنه 'ضعف في ذاته'؟", "لأنه يحتاج دائمًا إلى تركيبة هشة (قول لا يطابقه واقع، ظاهر يخالف باطنًا) ليستمر."],
+  ["كيف يتحول الجهل إلى جهالة عمليًا؟", "حين يُنبَّه الإنسان إلى خطئه بالأدلة والقرائن ثم يصرّ على تكرار الفعل رغم علمه — هنا يخرج من دائرة العذر بالجهل إلى الجهالة المذمومة."],
+  ["ما الحكمة من مشروعية التورية في حالات كالإصلاح بين اثنين أو الحرب؟", "لأنها تمنح مساحة مشروعة لمن لا يملك قوة مواجهة الموقف كاملًا، دون الوقوع في الكذب الصريح المحرّم."],
+  ["لماذا قد يكذب الزوج أحيانًا على زوجته بحسب تحليل الشيخ؟", "بسبب ضعفه أمام موقف أقوى منه، لا يملك مواجهته بصدق كامل، فيلجأ للكذب بدل التورية المشروعة."],
+  ["ما الخطر الاجتماعي الذي حذّر منه الشيخ في تربية الأطفال على المجاملة الزائفة؟", "أنها تُنشئ جيلًا لا يفرّق بين الصدق والمجاملة، ويتقبّل الكذب المتفق عليه كأمر عادي في المجتمع."],
+  ["ما العلاج المقترح للتعامل مع شخص واقع في المخادعة المستمرة لنفسه؟", "الدعاء له بالهداية بدل الاستمرار في مجادلته، لأن المخادِع لنفسه غالبًا لا يقتنع بالنصح لتكذيبه لواقعه أصلًا."],
+  ["ما السؤال التشخيصي الذي اقترحه الشيخ لمعرفة هل الإنسان واقع في الجهل أم الهوى؟", "هل أعرف الحكم فعلًا أم لا؟ فإن كان لا يعرف فالمشكلة معرفية (جهل)، وإن كان يعرف ولا يلتزم فالمشكلة أعمق (جهالة أو هوى)."],
+  ["ما الفرق بين اللعب المقبول واللعب المذموم؟", "اللعب المقبول لا يشغل عن الأولى وقد يُعين عليه (كالترويح)، أما المذموم فيتحول إلى شغل شاغل يُنسي الأولويات."],
+  ["كيف نصح الشيخ بالتعامل مع من يخادع نفسه ويبرر أخطاءه رغم بساطة المطلوب منه؟", "بتخفيف اللوم عليه والتعامل معه بحنان، لأن من وصل لهذه الهشاشة النفسية يحتاج تعاملًا حانيًا لا مزيدًا من الضغط."],
+  ["ما نصيحة الشيخ لمن يشعر برغبة في الرد الفوري عند تلقي نصيحة موجهة له؟", "أن يتنبه لأن هذه اللحظة قد تكون مؤشرًا خفيًا على الكِبر، وتستحق المراجعة الفورية بدل الدفاع عن الذات."],
+  ["لماذا يُعتبر اللعب واللغو 'منظومة مزدوجة' تعزز الجهل والهوى معًا؟", "لأن اللغو يشغل عن طلب العلم فيُبقي على الجهل، واللعب الزائد يُضعف العزيمة والانضباط فيُقرّب من اتباع الهوى."],
+];
+
+function downloadAnkiDeck() {
+  let content = ankiCards.map(([q, a]) => {
+    const clean = s => s.replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+    return `${clean(q)}\t${clean(a)}`;
+  }).join('\n');
+  const BOM = '\uFEFF';
+  const blob = new Blob([BOM + content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'بطاقات_أنكي_فقه_النفس_المحاضرة_الخامسة.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
 </body>
 </html>

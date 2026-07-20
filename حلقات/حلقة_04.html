@@ -3,150 +3,935 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الحلقة 4 - فقه الإخلاص - فقه الإخلاص</title>
+<title>فقه الإخلاص (٤): موازين الصدق في القصص والواقع</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --gold:#b8860b;
-    --gold-light:#d4a537;
-    --green-deep:#1f4d3a;
-    --green-mid:#2e6b52;
-    --brown-dark:#3a2c1f;
-    --cream:#faf6ec;
-    --cream-dark:#f0e8d4;
-    --ink:#2b241a;
-    --card-border:#e3d6b0;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    font-family:'Cairo', sans-serif;
-    background:var(--cream);
-    color:var(--ink);
-    line-height:1.9;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-  }
-  header{
-    background:linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 55%, var(--brown-dark) 100%);
-    color:#fdf8ec;
-    padding:40px 20px 32px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    border-bottom:6px solid var(--gold);
-  }
-  header::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-      repeating-linear-gradient(45deg, rgba(212,165,55,0.05) 0, rgba(212,165,55,0.05) 2px, transparent 2px, transparent 30px);
-    pointer-events:none;
-  }
-  .series-badge{
-    display:inline-block;
-    background:rgba(212,165,55,0.18);
-    border:1px solid var(--gold-light);
-    color:var(--gold-light);
-    padding:6px 20px;
-    border-radius:30px;
-    font-size:0.9rem;
-    font-weight:600;
-    margin-bottom:18px;
-    letter-spacing:0.5px;
-  }
-  header h1{
-    font-size:2rem;
-    font-weight:900;
-    text-shadow:0 2px 10px rgba(0,0,0,0.25);
-  }
-  .back-link{
-    display:inline-block;
-    margin-top:18px;
-    color:var(--gold-light);
-    text-decoration:none;
-    font-weight:600;
-    font-size:0.95rem;
-    border:1px solid var(--gold-light);
-    padding:8px 18px;
-    border-radius:8px;
-    transition:background 0.15s, color 0.15s;
-  }
-  .back-link:hover{
-    background:var(--gold-light);
-    color:var(--brown-dark);
-  }
+:root{
+  --bg-cream:#faf6ee;
+  --bg-paper:#fffdf8;
+  --brown-dark:#3d2b1f;
+  --brown-mid:#6b4a30;
+  --gold:#b8860b;
+  --gold-light:#d4a94a;
+  --green-deep:#2f4f3e;
+  --green-mid:#4a7a5e;
+  --ink:#2a2118;
+  --border-soft:#e4d9c3;
+  --shadow:0 4px 20px rgba(61,43,31,0.08);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  font-family:'Cairo', sans-serif;
+  background:var(--bg-cream);
+  color:var(--ink);
+  line-height:1.9;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(184,134,11,0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(47,79,62,0.04) 0%, transparent 40%);
+}
+.container{max-width:920px; margin:0 auto; padding:0 20px;}
 
-  main{
-    flex:1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:60px 20px;
-  }
-  .empty-card{
-    background:#fff;
-    border:1px dashed var(--card-border);
-    border-radius:18px;
-    padding:50px 40px;
-    max-width:520px;
-    text-align:center;
-    box-shadow:0 8px 24px rgba(59,44,20,0.07);
-  }
-  .empty-card .icon{
-    font-size:3rem;
-    margin-bottom:18px;
-    display:block;
-    color:var(--gold);
-  }
-  .empty-card h2{
-    color:var(--green-deep);
-    font-size:1.3rem;
-    margin-bottom:12px;
-  }
-  .empty-card p{
-    color:#6b6152;
-    font-size:0.98rem;
-  }
-  .header-ornament{
-    margin-top:16px;
-    font-size:1.2rem;
-    color:var(--gold-light);
-    letter-spacing:8px;
-  }
+/* ===== Header ===== */
+header{
+  background:linear-gradient(135deg, var(--brown-dark) 0%, #4a3626 55%, var(--green-deep) 130%);
+  color:#fdf8ee;
+  padding:50px 0 40px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:5px solid var(--gold);
+}
+header::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(45deg, transparent 48%, rgba(212,169,74,0.06) 49%, rgba(212,169,74,0.06) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(212,169,74,0.06) 49%, rgba(212,169,74,0.06) 51%, transparent 52%);
+  background-size:60px 60px;
+  opacity:0.5;
+}
+.header-inner{position:relative; z-index:1; text-align:center;}
+.series-badge{
+  display:inline-block;
+  background:rgba(212,169,74,0.15);
+  border:1px solid var(--gold-light);
+  color:var(--gold-light);
+  padding:6px 18px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:18px;
+  letter-spacing:0.5px;
+}
+h1{
+  font-family:'Amiri', serif;
+  font-size:2.6em;
+  font-weight:700;
+  margin-bottom:12px;
+  text-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+.subtitle{
+  font-size:1.15em;
+  color:#e8dcc4;
+  font-weight:300;
+  max-width:620px;
+  margin:0 auto 22px;
+}
+.header-meta{
+  display:flex; justify-content:center; gap:14px; flex-wrap:wrap;
+  font-size:0.9em; color:#d9c9a3;
+}
+.header-meta span{
+  background:rgba(255,255,255,0.08);
+  padding:5px 14px;
+  border-radius:20px;
+  border:1px solid rgba(212,169,74,0.25);
+}
+.anki-btn-top{
+  margin-top:26px;
+}
+.anki-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--gold);
+  color:#fff;
+  border:none;
+  padding:13px 28px;
+  border-radius:10px;
+  font-family:'Cairo', sans-serif;
+  font-size:1em;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 4px 14px rgba(184,134,11,0.35);
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.anki-btn:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(184,134,11,0.45);}
+.anki-btn:active{transform:translateY(0);}
 
-  footer{
-    background:linear-gradient(135deg, var(--brown-dark) 0%, var(--green-deep) 100%);
-    color:#f0e8d4;
-    text-align:center;
-    padding:22px 20px;
-    font-size:0.85rem;
-    opacity:0.85;
-  }
+/* ===== TOC ===== */
+.toc{
+  background:var(--bg-paper);
+  margin:-30px auto 40px;
+  max-width:800px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  padding:28px 32px;
+  border:1px solid var(--border-soft);
+  position:relative; z-index:2;
+}
+.toc h2{
+  font-family:'Amiri', serif;
+  color:var(--brown-dark);
+  font-size:1.4em;
+  margin-bottom:16px;
+  display:flex; align-items:center; gap:10px;
+}
+.toc ol{
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.toc li a{
+  display:block;
+  color:var(--brown-mid);
+  text-decoration:none;
+  padding:9px 14px;
+  border-radius:8px;
+  font-size:0.95em;
+  border-right:3px solid transparent;
+  transition:all 0.2s;
+}
+.toc li a:hover{
+  background:rgba(184,134,11,0.08);
+  border-right-color:var(--gold);
+  color:var(--brown-dark);
+}
+@media(max-width:640px){.toc ol{grid-template-columns:1fr;}}
+
+/* ===== Sections ===== */
+main{padding-bottom:60px;}
+section{
+  background:var(--bg-paper);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  margin-bottom:28px;
+  border:1px solid var(--border-soft);
+  overflow:hidden;
+  scroll-margin-top:20px;
+}
+.section-header{
+  background:linear-gradient(90deg, rgba(184,134,11,0.08), transparent);
+  padding:22px 32px;
+  border-bottom:2px solid var(--border-soft);
+  display:flex; align-items:center; gap:14px;
+}
+.section-header .icon{
+  font-size:1.6em;
+  width:48px; height:48px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--gold);
+  color:#fff;
+  border-radius:12px;
+  flex-shrink:0;
+}
+.section-header h2{
+  font-family:'Amiri', serif;
+  font-size:1.55em;
+  color:var(--brown-dark);
+}
+.section-body{padding:28px 32px;}
+.section-body p{margin-bottom:16px; font-size:1.02em;}
+.section-body h3{
+  font-family:'Amiri', serif;
+  color:var(--green-deep);
+  font-size:1.25em;
+  margin:24px 0 12px;
+}
+.section-body ul, .section-body ol{margin:0 0 16px 0; padding-right:22px;}
+.section-body li{margin-bottom:8px;}
+
+/* ===== Blocks ===== */
+.definition-box{
+  background:#f3ede0;
+  border-right:4px solid var(--gold);
+  border-radius:10px;
+  padding:18px 22px;
+  margin:18px 0;
+  position:relative;
+}
+.definition-box .label{
+  font-weight:700;
+  color:var(--gold);
+  font-size:0.85em;
+  display:block;
+  margin-bottom:6px;
+}
+.definition-box p{margin:0;}
+
+.quote-block{
+  background:linear-gradient(135deg, #eef4ee, #f3ede0);
+  border-right:4px solid var(--green-mid);
+  border-radius:10px;
+  padding:20px 24px;
+  margin:18px 0;
+  font-family:'Amiri', serif;
+  font-size:1.1em;
+  color:var(--brown-dark);
+}
+.quote-block .label{
+  font-family:'Cairo', sans-serif;
+  font-weight:700;
+  color:var(--green-mid);
+  font-size:0.75em;
+  display:block;
+  margin-bottom:8px;
+}
+.quote-block .source{
+  display:block;
+  margin-top:10px;
+  font-family:'Cairo', sans-serif;
+  font-size:0.8em;
+  color:var(--brown-mid);
+  font-style:normal;
+}
+
+.key-point{
+  background:#fff;
+  border:2px solid var(--gold-light);
+  border-radius:10px;
+  padding:16px 20px;
+  margin:16px 0;
+  display:flex; gap:12px; align-items:flex-start;
+}
+.key-point .bullet{
+  font-size:1.3em;
+  flex-shrink:0;
+}
+.key-point p{margin:0;}
+
+.warning-box{
+  background:#fdf1ec;
+  border-right:4px solid #c0562b;
+  border-radius:10px;
+  padding:18px 22px;
+  margin:18px 0;
+}
+.warning-box .label{
+  font-weight:700;
+  color:#c0562b;
+  font-size:0.85em;
+  display:block;
+  margin-bottom:6px;
+}
+.warning-box p{margin:0;}
+
+.story-card{
+  background:#f9f5ea;
+  border:1px solid var(--border-soft);
+  border-radius:12px;
+  padding:20px 24px;
+  margin:18px 0;
+  position:relative;
+}
+.story-card .story-title{
+  font-family:'Amiri', serif;
+  font-weight:700;
+  color:var(--brown-dark);
+  font-size:1.1em;
+  margin-bottom:10px;
+  display:flex; align-items:center; gap:8px;
+}
+.story-card p{margin-bottom:10px;}
+.story-lesson{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px dashed var(--border-soft);
+  font-size:0.95em;
+  color:var(--green-deep);
+  font-weight:600;
+}
+
+.comparison-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:18px 0;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+.comparison-table th{
+  background:var(--brown-dark);
+  color:#fdf8ee;
+  padding:12px 16px;
+  text-align:right;
+  font-weight:700;
+  font-size:0.95em;
+}
+.comparison-table td{
+  padding:12px 16px;
+  border-bottom:1px solid var(--border-soft);
+  background:#fff;
+  font-size:0.93em;
+}
+.comparison-table tr:nth-child(even) td{background:#faf6ee;}
+
+.flow-card{
+  display:flex;
+  gap:16px;
+  margin:14px 0;
+  align-items:flex-start;
+}
+.flow-card .num{
+  background:var(--green-deep);
+  color:#fff;
+  width:34px; height:34px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700;
+  flex-shrink:0;
+}
+.flow-card .content{
+  background:#fff;
+  border:1px solid var(--border-soft);
+  border-radius:10px;
+  padding:12px 18px;
+  flex:1;
+}
+.flow-card .content strong{color:var(--brown-dark);}
+
+.action-card{
+  background:linear-gradient(135deg, #eef4ee, #fff);
+  border:1px solid var(--green-mid);
+  border-radius:10px;
+  padding:16px 20px;
+  margin:16px 0;
+}
+.action-card .label{
+  font-weight:700;
+  color:var(--green-deep);
+  font-size:0.85em;
+  display:block;
+  margin-bottom:6px;
+}
+
+/* ===== Footer ===== */
+footer{
+  background:linear-gradient(135deg, var(--brown-dark), var(--green-deep));
+  color:#f3ede0;
+  text-align:center;
+  padding:50px 20px 40px;
+  margin-top:20px;
+}
+footer .dua{
+  font-family:'Amiri', serif;
+  font-size:1.3em;
+  max-width:650px;
+  margin:0 auto 24px;
+  line-height:2;
+  color:#fdf8ee;
+}
+footer .signature{
+  font-size:0.9em;
+  color:#d9c9a3;
+  margin-top:20px;
+}
+
+@media(max-width:640px){
+  h1{font-size:1.9em;}
+  .section-body{padding:20px 18px;}
+  .section-header{padding:18px 20px;}
+  .toc{padding:20px 18px; margin-top:-20px;}
+}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="series-badge">الدرس 4 &middot; سلسلة فقه الإخلاص</div>
-  <h1>الحلقة 4 - فقه الإخلاص</h1>
-  <div class="header-ornament">﴾ ۝ ﴿</div>
-  <a class="back-link" href="../index.html">→ الرجوع لفهرس الحلقات</a>
+  <div class="header-inner container">
+    <span class="series-badge">📚 سلسلة فقه الإخلاص — المحاضرة الرابعة</span>
+    <h1>فقه الإخلاص (٤)</h1>
+    <p class="subtitle">موازين الصدق: كيف نتعرّف على الإخلاص من خلال قصص السلف والواقع المعاصر</p>
+    <div class="header-meta">
+      <span>🎙️ محاضرة صوتية مفرّغة</span>
+      <span>📖 الجزء الرابع من السلسلة</span>
+      <span>⏱️ قراءة ٢٥ دقيقة</span>
+    </div>
+    <div class="anki-btn-top">
+      <button class="anki-btn" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+    </div>
+  </div>
 </header>
 
-<main>
-  <div class="empty-card">
-    <span class="icon">🕊️</span>
-    <h2>هذه الحلقة لم تُضَف بعد</h2>
-    <p>سيتم رفع محتوى هذه الحلقة قريبًا بإذن الله، بنفس منهجية التلخيص التعليمي وبطاقات المراجعة (أنكي) المعتمدة في السلسلة.</p>
-  </div>
-</main>
+<div class="container">
+  <nav class="toc">
+    <h2>📑 محتويات المحاضرة</h2>
+    <ol>
+      <li><a href="#intro">١. مقدمة: أين وصلنا في السلسلة؟</a></li>
+      <li><a href="#fiqh-meaning">٢. لماذا "فقه" الإخلاص لا "الإخلاص" فقط؟</a></li>
+      <li><a href="#khulus-sidq">٣. الخلوص والصفاء والصدق</a></li>
+      <li><a href="#ghazali">٤. قصة الإمام الغزالي: صدق الاعتراف</a></li>
+      <li><a href="#salaf-stories">٥. قصص السلف: الصدق الخفي</a></li>
+      <li><a href="#khabiah">٦. الخبيئة النفسية</a></li>
+      <li><a href="#asmaie">٧. طرفة الأصمعي: الصدق في رواية الموقف المُحرج</a></li>
+      <li><a href="#ibn-hazm">٨. قصة ابن حزم: الاعتراف بالحق رغم الهزيمة</a></li>
+      <li><a href="#sayyid-qutb">٩. سيد قطب: "لن تأكل قلبي الحسرة"</a></li>
+      <li><a href="#abdullah-hadlaq">١٠. عبدالله الهدلق: أزمة الصدق أمام الجمهور</a></li>
+      <li><a href="#contemporary">١١. مواقف معاصرة من واقع المحاضر</a></li>
+      <li><a href="#egoism">١٢. الأنانية والإيثار: إعادة تعريف</a></li>
+      <li><a href="#lillah">١٣. معنى أن يكون العمل "لله"</a></li>
+      <li><a href="#faqid-shay">١٤. "فاقد الشيء لا يعطيه": تصحيح المفهوم</a></li>
+      <li><a href="#rabia">١٥. تصحيح تاريخي: أبيات لا تصح لرابعة العدوية</a></li>
+      <li><a href="#definitions">١٦. قاموس المصطلحات</a></li>
+      <li><a href="#next">١٧. خلاصة ومقدمة الدرس القادم</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <!-- 1. مقدمة -->
+    <section id="intro">
+      <div class="section-header">
+        <span class="icon">🕌</span>
+        <h2>١. مقدمة: أين وصلنا في السلسلة؟</h2>
+      </div>
+      <div class="section-body">
+        <p>افتتح الشيخ الدرس ببيان سبب التوقف الطويل بين هذه المحاضرة والمحاضرة السابقة: انشغال بالنادي الصيفي، وإعادة ترميم مكان الدروس، والتوسّع في مكان جديد لاستيعاب أعداد أكبر من الحضور. كما أوضح أن جدول الدروس أُعيد تنظيمه، حيث انتقل درس السبت (فقه الإخلاص) إلى يوم الاثنين، بينما خُصّص السبت لدورة جديدة عن العيادة النفسية موجّهة للأمهات والبنات.</p>
+
+        <div class="key-point">
+          <span class="bullet">🔑</span>
+          <p>المحاضرة الحالية هي الجزء الرابع من سلسلة "فقه الإخلاص"، وتأتي بعد ثلاث محاضرات تناولت: (١) خطورة التصدّر للحديث عن الإخلاص وهو أمر خفي بين العبد وربه، (٢) معنى "الفقه" ولماذا استُخدم بدل الاقتصار على كلمة "الإخلاص"، (٣) أهمية الإخلاص في كل تفاصيل الحياة اليومية لا فقط في العبادات الشعائرية، (٤) معاني الإخلاص في اللغة والوحي، وقصص السلف المرتبطة به.</p>
+        </div>
+
+        <p>ذكّر الشيخ الحضور بأن ما سيقدّمه اليوم هو "موجز" لما سبق، وحذّر من أن الإيجاز قد يُحدث علامات استفهام عند من لم يحضر المجالس الثلاثة الأولى، ناصحًا بمراجعتها لأن الموضوع متسلسل ولا يصح القفز إلى نقطة متقدمة دون فهم ما قبلها.</p>
+      </div>
+    </section>
+
+    <!-- 2. لماذا فقه -->
+    <section id="fiqh-meaning">
+      <div class="section-header">
+        <span class="icon">📖</span>
+        <h2>٢. لماذا "فقه" الإخلاص لا "الإخلاص" فقط؟</h2>
+      </div>
+      <div class="section-body">
+        <p>نبّه الشيخ إلى خطأ شائع عند سماع كلمة "فقه"، وهو حصرها في الأحكام الشرعية التقليدية (كأحكام الصلاة والصيام) بمعزل عن واقع حياة الإنسان النفسية والسلوكية.</p>
+
+        <div class="definition-box">
+          <span class="label">🏷️ تعريف: الفقه</span>
+          <p>الفقه في أصل استخدامه هو "محاولة فهم الأشياء من منظور الخالق سبحانه وتعالى"، وليس مقصورًا على الأحكام الفقهية التقليدية. من هنا يصح أن نقول: فقه الحب، فقه الزواج، فقه التربية، فقه النفس — لأن المعنى الجامع هو محاولة فهم الأمر بمنظور مَن خلق الإنسان.</p>
+        </div>
+
+        <p>وبناءً على هذا التعريف، فإن فقه الإخلاص لا يقتصر على النية في العبادات المحضة، بل يمتد ليشمل كل تفصيل يومي: اختيار مكان للتسوّق، التخطيط لعزومة في البيت، التعامل مع الزحام، بل حتى طريقة جلوس الإنسان في الطائرة — كل هذه مواطن يتدخّل فيها الإخلاص ويُحدّد ما إذا كانت الأعمال ستُثقل الميزان أم تذهب هباءً.</p>
+
+        <div class="key-point">
+          <span class="bullet">💡</span>
+          <p>مثال عملي: في عزومة بالبيت، الإخلاص هو ما يجعل صاحب البيت "يُسقط الناس من حسابه" فلا يبالغ في التكلّف رياءً، ويتقن العمل ويستحضر الأجر في كل تفصيلة — من اللقمة إلى الابتسامة — بدل أن يكون همّه إرضاء نظرة الضيوف فقط.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. الخلوص والصفاء -->
+    <section id="khulus-sidq">
+      <div class="section-header">
+        <span class="icon">💎</span>
+        <h2>٣. الخلوص والصفاء والصدق</h2>
+      </div>
+      <div class="section-body">
+        <p>عاد الشيخ إلى الأصل اللغوي لكلمة "الإخلاص" قبل أن يصطلح عليها العلماء بمعناها الشرعي المعروف.</p>
+
+        <div class="definition-box">
+          <span class="label">🏷️ تعريف: الخلوص</span>
+          <p>الخلوص في اللسان العربي هو "الحالة الخالصة الصافية التي زالت عنها الشوائب بعد أن كانت مخالَطة" — أي أن الشيء مرّ بمرحلة اختلاط ثم تخلّص من الشوائب فأصبح صافيًا.</p>
+        </div>
+
+        <div class="definition-box">
+          <span class="label">🏷️ تعريف: الصفاء (والفرق بينه وبين الخلوص)</span>
+          <p>الصفاء هو ما لا شوائب فيه أصلًا، بخلاف الخلوص الذي يفترض وجود شوائب سابقة زالت. وهذا الفرق الدقيق يُبيّن أن الإخلاص عملية تخلُّص مستمرة من الشوائب (كالرياء وحب الظهور) لا حالة صافية أصلية يولد بها الإنسان.</p>
+        </div>
+
+        <div class="warning-box">
+          <span class="label">⚠️ تنبيه مهم</span>
+          <p>لا يجوز الجزم بأن شخصًا معينًا "مخلص" جزمًا قاطعًا، لأن الإخلاص أمر خفي متسلل داخل النفس لا يطّلع عليه إلا الله. لكن في المقابل، لا يجوز إنكار وجوده كليًّا، لأن له ضوابط يمكن من خلالها التعرّف على آثاره في الواقع — وأبرز هذه الآثار هو ظهور "الصدق" في سلوك الإنسان وكلامه.</p>
+        </div>
+
+        <p>من هنا انتقل الشيخ إلى ربط الإخلاص بمفهوم آخر أكثر قابلية للرصد في الواقع، وهو "الصدق" — واستعرض مجموعة من القصص التي يظهر فيها الصدق كعلامة يُستدل بها على الإخلاص.</p>
+      </div>
+    </section>
+
+    <!-- 4. الغزالي -->
+    <section id="ghazali">
+      <div class="section-header">
+        <span class="icon">📜</span>
+        <h2>٤. قصة الإمام الغزالي: صدق الاعتراف</h2>
+      </div>
+      <div class="section-body">
+        <div class="story-card">
+          <div class="story-title">📚 قصة أبي حامد الغزالي في "المنقذ من الضلال"</div>
+          <p>يروي الإمام الغزالي عن نفسه أنه شعر يومًا بأن نيّته في التعليم قد تسللت إليها شوائب العُجب والرياء، فأدرك أن ما يفعله لم يعد خالصًا لله كما ينبغي، فاعترف بذلك على نفسه صراحة في كتابه.</p>
+          <p>وصف الشيخ هذا الاعتراف بأنه "من أشد ما يُبكي" رغم تكرار سماعه وقراءته مرات عديدة، وذلك لشدة صدق الغزالي في تعبيره عن حال نفسه — وهو، بحسب المحاضر، كان من أعلم أهل زمانه، يُسافَر إليه من أقطار بعيدة، ومع ذلك لم يتردد في كشف ضعفه أمام الناس.</p>
+          <div class="story-lesson">💡 العبرة: الصدق مع النفس لا يتناسب مع علوّ المكانة أو انخفاضها؛ فكلما ازداد العالم رفعة، ازداد الاعتراف بالضعف دليلًا على صدقه لا نقصًا في قدره.</div>
+        </div>
+
+        <div class="warning-box">
+          <span class="label">⚠️ تنبيه أمانة علمية</span>
+          <p>أشار الشيخ إلى أن هناك كلمات أخرى نُسبت إلى الغزالي لاحقًا في نهاية حياته (يُقال إنه ندم على انشغاله بالتصدّر)، وعلّق بأن هذه الكلمات إن صحّت نسبتها إليه ولم يتب عنها فهي "مصيبة"، داعيًا الله أن يغفر له. وهذا يوضّح منهج الشيخ في التعامل مع القصص المنقولة: عرضها مع التحفّظ على صحة نسبتها حين تكون محل شك.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. قصص السلف -->
+    <section id="salaf-stories">
+      <div class="section-header">
+        <span class="icon">🌙</span>
+        <h2>٥. قصص السلف: الصدق الخفي</h2>
+      </div>
+      <div class="section-body">
+        <p>استعرض الشيخ مجموعة من الآثار المنقولة عن السلف الصالح، كلها تدور حول محور واحد: العمل الخفي الذي لا يعلمه إلا الله، باعتباره أبلغ علامات الإخلاص.</p>
+
+        <div class="story-card">
+          <div class="story-title">١) مالك بن أنس</div>
+          <p>قيل لمالك بن أنس إن فلانًا عمل "موطأً" (كتاب حديث) مثل موطئه، فقال: "وما كان لله عز وجل فهو يبقى". علّق الشيخ بأن قوة هذه العبارة لا تكمن في صعوبة ألفاظها، بل في أن قائلها عالِمٌ مشهود له، وكتابه (الموطأ) ما زال يُدرَّس إلى اليوم — فحين يقولها مثله تهزّ النفس، بخلاف قولها من شخص مغمور.</p>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">٢) الإمام الشافعي</div>
+          <p>مرّ الشافعي برجل يبكي في المسجد أمام الناس، فقال: "ما أطيب هذه الدموع، ولو كانت وحدها (بلا مشاهدين) لكانت أطيب". وضّح الشيخ أن الشافعي لم يُنكر على الرجل بكاءه، بل نبّه إلى أن البكاء حين يكون في خلوة تامة مع الله يكون أدل على صفاء القصد من البكاء أمام الناس، دون أن يعني ذلك تحريم البكاء العلني.</p>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">٣) أحمد بن حنبل</div>
+          <p>سُئل الإمام أحمد عن رجل استتر خمسين سنة ثم انكشف أمره عند موته، فقال: "من حبّه للدنيا". أي أن الانكشاف المفاجئ عند الموت قد يدل على أن الاستتار الطويل لم يكن نابعًا من إخلاص خالص بل من محبة خفية للدنيا تسلّلت رغم ظاهر الصلاح.</p>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">٤) الفضيل بن عياض</div>
+          <p>قال: "خير العمل أخفاه، أمنعه من الشيطان وأبعده عن الرياء". وضّح الشيخ أن هذا لا يعني وجوب إخفاء كل عمل صالح مطلقًا، بل المقصود أن العمل الذي يبقى خالصًا لله حتى لو اطّلع عليه الناس لاحقًا هو الأفضل، لا أن يكون العمل من الأساس موجَّهًا لأن يراه الناس.</p>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">٥) الأوزاعي</div>
+          <p>كان يتكحّل ليُخفي أثر البكاء من خشية الله حتى لا يظهر أثره على وجهه أمام الآخرين. وأشار الشيخ إلى أن البعض قد يرى في هذا "مبالغة"، لكن المبالغة في نظر الشخص نفسه أحيانًا تكون حاجة نفسية حقيقية يشعر بها هو، فلا يصح الحكم على مثل هذه الأفعال دون معرفة السياق الداخلي لصاحبها.</p>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">٦) محمد بن واسع</div>
+          <p>قال: "لقد أدركتُ رجالًا كان الرجل يكون رأسه مع رأس امرأته على وسادة واحدة، وقد بلّ ما تحت خدّه من دموعه، لا تشعر به امرأته". علّق الشيخ بأن أقرب الناس إلى الإنسان (زوجه) قد لا يعلم بحاله مع الله، وهذا يدل على أن العمل بينه وبين ربه وصل إلى درجة من الخفاء والصدق لا تتحقق بسهولة.</p>
+        </div>
+
+        <div class="quote-block">
+          <span class="label">🕋 دليل من الوحي</span>
+          "ما صدق الله عبدٌ أحبّ الشهرة"
+          <span class="source">أثر منقول يُستشهد به في سياق ذم حب الظهور — والعبارة، وإن بدت قاسية، تصف حال من يسعى للشهرة على حساب الإخلاص.</span>
+        </div>
+
+        <div class="key-point">
+          <span class="bullet">🔑</span>
+          <p>علامة المخلص كما وصفها الشيخ: أنه يحب الشهرة (بمعنى قد يجد في نفسه ميلًا طبيعيًا لها) لكنه لا يشعر بالانزعاج إذا اتُّهم أو لم يُحرَد له حق — أي أن الإخلاص لا يعني انعدام الرغبات البشرية، بل التحكم في أثرها على السلوك والشعور.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. الخبيئة النفسية -->
+    <section id="khabiah">
+      <div class="section-header">
+        <span class="icon">🔒</span>
+        <h2>٦. الخبيئة النفسية</h2>
+      </div>
+      <div class="section-body">
+        <div class="definition-box">
+          <span class="label">🏷️ تعريف: الخبيئة النفسية</span>
+          <p>هي "الشيء الذي يحصل في داخل النفس ولا يصدر عنها أي سلوك ظاهر يدل عليه، فلا يعلمه إلا الله". بخلاف الصدقة السرّية التي وإن كانت خفية عن الناس، إلا أنها تتضمن حركة يد وفعلًا ماديًا قد يراه أحد من بعيد؛ أما الخبيئة النفسية فهي أمر نفسي بحت لا أثر خارجي له إطلاقًا — كأن يتحكم الإنسان في غضبه أو يسكت عن كلمة لله وحده يعلم أنه سكت من أجله، دون أن يعرف أحد سبب سكوته.</p>
+        </div>
+
+        <div class="key-point">
+          <span class="bullet">💡</span>
+          <p>مثال توضيحي: شخص غلبه أحدهم في نقاش وكان بإمكانه أن يُحرجه أو يفضحه، لكنه سكت. لا أحد يعرف أن هذا السكوت كان "لله" إلا الله وحده — وهذه هي الخبيئة النفسية بعينها.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. الأصمعي -->
+    <section id="asmaie">
+      <div class="section-header">
+        <span class="icon">😄</span>
+        <h2>٧. طرفة الأصمعي: الصدق في رواية الموقف المُحرج</h2>
+      </div>
+      <div class="section-body">
+        <div class="story-card">
+          <div class="story-title">🐫 قصة الأصمعي مع الأعرابي</div>
+          <p>يروي الأصمعي (الشاعر واللغوي المعروف) أنه دُعي إلى وليمة في البرّية، فجاء أعرابي غريب وجلس يأكل دون استئذان، وبدأ يصف الحاضرين بأوصاف قاسية غير لائقة. سأله الأصمعي إن كان يحفظ شعرًا، فادّعى الأعرابي معرفته الواسعة بالشعر، ثم دار بينهما تبادل أبيات شعرية غريبة انتهت بموقف طريف حول تقسيم الدجاجة التي قدّمها الأصمعي وأسرته للضيف، حيث قسّمها الأعرابي بطريقة غير متوقعة أعطى فيها لنفسه النصيب الأكبر بذريعة عجيبة.</p>
+          <div class="story-lesson">💡 العبرة: ما استوقف المحاضر في هذه القصة ليس الطرفة الأدبية بحد ذاتها، بل صدق الأصمعي في روايتها كما هي عن نفسه، رغم أنها تُظهره في موقف مُحرج أمام أعرابي مجهول غلبه في النهاية. فالأصمعي رجل مشهور يروي موقفًا لم ينتصر فيه، ولم يحاول تجميل الصورة أو حذف تفاصيلها المُحرجة — وهذا بحد ذاته مظهر من مظاهر الصدق في النقل.</div>
+        </div>
+
+        <div class="warning-box">
+          <span class="label">⚠️ إسقاط على الواقع المعاصر</span>
+          <p>علّق الشيخ بأنه لو حصل موقف مشابه اليوم لأحد المشاهير على منصات التواصل، لتعرّض على الأرجح لحملة تنمّر أو "هكر" لحسابه، لأن ثقافة اليوم لا تتقبّل بسهولة أن يروي المشهور موقفًا يظهر فيه بصورة الخاسر أو المهزوم.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ابن حزم -->
+    <section id="ibn-hazm">
+      <div class="section-header">
+        <span class="icon">⚖️</span>
+        <h2>٨. قصة ابن حزم: الاعتراف بالحق رغم الهزيمة</h2>
+      </div>
+      <div class="section-body">
+        <div class="story-card">
+          <div class="story-title">📚 ابن حزم والصديق الذي وجد الحجة للخصم</div>
+          <p>ابن حزم (الفقيه الأندلسي، صاحب المذهب الظاهري) كان معروفًا بقوته الشديدة في المناظرات، حتى إن من يقع تحت "رحمته" في نقاش يخرج مهزومًا. في إحدى المرات، دخل في مناظرة وغلب خصمه بلسانه القوي رغم أن الخصم — كما تبيّن لاحقًا — كان معه الحق. صديق ابن حزم، الذي كان حاضرًا، عاد إلى البيت وأخذ يبحث في كتاب عن موضع يثبت أن الطرف الآخر كان مُحقًّا فعلًا، وأشار إليه لابن حزم قائلاً: "الحق معه، لكنك غلبته لأن في لسانه لدغة". فسأله ابن حزم: أتنوي إخباره بذلك؟ فأجاب: نعم، لكن الوقت متأخر الآن.</p>
+          <div class="story-lesson">💡 العبرة: موقف الصديق في البحث عن الحق حتى بعد انتهاء المناظرة وانتصار صاحبه، ونيّته إخبار الخصم بأن الحق كان معه، يمثّل نموذجًا للصدق مع النفس ومع الآخرين حتى لو كلّف ذلك الاعتراف بخسارة "معسكره" في النقاش.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. سيد قطب -->
+    <section id="sayyid-qutb">
+      <div class="section-header">
+        <span class="icon">✍️</span>
+        <h2>٩. سيد قطب: "لن تأكل قلبي الحسرة"</h2>
+      </div>
+      <div class="section-body">
+        <p>استشهد الشيخ بمقطع من كلمات سيد قطب، ووصفها بأنها "غاية في الروعة"، وسبق أن علّق عليها باستفاضة في مجالس خاصة سابقة تناولت موضوع أفراح الروح.</p>
+
+        <div class="quote-block">
+          <span class="label">📝 من كلمات سيد قطب (بتصرف يسير في النقل الشفهي)</span>
+          يتحدث فيها عن أنه لم يعد يخشى الموت، وأنه أخذ من هذه الحياة الكثير بقدر ما أعطى، وأن الأخذ والعطاء يتماهيان في عالم الروح على عكس عالم المادة؛ فحين يمنح الإنسان نيّته الصادقة يشعر أن الأمر قد اكتمل عنده بصرف النظر عن استجابة الطرف الآخر أو شكره.
+        </div>
+
+        <div class="key-point">
+          <span class="bullet">🔑</span>
+          <p>الفكرة المحورية: في عالم المادة، العطاء يحتاج مقابلًا لسدّ الفراغ الذي تركه. أما في عالم الروح، فمجرد صدق النية وحضورها يكتمل به الأمر عند صاحبه، بصرف النظر عن استجابة الآخر أو تجاهله.</p>
+        </div>
+
+        <p>ثم أكمل الشيخ نقل المعنى: أن سيد قطب يقول إنه عمل بقدر ما استطاع، وأن الحسرة لن تأكل قلبه إن لم يستطع إتمام ما يريد، لأن آخرين سيكملون المسيرة من بعده، وهو مطمئن أن الفكرة الصالحة للبقاء لن تموت. وضرب الشيخ مثالًا من واقعه الشخصي، حين ساعده أحدهم في البحث عن سلعة في السوق دون أن يطلب منه ذلك، فأوصله إلى محل آخر وتابع معه الأمر رغم عدم معرفته به.</p>
+
+        <div class="key-point">
+          <span class="bullet">💡</span>
+          <p>ثم يختم قطب كلماته بأنه حاول أن يكون خيّرًا بقدر استطاعته، وأن أخطاءه يكِلها إلى رحمة الله، وأنه مطمئن إلى أن عقاب الله عدل، وقد تعوّد أن يتحمل تبعة أعماله خيرًا كانت أو شرًا.</p>
+        </div>
+
+        <div class="warning-box">
+          <span class="label">⚠️ ملاحظة</span>
+          <p>ذكر الشيخ أن بعض الناس في زمننا حين يشعرون باقتراب الأجل يخفون نتاجهم العلمي خوفًا من أن ينسبه أحد غيرهم إليه، في تناقض واضح مع روح النص الذي استشهد به — وهو مثال سلبي معاصر يُقارَن به الموقف الإيجابي في النص الأصلي.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. عبدالله الهدلق -->
+    <section id="abdullah-hadlaq">
+      <div class="section-header">
+        <span class="icon">📱</span>
+        <h2>١٠. عبدالله الهدلق: أزمة الصدق أمام الجمهور</h2>
+      </div>
+      <div class="section-body">
+        <div class="story-card">
+          <div class="story-title">📖 عبدالله الهدلق: القارئ الموسوعي على تويتر</div>
+          <p>وصف الشيخ عبدالله الهدلق بأنه صحفي سعودي معروف بنشاطه الموسوعي على منصة تويتر، حيث كان يجيب على استفسارات المتابعين حول الكتب والمعارض في مختلف المجالات (أدب، فلسفة، نفس، شريعة) بمعرفة واسعة جدًا لدرجة أن الشيخ شخصيًا شكّ يومًا في أنه يتلقى مساعدة من آخرين، إلى أن تأكد من دقة معلوماته بنفسه (كمثال: معرفته بتفاصيل دقيقة في هامش أحد الكتب لا في متنه).</p>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">📉 موقف "باسم يوسف" والاختبار الحقيقي</div>
+          <p>الموقف المحوري في هذه القصة: نشر باسم يوسف (يوسف الإسلام) تغريدة تنتقد فيها الانشغال المفرط بالقراءة على حساب "متعة الاختيار وتنوّع التجارب"، بأسلوب غير مباشر يُفهم منه انتقاد أشخاص كعبدالله الهدلق. راقب الشيخ ردة فعل عبدالله عن كثب، متوقعًا أن يغضب أو يتجاهل الأمر أو يدافع عن نفسه — فإذا بأول تعليق له تحت التغريدة هو: "صدقتَ"، ثم أكمل بأن التغريدة صحيحة وأن الاستغراق الشديد في القراءة قد حرمه من متعة التنوع، وأنه ليته عرف التوازن مبكرًا.</p>
+          <p>ثم كتب صاحب التغريدة الأصلية (شاب مغمور غير مشهور) ردًّا يعتذر فيه، فأجابه عبدالله بلطف بأنه سُرَّ بالتغريدة لأنه "من يهتز للمعنى الجميل حتى لو لم يكن في صالحه".</p>
+          <div class="story-lesson">💡 العبرة: الاختبار الحقيقي للصدق ليس في الحديث عن الكتب والمعرفة، بل في قبول النقد من شخص مغمور دون تكبّر أو دفاع عن الذات، رغم أن نشره لهذا الاعتراف علنًا لم يكن ليفهمه كثيرون خارج سياقهم الضيق — أي أنه لم يكن يفعل ذلك "استعراضًا"، بل استجابة صادقة.</div>
+        </div>
+
+        <div class="warning-box">
+          <span class="label">⚠️ تحذير من ثقافة "التباهي بالتواضع"</span>
+          <p>وصف الشيخ ظاهرة معاصرة أسماها بـ"كلمنجية" (المبالغة اللفظية الفارغة)، حيث يكتب بعض المؤثرين تغريدات عن "فوضى الطوابير" و"الحرج من الفرشاة" بأسلوب متكلّف يُظهر تصنّعًا أكثر منه صدقًا، مقارنًا ذلك بمن يتحدث عن كرم الضيافة الأمريكية أو غيرها من التفاصيل بأسلوب استعراضي هدفه الإعجاب لا التوثيق الصادق.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. مواقف معاصرة -->
+    <section id="contemporary">
+      <div class="section-header">
+        <span class="icon">🌍</span>
+        <h2>١١. مواقف معاصرة من واقع المحاضر</h2>
+      </div>
+      <div class="section-body">
+        <div class="story-card">
+          <div class="story-title">١) الشاب "أيمن" وشباك السيارة</div>
+          <p>روى الشيخ عن شاب من معارفه اسمه أيمن، كان يتأخر دائمًا في التجهّز قبل الصلوات لأنه يقف أمام شباك السيارة (كالمرآة) لتصفيف شعره. حين نبّهه الشيخ يومًا على تأخره، أجابه أيمن بأنه أدرك أن استخدام شباك سيارة ليست ملكه كمرآة أمر لا يجوز له شرعًا (لأنها ليست سيارته)، فصار يتجنب ذلك تمامًا رغم أن الأمر بسيط في نظر أغلب الناس.</p>
+          <div class="story-lesson">💡 العبرة: هذا المستوى من الورع الدقيق يدل على أن العمل بين العبد وربه وصل إلى مرحلة من التدقيق النفسي الخفي، حتى لو اعتبره البعض "مبالغة".</div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">٢) القلم الشخصي في العمل</div>
+          <p>يروي الشيخ عن شخص كان يعمل في المحاكم، كان يرفض استخدام قلم العمل (المخصص لمهامه الوظيفية) في أي أمر شخصي، فيخرج قلمه الخاص من جيبه لأي غرض شخصي رغم أن الأمر مباح وولي الأمر (جهة العمل) يسمح باستخدامه.</p>
+          <div class="story-lesson">💡 العبرة: مثل هذه القصص من الورع الدقيق ليست واجبة شرعًا، لكنها تُذكّر النفس بأن ثمة نموذجًا يُحتذى به في مراقبة النفس، حتى في أدق التفاصيل المباحة.</div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-title">٣) اتصال أبو جعفر: الصدق اللحظي غير المتصنَّع</div>
+          <p>يروي الشيخ أنه كان في مكالمة هاتفية مع أحد الدعاة يسأله عن أفضل الكتب في موضوع الحقيقة والمجاز، فجاءت مكالمة أخرى في نفس الوقت من شخص يستشيره عمّن ينصح به في قضية أخرى تمامًا، فأجاب تلقائيًا ودون تفكير باسم داعية آخر (أحمد سالم) كأفضل من كتب في ذلك الموضوع رغم أنه كان في خضم حديث عن موضوع مختلف كليًّا.</p>
+          <div class="story-lesson">💡 العبرة: الصدق اللحظي التلقائي (رد الفعل السريع دون تفكير أو تجميل) يُعدّ من أقوى المؤشرات على النية الحقيقية، لأنه يصعب على الإنسان أن "يمثّل" الصدق في لحظة انفعال سريعة وغير مُعدّة مسبقًا.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. الأنانية والإيثار -->
+    <section id="egoism">
+      <div class="section-header">
+        <span class="icon">🪞</span>
+        <h2>١٢. الأنانية والإيثار: إعادة تعريف</h2>
+      </div>
+      <div class="section-body">
+        <div class="definition-box">
+          <span class="label">🏷️ تعريف: الأنانية الطبيعية (بحسب الشيخ)</span>
+          <p>هي شعور طبيعي وأساسي في النفس البشرية، يمثّل الخطوة الأولى الضرورية قبل أن يصل الإنسان إلى مرحلة الإيثار. لا يمكن أن يعطي الإنسان من فراغ؛ فلا بد أن يمتلئ أولًا (يهتم بنفسه، يحفظ حقها) حتى يفيض على غيره، وحينها يتحول الفائض إلى إيثار حقيقي.</p>
+        </div>
+
+        <div class="key-point">
+          <span class="bullet">💡</span>
+          <p>مثال معاصر: من ينتظر بفارغ الصبر خروج حقائبه من حزام المطار وهو محاط بمن ينتظرون أيضًا، لا يُعدّ بالضرورة "أنانيًا مذمومًا" — فهذا تصرّف طبيعي، بخلاف من يتعمد إعاقة الآخرين عن الوصول لحقائبهم.</p>
+        </div>
+
+        <table class="comparison-table">
+          <tr><th>المفهوم</th><th>التعريف</th><th>مثال</th></tr>
+          <tr><td>الأنانية الطبيعية</td><td>الاهتمام بحاجات النفس الأساسية كخطوة ضرورية لا مذمومة</td><td>حجز مقعد بجانب النافذة، الاهتمام بحاجة الجسد</td></tr>
+          <tr><td>الإيثار الحقيقي</td><td>إعطاء "الفاضل" عن حاجتك بعد أن يُسدّ احتياجك الأساسي</td><td>مشاركة الطعام بعد أن أكل الشخص كفايته</td></tr>
+          <tr><td>الإيثار المتكلَّف</td><td>محاولة العطاء دون امتلاك أصل الشيء أو حق النفس، فيؤدي لاحتراق نفسي</td><td>جيل "المحترقين" الذين لم يُعطوا أنفسهم حقها فانهاروا</td></tr>
+        </table>
+
+        <div class="warning-box">
+          <span class="label">⚠️ تحذير من ثقافة "الذوبان من أجل الآخرين"</span>
+          <p>حذّر الشيخ من ثقافة تربوية وإعلامية سائدة تُعلّم الأجيال "الذوبان الكامل من أجل الآخرين" دون إعطاء النفس حقها أولًا، ووصف نتيجة هذا بأنه أنتج "جيلًا كاملًا من المحترقين" غير القادرين على العطاء الحقيقي لأنهم لم يمتلئوا بما يكفي ليفيض منهم شيء.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. لله -->
+    <section id="lillah">
+      <div class="section-header">
+        <span class="icon">🕋</span>
+        <h2>١٣. معنى أن يكون العمل "لله"</h2>
+      </div>
+      <div class="section-body">
+        <p>تطرّق الشيخ إلى إشكالية شائعة في فهم عبارة "افعل هذا لله"، موضحًا أنها ليست مجرد شعار يُقال دون فهم عميق لمعناه العملي.</p>
+
+        <div class="quote-block">
+          <span class="label">🕋 موقف نبوي</span>
+          دخل النبي صلى الله عليه وسلم على أحد أصحابه وسمعه يدعو الله فقط بقوله: "اللهم زحزحني عن النار وأدخلني الجنة"، فسأله النبي عن حاله، وعلّق الشيخ بأن الرسول أراد أن "يوسّع" دائرة الدعاء عنده، لا أن يُنكر عليه طلب الجنة والنجاة من النار.
+        </div>
+
+        <div class="key-point">
+          <span class="bullet">🔑</span>
+          <p>الفكرة: طلب الجنة والنجاة من النار مشروع وليس منقوصًا من الإخلاص، لكن أعلى درجات العبودية أن يعبد الإنسان الله لأنه يستحق العبادة بذاته، لا فقط خوفًا من عقاب أو طمعًا في ثواب — وهذا لا يلغي مشروعية الدرجة الأولى بل يضيف عليها.</p>
+        </div>
+
+        <div class="definition-box">
+          <span class="label">🏷️ توضيح: "لله" بمعزل عن الوحي</span>
+          <p>حذّر الشيخ من عبارات مثل "أعمل الخير لأنه خير" أو "أرمي الأذى في البحر" بمعزل عن ربطها بالوحي (القرآن والسنة)، موضحًا أن الشعور بالطمأنينة والسكينة عند فعل الخير مطلوب، لكن يجب أن يبقى العمل مرتبطًا بمصدره الشرعي الأصيل لا مجرد شعور نفسي عام منفصل عن الدين.</p>
+        </div>
+
+        <p>واستشهد بالفرق بين حضور "الوحي" في لحظة اتخاذ القرار وغيابه: فمثلًا، حين يتنازع الناس في زحام المرور بعد حادث تصادم بسيط، فإن غياب استحضار الوحي (الحساب، الآخرة) يجعل الأمر يتحول لصراع عن "الحق الشخصي"، بينما حضوره يُغيّر المعادلة كليًّا نحو التسامح والتغاضي.</p>
+      </div>
+    </section>
+
+    <!-- 14. فاقد الشيء -->
+    <section id="faqid-shay">
+      <div class="section-header">
+        <span class="icon">🌿</span>
+        <h2>١٤. "فاقد الشيء لا يعطيه": تصحيح المفهوم</h2>
+      </div>
+      <div class="section-body">
+        <div class="warning-box">
+          <span class="label">⚠️ تصحيح مفهوم شائع</span>
+          <p>صحّح الشيخ العبارة الدارجة "فاقد الشيء لا يعطيه" موضحًا أنها غير دقيقة على إطلاقها. الصحيح أن "الذي حُرم من الشيء لا يعطيه" في اللحظة التي يفتقد فيها الشيء فعلًا، أما إن اكتسبه لاحقًا من مصدر آخر (كالمعرفة، أو التجربة، أو التعويض النفسي) فإنه قادر على إعطائه، لأنه أصبح يملكه فعلًا في لحظة العطاء وإن لم يكن يملكه في مرحلة سابقة من حياته.</p>
+        </div>
+
+        <div class="key-point">
+          <span class="bullet">💡</span>
+          <p>مثال: أب لم يحظَ بتعليم أكاديمي (حُرم من العلم شخصيًا)، لكنه يدرك قيمة العلم جيدًا، فيستطيع أن "يُعطي" ابنه حب العلم والتشجيع عليه، لأنه يملك الوعي بقيمته وإن لم يملك هو نفسه شهادة علمية.</p>
+        </div>
+
+        <p>وربط الشيخ هذا بموضوع أعمق: أن الحرمان في الصغر قد يكون سببًا في تعويض إيجابي لاحق، مستشهدًا بأن بعض الأشخاص الذين عانوا حرمانًا في طفولتهم أصبحوا لاحقًا أكثر قدرة على تقدير النِّعم وإسعاد أنفسهم، على عكس التنشئة المفرطة في التدليل التي قد تنتج جيلًا "واهنًا" غير قادر على مواجهة الحياة.</p>
+      </div>
+    </section>
+
+    <!-- 15. رابعة -->
+    <section id="rabia">
+      <div class="section-header">
+        <span class="icon">🔍</span>
+        <h2>١٥. تصحيح تاريخي: أبيات لا تصح لرابعة العدوية</h2>
+      </div>
+      <div class="section-body">
+        <div class="warning-box">
+          <span class="label">⚠️ تحقيق وتصحيح</span>
+          <p>نبّه الشيخ إلى خطأ منتشر في نسبة عبارة "ما عبدتُ الله طمعًا في جنته ولا خوفًا من ناره" إلى رابعة العدوية، موضحًا أنه لا يوجد تحقيق يثبت صحة نسبة هذا الكلام إليها تاريخيًا، بل الأرجح من قراءته أنها كانت زاهدة لكن ليست بهذا الشكل المُصوَّر إعلاميًا، وأن بعض الأعمال الفنية (كفيلم مصري تناول قصتها) شوّهت التاريخ الحقيقي المتعلق بها.</p>
+        </div>
+
+        <div class="key-point">
+          <span class="bullet">🔑</span>
+          <p>أوضح الشيخ أيضًا أن الأبيات المشهورة المنسوبة لرابعة والتي تبدأ بـ"وليتك ترضى والأنام غضاب" لا تصح نسبتها إليها، بل الصحيح تاريخيًا أنها لأبي فراس الحمداني، قالها لابن عمه سيف الدولة الحمداني وهو مسجون يعاتبه على عدم السؤال عنه. وشدّد على أن هذه المعاني (وليس الذي بيني وبينك عامر) لا يجوز أن تُقال في غير الخالق سبحانه، وهي في الأصل موجَّهة من مخلوق لمخلوق.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. قاموس المصطلحات -->
+    <section id="definitions">
+      <div class="section-header">
+        <span class="icon">📚</span>
+        <h2>١٦. قاموس المصطلحات</h2>
+      </div>
+      <div class="section-body">
+        <div class="flow-card">
+          <div class="num">١</div>
+          <div class="content"><strong>الفقه:</strong> محاولة فهم الأشياء من منظور الخالق، وليس مقصورًا على الأحكام الشرعية التقليدية.</div>
+        </div>
+        <div class="flow-card">
+          <div class="num">٢</div>
+          <div class="content"><strong>الخلوص:</strong> الحالة الصافية بعد زوال الشوائب التي كانت موجودة سابقًا.</div>
+        </div>
+        <div class="flow-card">
+          <div class="num">٣</div>
+          <div class="content"><strong>الصفاء:</strong> ما لا شوائب فيه من الأساس، بخلاف الخلوص الذي يفترض تخلّصًا سابقًا من شوائب.</div>
+        </div>
+        <div class="flow-card">
+          <div class="num">٤</div>
+          <div class="content"><strong>الخبيئة النفسية:</strong> أمر يحدث داخل النفس دون أي أثر أو سلوك ظاهر يدل عليه، لا يعلمه إلا الله.</div>
+        </div>
+        <div class="flow-card">
+          <div class="num">٥</div>
+          <div class="content"><strong>الأنانية الطبيعية:</strong> اهتمام الإنسان بحاجاته الأساسية كخطوة ضرورية سابقة للإيثار، وليست مذمومة في ذاتها.</div>
+        </div>
+        <div class="flow-card">
+          <div class="num">٦</div>
+          <div class="content"><strong>الإيثار الحقيقي:</strong> إعطاء الفائض عن حاجة النفس بعد أن تُسدّ هذه الحاجة أولًا.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. خلاصة -->
+    <section id="next">
+      <div class="section-header">
+        <span class="icon">🧭</span>
+        <h2>١٧. خلاصة ومقدمة الدرس القادم</h2>
+      </div>
+      <div class="section-body">
+        <div class="action-card">
+          <span class="label">✅ خلاصة المحاضرة</span>
+          <p>الإخلاص أمر خفي بين العبد وربه لا يمكن الجزم بوجوده أو عدمه في أي شخص، لكن يمكن التعرّف على آثاره من خلال علامة جوهرية هي "الصدق" — الصدق مع النفس، مع الآخرين، وفي أدق تفاصيل الحياة اليومية. القصص المذكورة (من السلف والمعاصرين) كلها نماذج لهذا الصدق الذي يُستدل به على وجود الإخلاص، لا دليل قاطع عليه.</p>
+        </div>
+
+        <div class="key-point">
+          <span class="bullet">🔜</span>
+          <p>أعلن الشيخ أن الدرس القادم سيتناول: "ما معوقات الإخلاص؟" — أي ما الذي يمنع الإنسان من الوصول إلى هذه الدرجة من الصدق، مع تطبيقات على الحياة اليومية (البيت، الشغل، الشارع، السوق، المسجد)، وسيُختم الدرس بقصة كعب بن مالك كمثال شامل يجمع بين الصدق والإخلاص.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
 
 <footer>
-  سلسلة فقه الإخلاص &middot; الحلقة 4 - فقه الإخلاص
+  <p class="dua">رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ<br>
+  اللهم اجعل أعمالنا كلها خالصة لوجهك الكريم، ولا تجعل لأحد فيها شيئًا</p>
+  <button class="anki-btn" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  <p class="signature">سبحانك اللهم وبحمدك، أشهد أن لا إله إلا أنت، أستغفرك وأتوب إليك</p>
 </footer>
+
+<script>
+const ankiCards = [
+  // تعريفات ومفاهيم
+  ["ما تعريف الفقه في هذه المحاضرة؟", "محاولة فهم الأشياء من منظور الخالق سبحانه وتعالى، وليس مقصورًا على الأحكام الشرعية التقليدية فقط."],
+  ["ما الفرق بين الخلوص والصفاء؟", "الخلوص: حالة صافية بعد زوال شوائب كانت موجودة سابقًا. الصفاء: ما لا شوائب فيه من الأصل."],
+  ["ما تعريف الخبيئة النفسية؟", "شيء يحدث داخل النفس ولا يصدر عنه أي سلوك ظاهر يدل عليه، لا يعلمه إلا الله."],
+  ["ما الفرق بين الأنانية الطبيعية والإيثار المتكلَّف؟", "الأنانية الطبيعية: اهتمام بحاجات النفس الأساسية كخطوة ضرورية. الإيثار المتكلَّف: محاولة العطاء دون امتلاك أصل الشيء، ما يؤدي للاحتراق النفسي."],
+  ["كيف صحّح الشيخ عبارة \"فاقد الشيء لا يعطيه\"؟", "الصحيح: \"الذي حُرم من الشيء لا يعطيه\" في لحظة الحرمان فقط؛ فإن اكتسبه لاحقًا من مصدر آخر أصبح قادرًا على إعطائه."],
+  ["ما معنى الإيثار الحقيقي؟", "إعطاء الفائض عن حاجة النفس الأساسية بعد أن تُسدّ هذه الحاجة أولًا، لا العطاء من فراغ."],
+  ["لماذا استُخدمت كلمة \"فقه\" مع الإخلاص بدل الاقتصار على \"الإخلاص\" فقط؟", "لأن الفقه يعني فهم الأمر بمنظور الخالق في كل تفاصيل الحياة اليومية، لا فقط في العبادات الشعائرية."],
+  ["ما الذي يميز \"الخبيئة النفسية\" عن الصدقة السرّية؟", "الصدقة السرّية فيها فعل مادي ظاهر (حركة يد) قد يراه أحد، أما الخبيئة النفسية فأمر نفسي بحت بلا أي أثر خارجي."],
+
+  // أدلة ومراجع
+  ["ماذا قال مالك بن أنس لما قيل له إن فلانًا عمل موطأً مثل موطئه؟", "\"وما كان لله عز وجل فهو يبقى\"."],
+  ["ماذا قال الشافعي حين مرّ برجل يبكي في المسجد أمام الناس؟", "\"ما أطيب هذه الدموع، ولو كانت وحدها لكانت أطيب\"."],
+  ["بم أجاب أحمد بن حنبل حين سُئل عن رجل استتر خمسين سنة ثم انكشف أمره عند موته؟", "قال: \"من حبّه للدنيا\"."],
+  ["ماذا قال الفضيل بن عياض عن خير العمل؟", "\"خير العمل أخفاه، أمنعه من الشيطان وأبعده عن الرياء\"."],
+  ["لماذا كان الأوزاعي يتكحّل؟", "ليُخفي أثر البكاء من خشية الله عن أعين الناس."],
+  ["ماذا قال محمد بن واسع عن رجال أدركهم يبكون في الليل دون أن تشعر بهم زوجاتهم؟", "وصف رجلاً كان رأسه مع رأس امرأته على وسادة واحدة وقد بلّ ما تحت خده من دموعه، ولا تشعر به امرأته."],
+  ["ما الأثر المنقول: \"ما صدق الله عبدٌ...\"؟", "\"ما صدق الله عبدٌ أحبّ الشهرة\"."],
+  ["ماذا قال النبي صلى الله عليه وسلم لمن سمعه يدعو فقط بـ\"اللهم زحزحني عن النار وأدخلني الجنة\"؟", "سأله عن حاله ليوسّع دائرة دعائه، دون إنكار طلب الجنة والنجاة من النار."],
+  ["من قائل الأبيات \"وليتك ترضى والأنام غضاب\" فعليًا (وليست رابعة العدوية كما يُشاع)؟", "أبو فراس الحمداني، قالها لابن عمه سيف الدولة الحمداني وهو مسجون."],
+  ["هل تصح نسبة عبارة \"ما عبدت الله طمعًا في جنته ولا خوفًا من ناره\" إلى رابعة العدوية؟", "لا يوجد تحقيق يثبت صحة نسبتها إليها تاريخيًا بحسب ما ذكره الشيخ."],
+  ["ماذا قال ابن حزم لصديقه حين علم أنه وجد الحق مع خصمه في المناظرة؟", "سأله إن كان سيخبره بذلك، فأجاب الصديق نعم، لكن الوقت متأخر."],
+
+  // فوائد ونقاط مهمة
+  ["ما علامة المخلص فيما يخص حب الشهرة بحسب المحاضرة؟", "أنه قد يجد في نفسه ميلًا لحب الشهرة، لكنه لا ينزعج إن اتُّهم أو لم يُنصف — فالإخلاص ليس انعدام الرغبات بل التحكم في أثرها."],
+  ["ما العبرة من قصة الغزالي في المنقذ من الضلال؟", "الصدق مع النفس والاعتراف بالضعف لا يتناسبان مع علوّ المكانة، بل يزدادان دليلًا على الصدق كلما ازدادت المكانة رفعة."],
+  ["ما العبرة المستخلصة من قصة الأصمعي مع الأعرابي؟", "صدق الأصمعي في رواية موقف يظهر فيه مهزومًا أو محرجًا أمام رجل مجهول، دون تجميل أو حذف للتفاصيل."],
+  ["ما الموقف الذي اختبر فيه صدق عبدالله الهدلق؟", "تغريدة انتقدته ضمنيًا من باسم يوسف بشأن الانشغال المفرط بالقراءة، فكان أول رد له هو \"صدقتَ\" دون دفاع عن نفسه."],
+  ["كيف تعامل عبدالله الهدلق مع الشاب المغمور الذي اعتذر له لاحقًا؟", "ردّ عليه بلطف وقال إنه سُرَّ بالتغريدة لأنه يهتز للمعنى الجميل حتى لو لم يكن في صالحه."],
+  ["ما الفكرة المحورية في كلمات سيد قطب عن الأخذ والعطاء؟", "في عالم الروح، مجرد صدق النية وحضورها يكتمل به الأمر عند صاحبه بصرف النظر عن استجابة الآخر."],
+  ["لماذا لن تأكل الحسرة قلب سيد قطب إن لم يستطع إتمام ما يريد؟", "لأنه مطمئن أن آخرين سيكملون المسيرة من بعده، وأن الفكرة الصالحة للبقاء لن تموت."],
+  ["ما الموقف الذي رواه الشيخ عن الشاب أيمن وشباك السيارة؟", "توقف عن استخدام شباك سيارة ليست ملكه كمرآة لتصفيف شعره، لأنه أدرك أن ذلك لا يجوز شرعًا."],
+  ["ما دلالة قصة اتصال أبو جعفر بالمحاضر أثناء حديثه عن موضوع آخر؟", "الصدق اللحظي التلقائي (رد الفعل السريع دون تفكير) من أقوى مؤشرات صدق النية، لصعوبة تصنّعه في لحظة انفعالية."],
+  ["ما الفرق بين طلب الجنة والنجاة من النار وبين أعلى درجات العبودية؟", "طلب الجنة والنجاة مشروع وليس نقصًا في الإخلاص، لكن أعلى الدرجات أن يُعبَد الله لأنه يستحق العبادة بذاته."],
+  ["ماذا ينتج عن ثقافة تربوية تُعلّم \"الذوبان الكامل من أجل الآخرين\" دون إعطاء النفس حقها؟", "جيل من \"المحترقين\" غير القادرين على العطاء الحقيقي لأنهم لم يمتلئوا بما يكفي ليفيض منهم شيء."],
+  ["ما مثال الأب الذي حُرم من التعليم لكنه أعطى ابنه حب العلم؟", "رغم عدم امتلاكه شهادة أكاديمية، يملك الوعي بقيمة العلم فيستطيع أن يزرعه في ابنه لأنه أصبح يملكه معرفيًا."],
+  ["ما القصة التي وُعد الحضور بها في الدرس القادم كمسك ختام؟", "قصة كعب بن مالك في تخلّفه عن غزوة تبوك، كنموذج جامع للصدق والإخلاص."],
+  ["ما الموضوع الذي سيُطرح في الدرس القادم من سلسلة فقه الإخلاص؟", "ما معوقات الإخلاص؟ وتطبيقاتها في الحياة اليومية (البيت، الشغل، الشارع، السوق، المسجد)."],
+  ["لماذا انتقل درس فقه الإخلاص من يوم السبت إلى يوم الاثنين؟", "لأن يوم السبت أصبح مخصصًا لدورة جديدة عن العيادة النفسية موجّهة للأمهات والبنات."],
+];
+
+function downloadAnkiDeck() {
+  let content = ankiCards.map(([q, a]) => {
+    const clean = s => s.replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+    return `${clean(q)}\t${clean(a)}`;
+  }).join('\n');
+  const BOM = '\uFEFF';
+  const blob = new Blob([BOM + content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'بطاقات_أنكي_فقه_الإخلاص_الجزء_الرابع.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
 
 </body>
 </html>

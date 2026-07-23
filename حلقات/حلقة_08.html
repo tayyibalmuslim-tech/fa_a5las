@@ -3,768 +3,737 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>فقه الحرية | محاضرة 8 - فقه النفس</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<title>الصدق ومراتبه | فقه النفس</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --brown-dark:#3b2a1e;
-  --brown:#6b4a30;
-  --gold:#b8862f;
-  --gold-light:#e3c485;
-  --green:#3f5d44;
-  --cream:#faf5ea;
-  --cream-2:#f2e8d5;
-  --ink:#2b2117;
-  --danger:#a13c3c;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{
-  font-family:'Cairo',sans-serif;
-  background:var(--cream);
-  color:var(--ink);
-  line-height:1.9;
-}
-header.top{
-  background:linear-gradient(135deg,var(--brown-dark),var(--brown) 60%,var(--gold) 130%);
-  color:#fff;
-  padding:50px 20px 40px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-header.top::before{
-  content:"";
-  position:absolute;inset:0;
-  background:url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="120" height="120"%3E%3Cpath d="M60 10 L70 50 L110 60 L70 70 L60 110 L50 70 L10 60 L50 50 Z" fill="%23ffffff" fill-opacity="0.04"/%3E%3C/svg%3E');
-  opacity:0.5;
-}
-header.top .series-tag{
-  display:inline-block;
-  background:rgba(255,255,255,0.15);
-  border:1px solid var(--gold-light);
-  padding:6px 18px;
-  border-radius:30px;
-  font-size:14px;
-  margin-bottom:16px;
-  position:relative;
-}
-header.top h1{
-  font-family:'Amiri',serif;
-  font-size:2.6em;
-  margin-bottom:12px;
-  position:relative;
-}
-header.top p.desc{
-  font-size:1.15em;
-  max-width:720px;
-  margin:0 auto;
-  color:var(--cream-2);
-  position:relative;
-}
-.anki-banner{
-  margin-top:24px;
-  position:relative;
-}
-.anki-btn{
-  background:var(--gold);
-  color:#fff;
-  border:none;
-  padding:14px 30px;
-  border-radius:10px;
-  font-family:'Cairo',sans-serif;
-  font-weight:700;
-  font-size:1em;
-  cursor:pointer;
-  box-shadow:0 4px 14px rgba(0,0,0,0.25);
-  transition:transform 0.15s, box-shadow 0.15s;
-}
-.anki-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,0.3);}
+  :root{
+    --bg:#faf6ef;
+    --bg-alt:#f3ead9;
+    --paper:#fffdf8;
+    --brown:#5c3a21;
+    --brown-dark:#3d2612;
+    --gold:#b8860b;
+    --gold-light:#d4a72c;
+    --green:#3f6b4a;
+    --green-light:#eaf3ec;
+    --text:#2e2418;
+    --muted:#7a6b57;
+    --border:#e3d5b8;
+    --shadow: 0 4px 18px rgba(92,58,33,.10);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    background-image:
+      radial-gradient(circle at 10% 8%, rgba(184,134,11,.05), transparent 40%),
+      radial-gradient(circle at 90% 90%, rgba(63,107,74,.05), transparent 40%);
+    font-family:'Cairo', sans-serif;
+    color:var(--text);
+    line-height:1.9;
+  }
+  a{color:var(--green);}
+  .wrap{max-width:960px; margin:0 auto; padding:0 18px 60px;}
 
-nav.toc{
-  max-width:900px;
-  margin:-30px auto 40px;
-  background:#fff;
-  border:1px solid var(--gold-light);
-  border-radius:16px;
-  padding:26px 30px;
-  box-shadow:0 8px 30px rgba(59,42,30,0.12);
-  position:relative;
-  z-index:5;
-}
-nav.toc h2{
-  color:var(--brown);
-  font-size:1.3em;
-  margin-bottom:14px;
-  border-bottom:2px solid var(--gold-light);
-  padding-bottom:8px;
-}
-nav.toc ol{
-  list-style:none;
-  columns:2;
-  gap:20px;
-}
-@media(max-width:640px){nav.toc ol{columns:1;}}
-nav.toc li{margin-bottom:8px;}
-nav.toc a{
-  color:var(--brown-dark);
-  text-decoration:none;
-  font-weight:600;
-  display:block;
-  padding:6px 10px;
-  border-radius:8px;
-  transition:background 0.15s;
-}
-nav.toc a:hover{background:var(--cream-2);}
+  header.hero{
+    background:linear-gradient(135deg, var(--brown-dark), var(--brown) 60%, var(--gold-light));
+    color:#fdf8ee;
+    padding:46px 24px 40px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.035) 0 2px, transparent 2px 30px);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:1; max-width:900px; margin:0 auto;}
+  .badge{
+    display:inline-block;
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.35);
+    padding:6px 16px;
+    border-radius:999px;
+    font-size:.85rem;
+    margin-bottom:14px;
+    letter-spacing:.3px;
+  }
+  header.hero h1{
+    font-family:'Amiri', serif;
+    font-size:2.5rem;
+    margin:6px 0 10px;
+    font-weight:700;
+  }
+  header.hero p.desc{
+    font-size:1.05rem;
+    color:#f4e8cf;
+    max-width:640px;
+    margin:0 auto 22px;
+  }
+  .hero-btns{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--gold);
+    color:#2e1c08;
+    padding:11px 22px;
+    border:none;
+    border-radius:10px;
+    font-family:'Cairo',sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 3px 0 #8a6408;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 5px 0 #8a6408;}
+  .btn.secondary{
+    background:transparent;
+    color:#fdf8ee;
+    border:1.5px solid rgba(255,255,255,.55);
+    box-shadow:none;
+  }
+  .btn.secondary:hover{background:rgba(255,255,255,.12);}
 
-main{max-width:900px;margin:0 auto;padding:0 20px 60px;}
+  nav.toc{
+    background:var(--paper);
+    border:1px solid var(--border);
+    border-radius:16px;
+    margin:-30px auto 34px;
+    max-width:900px;
+    padding:22px 26px;
+    box-shadow:var(--shadow);
+    position:relative;
+    z-index:2;
+  }
+  nav.toc h2{
+    margin:0 0 12px;
+    font-size:1.05rem;
+    color:var(--brown);
+    display:flex; align-items:center; gap:8px;
+  }
+  nav.toc ol{
+    columns:2;
+    -webkit-columns:2;
+    padding-inline-start:20px;
+    margin:0;
+    gap:6px 24px;
+  }
+  @media(max-width:640px){ nav.toc ol{columns:1;} }
+  nav.toc li{margin-bottom:6px;}
+  nav.toc a{text-decoration:none; color:var(--text); font-size:.93rem;}
+  nav.toc a:hover{color:var(--gold);}
 
-section.block{
-  background:#fff;
-  border:1px solid #eadfc8;
-  border-radius:16px;
-  padding:32px;
-  margin-bottom:30px;
-  box-shadow:0 3px 14px rgba(59,42,30,0.06);
-}
-section.block h2{
-  font-family:'Amiri',serif;
-  color:var(--brown-dark);
-  font-size:1.7em;
-  margin-bottom:18px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  border-bottom:3px solid var(--gold-light);
-  padding-bottom:12px;
-}
-section.block h3{
-  color:var(--green);
-  font-size:1.25em;
-  margin:22px 0 10px;
-}
-section.block p{margin-bottom:14px;}
+  section{
+    background:var(--paper);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:30px 30px 26px;
+    margin-bottom:26px;
+    box-shadow:var(--shadow);
+    scroll-margin-top:20px;
+  }
+  section h2{
+    font-family:'Amiri', serif;
+    color:var(--brown);
+    font-size:1.55rem;
+    margin-top:0;
+    padding-bottom:12px;
+    border-bottom:2px solid var(--border);
+    display:flex; align-items:center; gap:10px;
+  }
+  section h3{
+    color:var(--green);
+    font-size:1.2rem;
+    margin-top:26px;
+  }
+  p{margin:12px 0;}
 
-.definition-box{
-  background:var(--cream-2);
-  border-right:5px solid var(--gold);
-  border-radius:10px;
-  padding:18px 22px;
-  margin:16px 0;
-}
-.definition-box .term{
-  font-weight:800;
-  color:var(--brown-dark);
-  display:block;
-  margin-bottom:6px;
-}
+  .definition-box{
+    background:var(--green-light);
+    border-inline-start:4px solid var(--green);
+    border-radius:8px;
+    padding:14px 18px;
+    margin:16px 0;
+  }
+  .definition-box .lbl{font-weight:700; color:var(--green); display:block; margin-bottom:4px;}
 
-.quote-block{
-  background:#f6f0e2;
-  border:1px dashed var(--gold);
-  border-radius:10px;
-  padding:18px 22px;
-  margin:16px 0;
-  font-family:'Amiri',serif;
-  font-size:1.1em;
-  color:var(--brown-dark);
-}
-.quote-block .src{
-  display:block;
-  margin-top:10px;
-  font-family:'Cairo',sans-serif;
-  font-size:0.85em;
-  color:var(--brown);
-}
+  .quote-block, .evidence-block{
+    background:#fbf3e2;
+    border:1px dashed var(--gold);
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+    font-family:'Amiri', serif;
+    font-size:1.1rem;
+    color:var(--brown-dark);
+    position:relative;
+  }
+  .quote-block::before{
+    content:"❝";
+    color:var(--gold);
+    font-size:1.6rem;
+    position:absolute;
+    top:2px; right:14px;
+    opacity:.5;
+  }
+  .quote-block .src{
+    display:block;
+    font-family:'Cairo',sans-serif;
+    font-size:.85rem;
+    color:var(--muted);
+    margin-top:8px;
+  }
 
-.key-point{
-  background:#eef4ea;
-  border-right:5px solid var(--green);
-  border-radius:10px;
-  padding:16px 20px;
-  margin:14px 0;
-}
-.key-point strong{color:var(--green);}
+  .key-point{
+    background:#fff;
+    border:1px solid var(--border);
+    border-inline-start:5px solid var(--gold);
+    border-radius:8px;
+    padding:14px 18px;
+    margin:14px 0;
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .key-point .icon{font-size:1.2rem;}
 
-.warning-box{
-  background:#fbeaea;
-  border-right:5px solid var(--danger);
-  border-radius:10px;
-  padding:16px 20px;
-  margin:14px 0;
-}
-.warning-box strong{color:var(--danger);}
+  .warning-box{
+    background:#fdecea;
+    border-inline-start:4px solid #c0392b;
+    border-radius:8px;
+    padding:14px 18px;
+    margin:16px 0;
+    color:#7a2418;
+  }
+  .warning-box .lbl{font-weight:700; display:block; margin-bottom:4px;}
 
-.story-card{
-  background:#fdf9f0;
-  border:1px solid var(--gold-light);
-  border-radius:12px;
-  padding:20px 24px;
-  margin:18px 0;
-  position:relative;
-}
-.story-card::before{
-  content:"📖";
-  position:absolute;
-  top:-14px;
-  right:20px;
-  background:var(--gold);
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:0.9em;
-}
-.story-card h4{
-  color:var(--brown-dark);
-  margin-bottom:10px;
-  padding-top:6px;
-}
+  .story-card{
+    background:#f7f1e3;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:20px 22px;
+    margin:18px 0;
+  }
+  .story-card h4{
+    margin-top:0;
+    color:var(--brown);
+    font-family:'Amiri', serif;
+    font-size:1.25rem;
+    display:flex; align-items:center; gap:8px;
+  }
 
-.flow-list{
-  list-style:none;
-  counter-reset:flow;
-  margin:16px 0;
-}
-.flow-list li{
-  counter-increment:flow;
-  position:relative;
-  padding:12px 50px 12px 12px;
-  margin-bottom:10px;
-  background:var(--cream-2);
-  border-radius:10px;
-}
-.flow-list li::before{
-  content:counter(flow);
-  position:absolute;
-  right:12px;
-  top:50%;
-  transform:translateY(-50%);
-  background:var(--brown);
-  color:#fff;
-  width:28px;height:28px;
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;
-  font-size:0.9em;
-}
-.flow-list li{padding-right:52px;}
+  .flow-list{ list-style:none; padding:0; margin:18px 0;}
+  .flow-list li{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 18px;
+    margin-bottom:10px;
+    position:relative;
+    padding-inline-start:52px;
+  }
+  .flow-list li .num{
+    position:absolute; right:14px; top:50%; transform:translateY(-50%);
+    background:var(--brown);
+    color:#fff;
+    width:30px; height:30px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700;
+    font-size:.95rem;
+  }
+  .flow-list li strong{color:var(--brown); display:block; margin-bottom:4px;}
 
-.comparison-table{
-  width:100%;
-  border-collapse:collapse;
-  margin:18px 0;
-  font-size:0.95em;
-}
-.comparison-table th{
-  background:var(--brown);
-  color:#fff;
-  padding:10px;
-  text-align:right;
-}
-.comparison-table td{
-  padding:10px;
-  border-bottom:1px solid var(--cream-2);
-}
-.comparison-table tr:nth-child(even){background:var(--cream);}
+  .map-note{
+    background:#eef3ee;
+    border:1px dashed var(--green);
+    border-radius:8px;
+    padding:10px 16px;
+    margin:14px 0;
+    font-size:.9rem;
+    color:var(--muted);
+  }
 
-.example-box{
-  background:#fffdf6;
-  border:1px solid #eee0bd;
-  border-radius:10px;
-  padding:14px 18px;
-  margin:12px 0;
-  font-size:0.97em;
-}
-.example-box::before{
-  content:"مثال: ";
-  font-weight:800;
-  color:var(--gold);
-}
+  table.comparison-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:18px 0;
+    font-size:.95rem;
+  }
+  table.comparison-table th{
+    background:var(--brown);
+    color:#fff;
+    padding:10px 12px;
+    text-align:right;
+  }
+  table.comparison-table td{
+    padding:10px 12px;
+    border-bottom:1px solid var(--border);
+  }
+  table.comparison-table tr:nth-child(even){background:#faf4e6;}
 
-footer.bottom{
-  background:linear-gradient(135deg,var(--brown-dark),var(--green));
-  color:#fff;
-  text-align:center;
-  padding:50px 20px;
-  margin-top:40px;
-}
-footer.bottom p{
-  max-width:700px;
-  margin:0 auto 20px;
-  font-family:'Amiri',serif;
-  font-size:1.2em;
-  line-height:2;
-}
+  .anki-banner{
+    background:linear-gradient(135deg, var(--green), #2c4d34);
+    color:#fff;
+    border-radius:14px;
+    padding:20px 26px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:26px;
+    box-shadow:var(--shadow);
+  }
+  .anki-banner p{margin:0; font-size:.95rem; opacity:.95;}
+  .anki-banner .btn{background:#fff; color:var(--green); box-shadow:0 3px 0 #cfead6;}
 
-.anki-bottom{margin-top:10px;}
+  footer{
+    text-align:center;
+    padding:40px 20px 10px;
+    color:var(--muted);
+  }
+  footer .dua{
+    font-family:'Amiri', serif;
+    font-size:1.3rem;
+    color:var(--brown);
+    max-width:700px;
+    margin:0 auto 16px;
+    line-height:2.1;
+  }
 
-::selection{background:var(--gold-light);}
+  .icon-title{font-size:1.4rem;}
+  ::selection{background:var(--gold-light); color:#2e1c08;}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="series-tag">سلسلة فقه النفس — محاضرة 8 (فقه الإخلاص / فقه الحرية)</div>
-  <h1>فقه الحرية: بين الوهم والحقيقة</h1>
-  <p class="desc">لماذا نتحدث عن الحرية؟ ومتى تتحول "حريتي" إلى عبودية مقنّعة؟ رحلة في مفهوم الحرية وأهميته وصوره المغلوطة في حياتنا اليومية</p>
-  <div class="anki-banner">
-    <button class="anki-btn" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+<header class="hero">
+  <div class="hero-inner">
+    <span class="badge">📚 فقه النفس — الحلقة الثامنة</span>
+    <h1>الصدق ومراتبه</h1>
+    <p class="desc">كيف تعرف نفسك بصدق، ولماذا يبدأ العلاج النفسي الحقيقي من الصدق مع الذات قبل الصدق مع الآخرين؟ محاضرة تفصيلية في فقه النفس تشرح معنى الصدق ومراتبه السبع، مع نماذج وقصص واقعية.</p>
+    <div class="hero-btns">
+      <button class="btn" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+      <a href="#toc" class="btn secondary">📖 عرض المحتويات</a>
+    </div>
   </div>
 </header>
 
-<nav class="toc">
-  <h2>📑 محتويات المحاضرة</h2>
-  <ol>
-    <li><a href="#sec1">أسئلة تمهيدية من المجلس السابق</a></li>
-    <li><a href="#sec2">لماذا الحديث عن الحرية؟</a></li>
-    <li><a href="#sec3">الحرية حاجة فطرية</a></li>
-    <li><a href="#sec4">تحقيق العدل والمساواة (الآفاق والأنفس)</a></li>
-    <li><a href="#sec5">إشكالية تعريف الحرية</a></li>
-    <li><a href="#sec6">أين يدخل مفهوم الحرية في حياتنا اليومية</a></li>
-    <li><a href="#sec7">لماذا تهاب النفوس الحرية؟ (الجهل والهوى)</a></li>
-    <li><a href="#sec8">قصة شيماء: الحرية المطلقة على المحك</a></li>
-    <li><a href="#sec9">حوار المحاضر مع الشاب "الحر"</a></li>
-    <li><a href="#sec10">تناقضات مفهوم الحرية في الواقع الغربي</a></li>
-    <li><a href="#sec11">خلاصة ووقفة أخيرة</a></li>
-  </ol>
-</nav>
+<div class="wrap">
 
-<main>
+  <nav class="toc" id="toc">
+    <h2>📑 محتويات المحاضرة</h2>
+    <ol>
+      <li><a href="#intro">مقدمات ضرورية قبل الموضوع</a></li>
+      <li><a href="#why">لماذا نتحدث عن الصدق؟</a></li>
+      <li><a href="#pain">الصدق مؤلم... ولماذا هذا طبيعي؟</a></li>
+      <li><a href="#meaning">معنى الصدق لغة واصطلاحًا</a></li>
+      <li><a href="#levels-intro">لماذا الصدق مراتب لا مرتبة واحدة؟</a></li>
+      <li><a href="#level1">المرتبة الأولى: معرفة النفس</a></li>
+      <li><a href="#level2">المرتبة الثانية: عدم الهروب من النفس</a></li>
+      <li><a href="#level3">المرتبة الثالثة: مواجهة النفس</a></li>
+      <li><a href="#level4">المرتبة الرابعة: عدم الانشغال بالآخر</a></li>
+      <li><a href="#level5">المرتبة الخامسة: الإبانة والتعبير بحق</a></li>
+      <li><a href="#level6">المرتبة السادسة: الصدق إذا سُئلت</a></li>
+      <li><a href="#level7">المرتبة السابعة: السعي نحو الحق</a></li>
+      <li><a href="#haqiqa-haqq">الفرق بين الحقيقة والحق</a></li>
+      <li><a href="#tricks">الحيلة النافعة مقابل المخادعة</a></li>
+      <li><a href="#stories">القصص والنماذج الواقعية</a></li>
+      <li><a href="#advice">وصايا ختامية للوصول إلى الصدق</a></li>
+      <li><a href="#qa">أبرز ما جاء في الأسئلة</a></li>
+    </ol>
+  </nav>
 
-<section class="block" id="sec1">
-  <h2>🕌 أولًا: أسئلة تمهيدية من المجلس السابق</h2>
-  <p>افتتح الشيخ المجلس بالإجابة عن أسئلة متبقية من المجلس السابق، قبل الانتقال لموضوع اليوم "فقه الحرية". هذه الأسئلة مهمة لأنها تمهّد لفكرة التحرر التي سيُبنى عليها الدرس كله.</p>
-
-  <h3>لماذا تميل النفس إلى تقليد الناس؟</h3>
-  <p>وضّح الشيخ أن هذا جزء طبيعي من تعلّم الإنسان، فالإنسان مفطور على أن يتعلم من طريقين: <strong>الفطرة</strong> و<strong>الكسب</strong>. والكسب يكون عن طريق التلقي من الآفاق والأنفس من حوله: المحيط، التربية، الإعلام، الوالدين.</p>
-  <div class="key-point"><strong>نقطة مهمة:</strong> في البدايات يقلّد الطفل (وكذلك طالب العلم) من حوله حتى يتكوّن له أسلوب خاص به، ثم يبدأ يتحرر ويكون له بصمة وهوية خاصة. هذا أمر طبيعي، ولا ينبغي أن يستعجل الإنسان "التحرر" من البدايات قبل أن يتقن الأساس.</p>
+  <div class="anki-banner">
+    <p>🗂️ جهّزنا لك بطاقات مراجعة بصيغة أسئلة وأجوبة من كل تعريف ودليل وفائدة في المحاضرة — جاهزة للاستيراد في برنامج Anki.</p>
+    <button class="btn" onclick="downloadAnkiDeck()">حمّل البطاقات الآن</button>
   </div>
 
-  <div class="story-card">
-    <h4>قصة: مدرب الدفاع عن النفس</h4>
-    <p>يحكي الشيخ أنه في شبابه كان يمارس فنون الدفاع عن النفس، وكان ينزعج من أن المدرب يقول له إنه "يقلّده"، فكان المدرب يبتسم ويقول له: اصبر. وفي امتحان الحزام الأسود النهائي، دخل الشيخ في نزال (فايت) مع المدرب فأخذ منه نقطة، فضحك المدرب وسأله: لماذا؟ فقال له: لأنه صار عندك أسلوب مختلف. وهذا يوضح أن التقليد في البداية طبيعي، ثم يتطور الإنسان ويتحرر بأسلوبه الخاص.</p>
+  <section id="intro">
+    <h2><span class="icon-title">🌱</span> مقدمات ضرورية قبل الموضوع</h2>
+    <p>افتتح المحاضر كلامه بالدعاء المعروف: "رب اشرح لي صدري ويسر لي أمري..."، ثم دخل في مقدمتين مهمتين قال إنهما ضروريتان لضمان الاستفادة من المحاضرة، لأن تجاوزهما يُعيق كثيرًا من الناس عن الانتفاع بأي معرفة تُقدَّم لهم مهما كانت قيّمة.</p>
+
+    <h3>المقدمة الأولى: خطر "المخادعات" الشكلية في الحكم على المتحدث</h3>
+    <p>نبّه المحاضر إلى ظاهرة يسمّيها "المخادعات": أن يرفض بعض الناس الاستماع لمتحدث ما لمجرد أن شكله أو هيئته لا تطابق القالب الذي يتوقعونه. فمثلًا لو ظهر متحدث بمظهر "الشيخ التقليدي" رفضوا الاستماع لأنهم يتوقعون خطابًا معينًا، ولو ظهر بمظهر "الطبيب" ثم استشهد بآية أو حديث اعتبروه غير موضوعي أو غير علمي.</p>
+    <div class="definition-box">
+      <span class="lbl">تعريف: المخادعات (بحسب سياق المحاضرة)</span>
+      قوالب جاهزة في ذهن السامع يحكم من خلالها على المتحدث بناءً على شكله أو هيئته لا على مضمون كلامه، فتمنعه من الانتفاع بالحق إن جاء بصورة غير متوقعة.
+    </div>
+    <div class="key-point">
+      <span class="icon">💡</span>
+      <div>من علامات عدم الصدق مع النفس أن يجعل الإنسان بينه وبين الحق حواجز شكلية — كشكل المتحدث أو أسلوبه — بدل أن يحكم على المضمون نفسه.</div>
+    </div>
+
+    <h3>المقدمة الثانية: الصورة النمطية عن الأطباء والمختصين</h3>
+    <p>وجّه المحاضر كلامه لطلاب التخصصات الطبية (طب، صيدلة، تمريض، أسنان) الحاضرين، مبيّنًا أن عليهم دورًا في تعديل الصورة النمطية عند المجتمع عن "الطبيب" الذي يُفترض أن يكون بعيدًا عن الدين ومغرقًا في المصطلحات الأجنبية ليبدو "علميًا". وأكد أن استخدام العلاج النفسي الحديث (الطب النفسي، العلاجات النفسية المنتشرة، علم النفس الأكاديمي) وحده غير كافٍ، وأن الرجوع لكتاب الخالق — بوعي، لا بطريقة سطحية أو عبر أشخاص غير مؤهلين — هو الأصل في هداية النفس وعلاجها.</p>
+    <div class="warning-box">
+      <span class="lbl">تنبيه من المحاضر</span>
+      حذّر بشدة من اللجوء لأشخاص غير مؤهلين علميًا وشرعيًا (سمّاهم بطريقة تهكمية) يقدّمون علاجًا نفسيًا أو روحيًا دون أساس علمي، واعتبر من يقبل التعامل بهذه الطريقة السطحية جديرًا بالمحاسبة الشديدة.
+    </div>
+  </section>
+
+  <section id="why">
+    <h2><span class="icon-title">❓</span> لماذا نتحدث عن الصدق؟</h2>
+    <p>طرح المحاضر سؤالًا: هل الصدق بهذه الأهمية التي تستدعي محاضرة كاملة، رغم أنه من المسلّمات البديهية؟ وأجاب بمثال طريف: هل يحتاج الناس اليوم لمحاضرة عن أهمية شرب الماء النقي؟ الجواب المتوقع "لا"، لكن الواقع أن منظمات الصحة العالمية تشير إلى أن كثيرًا من الناس حول العالم لا يشربون الماء النقي يوميًا، بل يستبدلونه بالمشروبات الغازية والعصائر المُصنّعة، حتى صار الماء النقي بحاجة إلى "دعاية" لإقناع الناس بشربه.</p>
+    <div class="key-point">
+      <span class="icon">🔑</span>
+      <div>إذا كان أمر بديهي وضروري مثل الماء النقي يحتاج اليوم إلى من يذكّر الناس به، فالصدق - وهو أوضح وأبده - من باب أولى يحتاج إلى من يحاضر فيه، لأن الناس ابتعدوا عنه رغم ادّعائهم الحاجة إليه.</div>
+    </div>
+    <p>ثم اختصر المحاضر أهمية الصدق في كلمة واحدة: <strong>الأمان</strong>. فالصداقة الحقيقية، واختيار شريك الحياة، واختيار المستشار في العمل أو ريادة الأعمال، كل هذا مبني على الثقة بأن الطرف الآخر صادق معك. وحتى في المعاملات التجارية البسيطة (كأن تشتري سلعة ثم تجدها أرخص في محل مجاور)، أول ما يخطر في البال هو الشعور بالخيانة والخداع.</p>
+    <div class="key-point">
+      <span class="icon">⚠️</span>
+      <div>لاحظ المحاضر أن كل الأمثلة السابقة عن الصدق مع الآخرين، لكن المشكلة الأعمق أن الإنسان غالبًا يتجاوز الصدق مع نفسه وينشغل بالحكم على صدق الآخرين، فيقع في الكذب مع ذاته حتى لو كان صادقًا مع من حوله.</div>
+    </div>
+
+    <h3>أهمية الصدق مع الله (باختصار من المحاضر)</h3>
+    <p>أشار المحاضر إلى تقسيم معروف في مادة "فقه النفس" يقسّم علاقة الإنسان إلى: علاقته بالله، وعلاقته بنفسه، وعلاقته بالآخرين. وذكر أن الصدق مع الله مرتبط بالإيمان والإخلاص: فبدون صدق قد يقع الإنسان في الكفر رغم أعماله الظاهرة، وبدون إخلاص يبطل العمل حتى لو كان صحيحًا في ظاهره. فمن أهم شروط الإخلاص أن يكون هناك صدق.</p>
+
+    <h3>أهمية الصدق مع النفس</h3>
+    <p>الصدق في اللغة يعني القوة (سيأتي تفصيل ذلك)، وبالتالي فإن من أهم ثمرات الصدق على النفس هي القوة النفسية، وهي ما يسمى عادة بـ"الصحة النفسية". فالإنسان الصادق مع نفسه صحيح نفسيًا وقوي، لأنه يستطيع أن يعبّر عن نفسه بوضوح: يقول "لا" حين يريد أن يقول لا، ويقول "أحب فلانًا" حين يحبه فعلًا، بدل الغموض الداخلي الذي يُنهك النفس.</p>
+  </section>
+
+  <section id="pain">
+    <h2><span class="icon-title">🔥</span> الصدق مؤلم... ولماذا هذا طبيعي؟</h2>
+    <p>أوضح المحاضر أن الصدق في بدايته مؤلم، تمامًا كالرياضة في أول تجربة: يتصبب الإنسان عرقًا ويشعر بالتمزق والإرهاق، لكن بعد الاستمرار تصبح طبيعية ومريحة. هذه طبيعة الأشياء الصحيحة عمومًا.</p>
+    <div class="definition-box">
+      <span class="lbl">قاعدة لغوية طريفة ذكرها المحاضر</span>
+      "صاد يساوي صاد" — أي أن حرف "الصاد" في "صعب" هو نفسه في "صح": الصح غالبًا صعب. ويمكن أن نضيف: "صدق يساوي صح"، وعكسها "س يساوي سين يساوي سهل" — فالهدم دائمًا أسهل من البناء، والرسوب أسهل من النجاح، والكذب أسهل من الصدق.
+    </div>
+    <div class="key-point">
+      <span class="icon">💭</span>
+      <div>مثال ضربه المحاضر: أسهل شيء هو الرسوب في الدراسة (ترك الدراسة والانشغال بالمقاهي والسهر)، بينما النجاح يحتاج خطة وحرمان النفس من أشياء وتحمّل مشقة. كذلك الصدق: طريق صعب لكنه المؤدي للنتيجة الصحيحة، والجنة "سلعة الله الغالية" التي لا تُنال بسهولة.</div>
+    </div>
+  </section>
+
+  <section id="meaning">
+    <h2><span class="icon-title">📖</span> معنى الصدق لغة واصطلاحًا</h2>
+    <div class="definition-box">
+      <span class="lbl">الصدق في اللغة</span>
+      "صَدَقَ" في العربية تدل على القوة والشدة. يُقال "صدق العود" أي اشتدّ العود. ومن هذا الجذر جاءت كلمات عديدة:
+    </div>
+    <table class="comparison-table">
+      <tr><th>الكلمة المشتقة</th><th>سبب الاشتقاق من "القوة"</th></tr>
+      <tr><td>صداق (المهر)</td><td>لأنه ميثاق قوي وغليظ بين الرجل والمرأة</td></tr>
+      <tr><td>صدقة</td><td>لأنها تحتاج قوة من الإنسان ليخرج من نفسه ويعطي</td></tr>
+      <tr><td>صديق / صديقة</td><td>لأن العلاقة الحقيقية تقوّي الطرفين، لا توهنهما (بخلاف "الصحبة" العابرة)</td></tr>
+    </table>
+    <div class="key-point">
+      <span class="icon">🧩</span>
+      <div>فرّق المحاضر بين "الصحبة" (ملازمة وقتية لشخص) و"الصداقة" (علاقة تقوّي الطرفين باستمرار). كثير من "الصداقات" في الجامعة في الحقيقة صحبة وقت الفراغ فقط، لا صداقة حقيقية وقت الجد.</div>
+    </div>
+
+    <div class="definition-box">
+      <span class="lbl">الصدق في الاصطلاح</span>
+      موافقة الظاهر للباطن — أي أن يكون ما يظهره الإنسان مطابقًا لما بداخله، وموافقة القول للعمل.
+    </div>
+    <p>وضّح المحاضر العلاقة بين هذا المعنى الاصطلاحي ومعنى "القوة" اللغوي بمثال بصري: تخيّل الظاهر والباطن كخطين منفصلين بينهما فراغ — هذه علاقة ضعيفة ومتذبذبة. لكن حين يتطابق الظاهر مع الباطن، يصبحان "جسمًا واحدًا" متماسكًا، وهذا هو مصدر القوة النفسية: أن يكون الإنسان "هو هو" في كل مكان، لا يحتاج لتمثيل أدوار مختلفة.</p>
+    <div class="key-point">
+      <span class="icon">🌀</span>
+      <div>الإنسان الذي ظاهره ليس كباطنه يعيش في حالة تردد وتوتر دائمين، لأنه يحمل عبء إخفاء باطنه الحقيقي في كل موقف.</div>
+    </div>
+    <div class="warning-box">
+      <span class="lbl">مثال توضيحي من المحاضر</span>
+      شخص يُسأل "شو كنت تعمل اليوم؟" فيقول "كنت أدرس"، بينما هو فعليًا خرج ولعب رياضة ثم عاد. هنا لم يتوافق القول مع العمل — وهذا كذب، وإن بدا تفصيلًا بسيطًا.
+    </div>
+  </section>
+
+  <section id="levels-intro">
+    <h2><span class="icon-title">🪜</span> لماذا الصدق مراتب لا مرتبة واحدة؟</h2>
+    <p>شدّد المحاضر على نقطة محورية في المحاضرة: كثير من الناس يتصورون الصدق "صورة واحدة" مثالية وخيالية، فإذا لم يطابقوا هذا التصور الوهمي حكموا على أنفسهم بأنهم "منافقون" فورًا. هذا الفهم الخاطئ يسبب أذى نفسيًا كبيرًا.</p>
+    <p>لذلك أوضح أن الصدق سبع مراتب متدرجة، وذكر ثلاثة أسباب رئيسية لضرورة معرفة هذه المراتب:</p>
+    <ul class="flow-list">
+      <li><span class="num">1</span><strong>تشخيص النفس</strong>حتى يعرف الإنسان أين هو بالضبط من مراتب الصدق، لا أن يحكم على نفسه حكمًا مبهمًا.</li>
+      <li><span class="num">2</span><strong>رحمة النفس</strong>فقد يكون الإنسان قد قطع أشواطًا في بعض المراتب وما زال في بداية مراتب أخرى، وهذا طبيعي في كل مخلوق، لا يستدعي جلد الذات.</li>
+      <li><span class="num">3</span><strong>رحمة الآخرين</strong>فبدل الحكم القاسي على من أخفق في الصدق ("بلوك" أو مقاطعة فورية)، يتذكر الإنسان أن الآخرين مخلوقات ضعيفة تحاول مثله تمامًا، وأن الإعلام والدعايات (الأنمي، السوبر هيروز، الصور "المثالية") تضخّم توقعاتنا عن الكمال البشري بشكل غير واقعي.</li>
+    </ul>
+  </section>
+
+  <section id="level1">
+    <h2><span class="icon-title">1️⃣</span> المرتبة الأولى: معرفة النفس</h2>
+    <p>أول مرتبة من مراتب الصدق أن يعرف الإنسان نفسه. المحاضر ربط ذلك بأن معظم من يطرقون أبواب العيادات النفسية يطلبون في الحقيقة أن يُعرَّفوا بأنفسهم أولًا. فإن كان الإنسان لا يعرف نفسه، فحتى تعبيره عن مشاعره قد يكون خاطئًا — يقول "أنا جوعان" وهو في الحقيقة "زهقان"، فكيف يتحقق التوافق بين الظاهر والباطن إن كان لا يعرف باطنه أصلًا؟</p>
+    <div class="definition-box">
+      <span class="lbl">الجهل المركّب مقابل الجهل البسيط</span>
+      الجهل البسيط: أن تعرف أنك لا تعلم. الجهل المركّب: أن تجهل الشيء وتجهل أيضًا أنك تجهله، فتتحدث بثقة في كل موضوع دون علم (سمّاهم المحاضر "الخنفشاريين" ممن يفتون بكل شيء دون تخصص).
+    </div>
+    <div class="key-point">
+      <span class="icon">💡</span>
+      <div>من كان "لا أعلم" جوابه، فهذا خير وبركة — لأنه على الأقل صادق مع نفسه في حدود معرفته.</div>
+    </div>
+
+    <h3>كيف تعرف نفسك؟ خطوات عملية ذكرها المحاضر</h3>
+    <ul class="flow-list">
+      <li><span class="num">1</span><strong>إطفاء المشتتات</strong>ابتعد عن كل ما يمنعك من الوصول لنفسك الحقيقية — الموبايل، اليوتيوب، وسائل التواصل.</li>
+      <li><span class="num">2</span><strong>الخلوة اليومية بالنفس</strong>وقت محدد يوميًا (يُفضَّل قبل النوم بنصف ساعة، بعد الانتهاء من كل المشاغل) تكون فيه وحدك تمامًا، مع ورقة وقلم.</li>
+      <li><span class="num">3</span><strong>تسجيل كل ما يطفو على السطح كما هو</strong>حتى لو كانت أفكارًا سلبية أو مؤلمة (لماذا أنا فاشل؟ لماذا زعلانة من فلان؟). لا تحكم عليها فورًا، فما يظهر أولًا ليس بالضرورة الحقيقة النهائية.</li>
+      <li><span class="num">4</span><strong>الانتظار يومين أو ثلاثة</strong>حتى يهدأ ما كان "يغلي" بالداخل، وتبدأ تظهر أفكار أكثر توازنًا وإيجابية تدريجيًا (المدة تختلف من شخص لآخر، فلا يجوز التعامل مع النفس البشرية بحدّية زمنية صارمة).</li>
+      <li><span class="num">5</span><strong>الاستعانة بأدوات مساعدة عند الحاجة</strong>مثل كرّاسة "قراءة النفس" (وهي مادة تعليمية موصى بها من المحاضر، متوفرة بنسخة للصغار باسم "أنا") أو كتاب "السنديان" الذي يطرح أسئلة عن أحداث الحياة لفهم كيفية الوصول لحالة الإنسان الراهنة. حذّر بشدة من الاختبارات النفسية التجارية المنتشرة على الإنترنت لأنها تبحث عن آراء لا حقائق.</li>
+      <li><span class="num">6</span><strong>الاستعانة بخبير ثقة عند الحاجة</strong>إذا لم تكف الخطوات السابقة، يُستشار شخص "خبير وثقة" (لا يشترط أن يكون طبيبًا، وقد يكون صديقًا مقربًا صادقًا)، بشرط ألا يكون ممن "يتقمص" مشاعر الطرف الآخر ضدك، وألا يكون من المعالجين الذين يطيلون الجلسات دون فائدة حقيقية.</li>
+    </ul>
+    <div class="warning-box">
+      <span class="lbl">تحذير من المحاضر</span>
+      بعض من يمارسون العلاج النفسي (سواء تقليديًا أو "روحيًا" غير مؤهل) يستغلون الناس بعشرات الجلسات دون أن يضعوا يدهم على المشكلة الحقيقية. ينبغي حسن الظن المبدئي، لكن مع الانتباه.
+    </div>
+  </section>
+
+  <section id="level2">
+    <h2><span class="icon-title">2️⃣</span> المرتبة الثانية: عدم الهروب من النفس</h2>
+    <p>بعد معرفة النفس، المرتبة الثانية ألا يهرب الإنسان من نفسه ومما يقرّبه منها. كثير من الناس يملأون وقتهم بالموسيقى، اليوتيوب، مقاطع الإنفلونسرز، الأنشطة الاجتماعية المتلاحقة، فقط حتى لا يجلسوا مع أنفسهم — خوفًا من مواجهة ما بداخلهم.</p>
+    <div class="key-point">
+      <span class="icon">🚪</span>
+      <div>علامة الهروب من النفس: أن تكون "منشغلة مع الكل إلا مع نفسك". مثال ضربه المحاضر: شخص يحاول صديقه أن يقترب منه في حديث حساس، فيغيّر الموضوع فورًا أو يختفي فجأة دون تفسير — هذا هروب.</div>
+    </div>
+  </section>
+
+  <section id="level3">
+    <h2><span class="icon-title">3️⃣</span> المرتبة الثالثة: مواجهة النفس</h2>
+    <p>المرتبة الثالثة أعمق من مجرد "عدم الهروب"، وهي أن يواجه الإنسان نفسه فعليًا، لا فقط ألا يهرب منها. الفرق دقيق: عدم الهروب يعني البقاء قريبًا من النفس دون التعمّق فيها، أما المواجهة فتعني التعمّد بالخلوة والتساؤل المباشر.</p>
+    <div class="definition-box">
+      <span class="lbl">استعارة "السرداب" التي استخدمها المحاضر</span>
+      شبّه النفس بأنها وُضعت منذ الصغر في "سرداب" (قبو) مغلق، وعشنا حياتنا بعيدًا عنه خوفًا من رائحته الكريهة المتراكمة. مرحلة الهروب هي البقاء بعيدًا عن باب السرداب، أما مرحلة المواجهة فهي فتح الباب ومشاهدة ما بداخله فعلًا.
+    </div>
+
+    <h3>وسائل عملية يومية لمواجهة النفس (كما ذكرها المحاضر)</h3>
+    <ul class="flow-list">
+      <li><span class="num">1</span><strong>الصلاة</strong>باعتبارها مواجهة يومية متكررة مع النفس، إذا أُدِّيت بطمأنينة (لا استعجال)، فتصبح أشبه بـ"علاج بالتنفس" (مقارنة المحاضر بالعلاج بالأروماثيرابي/التنفس العلاجي).</li>
+      <li><span class="num">2</span><strong>تعلّم فقه الصلاة فعليًا</strong>لأن أغلب الناس لا يعرفون كيف يصلّون بطمأنينة حقيقية، ولا معنى التسبيح في الركوع والسجود.</li>
+      <li><span class="num">3</span><strong>أذكار الصباح والمساء</strong>وخصوصًا دعاء "سيد الاستغفار" الذي أفرد له المحاضر قصة كاملة (انظر قسم القصص).</li>
+      <li><span class="num">4</span><strong>قراءة القرآن</strong>كوسيلة يومية للمواجهة المستمرة مع النفس.</li>
+    </ul>
+    <div class="quote-block">
+      اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك، وأنا على عهدك ووعدك ما استطعت، أعوذ بك من شر ما صنعت، أبوء لك بنعمتك علي، وأبوء بذنبي، فاغفر لي فإنه لا يغفر الذنوب إلا أنت.
+      <span class="src">دعاء سيد الاستغفار — من قاله موقنًا به حين يصبح فمات من يومه دخل الجنة، ومن قاله حين يمسي فمات من ليلته دخل الجنة</span>
+    </div>
+  </section>
+
+  <section id="level4">
+    <h2><span class="icon-title">4️⃣</span> المرتبة الرابعة: عدم الانشغال بالآخر</h2>
+    <p>حتى هذه المرتبة كانت كل المراتب متعلقة بـ"الذات". المرتبة الرابعة تنتقل خطوة نحو الآخر، لكن بشكل سلبي: ألا ينشغل الإنسان بردود فعل الآخرين حين يعبّر عن مشاعره الحقيقية.</p>
+    <div class="key-point">
+      <span class="icon">🙅</span>
+      <div>عدم الانشغال بالآخر لا يعني التصرف بلا اعتبار للناس (كأن يخرج الإنسان بملابس غير لائقة "ليثبت" عدم اكتراثه)، بل يعني ألا يكون دافع تصرفك هو "ماذا سيقول الناس؟" وإنما ما بداخل نفسك من صدق.</div>
+    </div>
+    <div class="warning-box">
+      <span class="lbl">مثال سلبي حذّر منه المحاضر: طائفة "الملامية" (الملاماتية)</span>
+      جماعة من غلاة المتصوفة كانوا يتعمدون ارتكاب المعاصي أمام الناس فقط لإثبات أنهم "لا يهتمون برأي الخلق". هذا في الحقيقة انشغال شديد بالآخر (بصورة معكوسة)، لا استقلالًا حقيقيًا عنه.
+    </div>
+  </section>
+
+  <section id="level5">
+    <h2><span class="icon-title">5️⃣</span> المرتبة الخامسة: الإبانة والتعبير بحق</h2>
+    <p>هذه المرتبة تتعلق بكيفية التعبير عن الصدق الداخلي، وهنا يفرّق المحاضر تفريقًا دقيقًا بين "الحقيقة" و"الحق" (سيأتي تفصيله في قسم مستقل).</p>
+    <p>الفكرة: أن تُعبّر عن نفسك بصدق، لكن بالطريقة الصحيحة المقبولة شرعًا وعقلًا، لا بأي طريقة. مثال ضربه المحاضر: لو سألك أحدهم "كيف حالك؟" وأنت تشعر بالسوء، فبدل قول كلمة جارحة مباشرة، يمكن التعبير عن نفس المعنى بصياغة لبقة (مثل: "أحتاج بعض الوقت لنفسي" بدل "أنا غير قادر على تحمّلك الآن").</p>
+    <div class="key-point">
+      <span class="icon">⚖️</span>
+      <div>هنا تدخل "فقه الأولويات": هل الأولى أن أعبّر عن انزعاجي بصراحة مباشرة أم بلباقة؟ يعتمد على الموقف — أحيانًا يكون التصريح المباشر ضروريًا لإصلاح خلل مستمر منذ زمن طويل، لا مجرد "مجاملة زائفة".</div>
+    </div>
+  </section>
+
+  <section id="level6">
+    <h2><span class="icon-title">6️⃣</span> المرتبة السادسة: الصدق إذا سُئلت</h2>
+    <p>مرتبة مستقلة عن الخامسة: إذا سألك أحدهم عن أمر يخصّك، فالمطلوب أن تُجيب بصدق وبحق معًا — لا أن تخفي الحقيقة بالكامل تحت اسم "الخصوصية"، ولا أن تفضح نفسك بتفاصيل غير لائقة.</p>
+    <div class="warning-box">
+      <span class="lbl">مثال ضربه المحاضر</span>
+      لو سُئل شخص "كيف حالك؟" وهو في الحقيقة منزعج بسبب تقصيره في صلاة الفجر لعدة أيام أو وقوعه في معصية، فليس من الصدق أن يفضح تفاصيل خطيئته أمام الجميع، لكن أيضًا ليس من الصدق أن يدّعي أن كل شيء "رائع" بينما هو منزعج فعلًا. الجواب المتوازن: "منزعج" فقط، دون تفصيل غير لائق.
+    </div>
+  </section>
+
+  <section id="level7">
+    <h2><span class="icon-title">7️⃣</span> المرتبة السابعة (والأخيرة): السعي نحو الحق</h2>
+    <p>هذه أعلى مرتبة، وهي أن الصدق لا يكتمل بمجرد الاعتراف بالضعف، بل يستلزم السعي الفعلي لتجاوزه. أن تقول "أنا ضعيف" ثم تتوقف عند هذه الجملة دون أي محاولة للتغيير، هذا ليس صدقًا كاملًا، بل نوع من الاستسلام المُغلَّف بمصطلح "الصدق مع النفس".</p>
+    <div class="warning-box">
+      <span class="lbl">مثال دقيق ضربه المحاضر حول الحجاب</span>
+      فتاة تعرف أن الحجاب واجب شرعًا (توافق باطني مع الحكم الشرعي)، لكنها لا ترتديه. هنا يوجد تناقض بين معرفتها وسلوكها، والصدق الكامل يقتضي أن "تسعى" لتقوية إرادتها (بالابتعاد عن الأماكن والصحبة التي تُبعدها عن الحجاب)، لا أن تكتفي بالاعتراف "أنا ضعيفة" كعذر دائم. أما من ترى الحجاب فكرًا متخلفًا داخليًا وفعليًا لا ترتديه، فهذا توافق (ولو كان توافقًا على باطل)، لكنه ليس محل الحديث هنا لأنه لم يسعَ لمعرفة الحق أصلًا (تابع صانعات محتوى مناهضات للحجاب فقط، دون البحث عن الرأي الآخر بجدية).
+    </div>
+    <div class="key-point">
+      <span class="icon">🎯</span>
+      <div>الصدق الكامل = معرفة الحق + توافق الظاهر مع الباطن + السعي الفعلي لتحقيق ما تؤمن به، لا الاكتفاء بالاعتراف اللفظي بالتقصير.</div>
+    </div>
+  </section>
+
+  <section id="haqiqa-haqq">
+    <h2><span class="icon-title">🔍</span> الفرق بين الحقيقة والحق</h2>
+    <p>هذا التفريق أساسي لفهم المرتبة الخامسة والسادسة، واستخدم المحاضر مثالًا حسيًا مباشرًا لتوضيحه.</p>
+    <table class="comparison-table">
+      <tr><th>المصطلح</th><th>المعنى</th><th>مثال</th></tr>
+      <tr><td>الحقيقة</td><td>مجرد وقوع الشيء فعليًا، بصرف النظر عن الحكم عليه</td><td>كسر تليفون: وقوع الكسر فعلًا هو "حقيقة"</td></tr>
+      <tr><td>الحق</td><td>الحكم الشرعي/العقلي على جواز أو عدم جواز فعل الشيء، أو الطريقة الصحيحة للتعامل معه</td><td>هل كان يجوز كسر التليفون؟ ولماذا؟ هذا هو "الحق"</td></tr>
+    </table>
+    <div class="key-point">
+      <span class="icon">💬</span>
+      <div>مثال آخر ضربه المحاضر: لو سُئل "كيف حالك؟" وأجاب "زفت" (سيئ جدًا)، فهذه "حقيقة" شعوره، لكن السؤال الأهم: هل من "الحق" أن يُعبَّر عنها بهذه الصياغة الفظة؟ التعبير الصادق لا يعني بالضرورة التعبير بأي أسلوب.</div>
+    </div>
+  </section>
+
+  <section id="tricks">
+    <h2><span class="icon-title">🎭</span> الحيلة النافعة مقابل المخادعة</h2>
+    <p>فرّق المحاضر بين مصطلحين قد يبدوان متشابهين لكنهما مختلفان جوهريًا:</p>
+    <table class="comparison-table">
+      <tr><th>المصطلح</th><th>المعنى</th><th>الحكم</th></tr>
+      <tr><td>الحيلة (النافعة)</td><td>وسيلة مؤقتة يستخدمها الإنسان للتعامل مع موقف ضاغط (حرج، تهديد، ضعف لحظي) — كالتمشي، أو الانشغال بموعظة معينة، أو الاستماع لمادة تذكيرية</td><td>مقبولة ونافعة، طالما بقيت وسيلة مؤقتة</td></tr>
+      <tr><td>المخادعة</td><td>حين تتحول "الحيلة" إلى هروب دائم من الواقع، ويستمرئ الإنسان هذا الهروب بدل مواجهة المشكلة الحقيقية</td><td>مرفوضة، لأنها تناقض الصدق مع النفس</td></tr>
+    </table>
+    <div class="key-point">
+      <span class="icon">🔁</span>
+      <div>الفيصل بين الحيلة والمخادعة هو الاستمرار: إن كانت مؤقتة ونافعة فهي حيلة، وإن تحولت لعادة هروب دائمة فهي مخادعة.</div>
+    </div>
+
+    <h3>تحذير من المواد "التحفيزية"</h3>
+    <div class="warning-box">
+      <span class="lbl">تحذير صريح من المحاضر</span>
+      حذّر من الاعتماد على فيديوهات ومواد "التنمية البشرية" التحفيزية، مستندًا إلى دراسات (لم يذكر مصدرًا محددًا في المحاضرة) تشير إلى أن معظمها "كلام فارغ" لا يحقق أثرًا حقيقيًا، بل قد يزيد صاحبها نكدًا حين يشعر أنه لم يحقق الوعود التي قُدّمت له. سمّى عدة أسماء بارزة في هذا المجال وحذّر من كتبهم ومحتواهم دون سند أو دليل علمي منضبط.
+    </div>
+  </section>
+
+  <section id="stories">
+    <h2><span class="icon-title">📜</span> القصص والنماذج الواقعية</h2>
+    <p>ذكر المحاضر عدة قصص واقعية ونماذج توضيحية أثناء شرحه، وهذا سردها كاملة كما وردت دون اختصار.</p>
+
+    <div class="story-card">
+      <h4>🕌 قصة سيد الاستغفار مع صديقه عبد الرحمن</h4>
+      <p>يحكي المحاضر أن صاحب خير (يعمل حاليًا جراح عظام ومفاصل) روى له أنه في يوم من أيام الجامعة، قال له صديقه عبد الرحمن ذات مرة: "سيد الاستغفار سهلة، بخبص (أرتكب المخالفات) بالنهار وباجي أحكيها قبل النوم وأروح على الجنة إذا متّ". فردّ عليه صاحبنا: "ما حيصير، ما بيمشي الموضوع إنك تكون مخبصًا وتتذكر تقول سيد الاستغفار فقط".</p>
+      <p>مرّت الأيام، وحكى له عبد الرحمن موقفًا حصل معه: كانوا مجموعة من الشباب في سهرة "غير حميدة" على عادات الجامعة (خصوصًا أيام الامتحانات النهائية، حين يميل بعض الشباب لارتكاب المخالفات كنوع من "التنفيس")، وكانوا يشاهدون أفلامًا ويشربون الخمر. يقول عبد الرحمن: "شربت وشربت حتى ملّيت، ثم شعرت أني أريد أن أراجع نفسي، فذهبت ووقفت عند المغسلة، وبدأت أشعر أن روحي ستخرج مع الضغط الذي شعرت به في القفص الصدري. تطلعت على حالي فوجدت عيني ووجهي محمرّتين. في تلك اللحظة شعرت أني سأموت، فهمست في داخلي قائلًا: لا إله إلا الله. آخر ما أتذكره أني أُغمي علي".</p>
+      <p>يقول: "أول ما صحوت، تذكرت حوارنا حول سيد الاستغفار، وأدركت أني بعد يوم كهذا استطعت أن أقول لا إله إلا الله رغم كل شيء". علّق المحاضر: هذا يدل على أن الصدق مع النفس (رغم كل التقصير) هو ما دفعه في آخر لحظة لفعل شيء مختلف، وأن سيد الاستغفار "مشى" معه فعلًا في النهاية، لكن ليس بالطريقة السطحية التي كان يتصورها أول مرة.</p>
+    </div>
+
+    <div class="story-card">
+      <h4>🦷 قصة الزميل في كلية الطب وقصة الرائحة</h4>
+      <p>يروي المحاضر أنه كان في كلية الطب زميل له مشكلة صحية (بكتيريا في الفم تسبب رائحة كريهة)، وكان بعض الزملاء يتحدثون عنه من وراء ظهره ("غيبة")، وكان المحاضر ينصحهم دائمًا أن يخبروا الزميل مباشرة بدل التحدث عنه سرًا، لكن أحدًا لم يفعل بسبب الجبن وضعف مواجهة الموقف.</p>
+      <p>بعد فترة، حصل موقف: كان المحاضر مع هذا الزميل في قسم النسائية والتوليد، وذهبا معًا لفحص مريضة. عند الاقتراب من السرير، شمّ المحاضر الرائحة الكريهة القادمة من زميله، فسألته المريضة أو أحد ما وضعًا يستدعي منه الخروج بسرعة. الزميل، من ضعفه، شكر المحاضر على أنه لم يلاحظ (رغم أنه لاحظ فعلًا وتعمّد كتمان الموضوع في تلك اللحظة).</p>
+      <p>بعد فترة، أخذه الزميل جانبًا وقال له: "أنا ما كنت أطيقك، وكنت أظن أنك مصلحجي (تسعى لمصلحتك الاجتماعية) وما إلى ذلك، لكن اليوم اللي غيّر علاقتي معك هو يوم حكيت لي عن رحلة أمي عندما عملت حفلة تخرجها ودعت اثنين أو ثلاثة فقط من كل الدفعة، وكنت أنا واحدًا منهم — كانت لقطة فارقة بالنسبة له أنك كنت شجاعًا كفاية لتحكي هذا الأمر بصراحة".</p>
+      <p>علّق المحاضر: هذا مثال على أن الصدق (سواء في مواجهة الآخر بحق، أو في مشاركة تفاصيل شخصية بصدق) يبني علاقات حقيقية، بخلاف "الغيبة" والتحدث خلف الظهر الذي يبقي العلاقات سطحية ومزيفة.</p>
+    </div>
+
+    <div class="story-card">
+      <h4>🐫 قصة حنظلة وأبي بكر رضي الله عنه</h4>
+      <p>ذكر المحاضر قصة حنظلة رضي الله عنه: كان أبو بكر رضي الله عنه ماشيًا في طريقه، فرأى حنظلة يبكي، فسأله: "ما لك يا حنظلة؟" فأجابه حنظلة بصدق تام معبّرًا عن حالته النفسية والتذبذب الذي يشعر به بين حال حضوره مع النبي صلى الله عليه وسلم وحال انشغاله بأهله ودنياه. فذهب به أبو بكر إلى النبي صلى الله عليه وسلم، فقال له النبي الكلمة المشهورة: "يا حنظلة، ساعة وساعة" — أي أن تفاوت الأحوال بين لحظات الإقبال ولحظات الانشغال بالدنيا أمر طبيعي في النفس البشرية، وليس نفاقًا كما ظن حنظلة عن نفسه.</p>
+      <p>علّق المحاضر: هذا مثال على الصدق التام في التعبير عن حال النفس دون خجل أو تجميل، وهو ما أوصل حنظلة إلى الطمأنينة بعد أن ظن نفسه منافقًا.</p>
+    </div>
+
+    <div class="story-card">
+      <h4>🎯 قصة غزوة حنين وحديث "غفر الله لرسول الله"</h4>
+      <p>أشار المحاضر إلى حادثة وردت في صحيح مسلم بعد غزوة حنين: رجع الأنصار من الغزوة ووزّع النبي صلى الله عليه وسلم الغنائم على قريش (المؤلفة قلوبهم) دون أن يعطي الأنصار في البداية، فتحدث بعضهم بما في داخلهم من تساؤل صادق حول هذا التوزيع، حتى وصل الأمر للنبي صلى الله عليه وسلم فقال (كما ورد في الحديث): "غفر الله لرسول الله، يعطي قريشًا ولا يعطينا، ونحن أصحاب السيوف التي تقطر من دمائنا؟". فجمعهم النبي صلى الله عليه وسلم وقال لهم: "أترضون أن يرجع الناس بالشاة والبعير، وترجعون أنتم برسول الله صلى الله عليه وسلم؟".</p>
+      <p>علّق المحاضر: هذا مثال على الصدق في التعبير عن مشاعر داخلية معقدة (حتى وإن بدت في ظاهرها اعتراضًا)، وأن مواجهة الموقف بصدق كانت سببًا في أن يوضّح النبي صلى الله عليه وسلم لهم الحقيقة الأعمق فاطمأنت قلوبهم.</p>
+    </div>
+
+    <div class="story-card">
+      <h4>🌍 قصة الفتاة الأمريكية التي أسلمت</h4>
+      <p>روى المحاضر قصة شاب (كان يلعب في فريق دفاعي أمريكي، وقد ابتعد عن دينه في فترة من حياته حتى وصفه المحاضر بأنه أصبح "ملحدًا" في مرحلة معينة من رحلته)، تعرّف على فتاة أمريكية من أصول أخرى بعد التحاقه بالنادي الرياضي هناك.</p>
+      <p>بعد أشهر من معرفتهما، قالت له الفتاة يومًا: "أريد أن أعترف لك بشيء: عندي قلق شديد وتساؤلات حول الله والخلق والأديان، وأبحث عن إجابات، ساعدني". فبدآ يبحثان معًا في الأديان: الهندوسية، البوذية، الطاوية في الشرق، ثم انتقلا لليهودية والنصرانية.</p>
+      <p>سألته يومًا: "أنت ماذا تفعل؟ ماذا تؤمن؟" فأجابها: "عندنا القرآن" (رغم أنه شخصيًا لم يكن له علاقة حقيقية بالقرآن حينها). طلبت منه أن يحضره لها، ففرح وأحضر لها نسخة مترجمة، وبدأ يقرأ لها الفصول بالعربية ويترجم لها بالإنجليزية وهي أمامه.</p>
+      <p>يقول: "فجأة وأنا أقرأ وأترجم، لم أسمع صوتها، فرفعت نظري فوجدتها تبكي". سألها: "ما بك؟" فقالت: "قف — هذا هو". فأعطاها نسخة القرآن، فذهبت للبيت، وبعد أيام رجعت إليه وقد قرأت جزء "عمّ" وجزء "تبارك" بمفردها. طلبت منه أن يدلّها على أقرب مسجد أو جالية مسلمة، فوجدت مسجدًا وأعلنت إسلامها هناك، وتحجّبت.</p>
+      <p>بقيت مع صاحبنا (الذي لم يكن قد رجع للدين بعد) حتى رجع هو نفسه إلى إسلامه لاحقًا، وكان أول قرار اتخذاه الاثنان معًا أن يعودا لبلاد العرب والمسلمين ليربّيا أولادهما هناك.</p>
+      <p>علّق المحاضر: "هي صادقة والله أعلم، أما هو فالله أعلم هل كان فيه صدق في البداية أم لا، لكن في الآخر هو أيضًا صدَق"، وأشار إلى أن هذا الشخص أصبح الآن يحضر دورات ويكتب ويشارك بجدية، مستشهدًا بالمقولة: "من لا يتألم لا يتعلّم".</p>
+    </div>
+
+    <div class="story-card">
+      <h4>💍 قصة السؤال عن الزواج الإجباري (من الأسئلة)</h4>
+      <p>في جلسة الأسئلة، جاءت طالبة (زميلة للمحاضر أيام الدراسة، من تخصص طب أسنان) وأخذته جانبًا بعد إحدى المحاضرات في السنة الأولى، وقالت له: "عبد الرحمن، أبي بدّه يزوّجني غصبًا عني، شو رأيك؟" فأجابها المحاضر مباشرة (وبأسلوب حاد نسبيًا حسب سياق الرواية) بأن هذا غير مقبول شرعًا: "الدين لا يحل لولي الأمر أن يزوّج ابنته رغمًا عنها". فردّت عليه شاكرة أن هذا وقفها عن أمر كانت مقدمة عليه.</p>
+      <p>وفي جلسة السؤال والجواب نفسها، أعاد المحاضر التعليق على هذه القصة موضحًا أنه أراد أيضًا أن يلفت انتباه من حوله إلى أن كثيرًا من الناس يسألون عن أحكام الدين في لحظة الحاجة فقط، بينما حياتهم بعيدة كل البعد عن الدين في باقي الأوقات — وهذا أيضًا نوع من عدم الصدق يستحق التنبيه عليه.</p>
+    </div>
+  </section>
+
+  <section id="advice">
+    <h2><span class="icon-title">🧭</span> وصايا ختامية للوصول إلى الصدق</h2>
+    <p>ختم المحاضر بمجموعة من النصائح العملية للسعي نحو الصدق في الحياة اليومية:</p>
+    <ul class="flow-list">
+      <li><span class="num">1</span><strong>الابتعاد عن "عالم الوهم"</strong>قلل من الاستهلاك المفرط للمسلسلات، الأنمي، الروايات الخيالية، الأغاني، والمحتوى الذي يخلق تصورات غير واقعية عن الحياة والجمال والعلاقات. حذّر بشكل خاص من تأثير الأنمي على الصورة الذاتية عند المراهقين (ضرب مثالًا بفتاة عمرها 12 سنة أرادت أن تجرح نفسها لأن شكلها لا يشبه شخصيات الأنمي رغم أنها جميلة فعليًا).</li>
+      <li><span class="num">2</span><strong>سمِّ الأشياء بأسمائها الحقيقية</strong>لا تُجمّل المحتوى الترفيهي أو تبرره بأوصاف غير دقيقة، حتى لا يتحول "عالم الوهم" في ذهنك إلى "حقيقة" تعيش من خلالها (مثال: تكوين توقعات عن شريك الحياة من أغاني رومانسية بدل الواقع).</li>
+      <li><span class="num">3</span><strong>ابتعد عمّن يقرّبك من عالم الوهم</strong>لا يعني قطع العلاقة تمامًا، لكن قلّل من قرب من يكثر الحديث عن أمور غير واقعية أو المبالغات المستمرة.</li>
+      <li><span class="num">4</span><strong>قلّل من "البروفايلات" (الصور الشخصية على وسائل التواصل) غير الواقعية</strong>حتى لا يتفاجأ من يتعرف عليك لاحقًا بفارق كبير بين صورتك الرقمية وواقعك.</li>
+      <li><span class="num">5</span><strong>اخلُ بنفسك وتعرّف عليها</strong>(تكرار للمرتبة الأولى كخطوة عملية مستمرة).</li>
+      <li><span class="num">6</span><strong>صاحِب الصادقين</strong>من ينصحك بصدق حين يرى منك خطأ، لكن باعتدال دون إثقال هذا الصديق بمشاكلك باستمرار حتى لا يتحول هو نفسه لضحية إرهاق نفسي.</li>
+      <li><span class="num">7</span><strong>حافظ على الصلاة والأذكار كخلوة يومية دائمة</strong>واعتبرها الوسيلة الأعمق للصدق مع النفس ومع الله.</li>
+      <li><span class="num">8</span><strong>انصح بأسلوب لبق عند رؤية خطأ</strong>غيّر المنكر بطريقة تراعي القبول لا الاستفزاز، فالأسلوب السيئ في النصيحة قد ينفّر من الدين نفسه لا من الخطأ فقط.</li>
+      <li><span class="num">9</span><strong>واجه الكذب الاجتماعي الجماعي بجرأة محسوبة</strong>ضرب مثالًا بمواقف اجتماعية (كطلب يد فتاة للزواج) يتم فيها تبادل عبارات مجاملة زائفة يعرف الطرفان أنها غير صادقة، ودعا لتقليل هذا النوع من التمثيل الاجتماعي (مع الإشادة بعادة حديثة إيجابية: إعلان "إشهار عقد القران" بصدق بدل التمثيل المطوّل).</li>
+    </ul>
+  </section>
+
+  <section id="qa">
+    <h2><span class="icon-title">💬</span> أبرز ما جاء في الأسئلة</h2>
+
+    <h3>س: بعض الناس وصلوا لمرحلة خداع أنفسهم دون أن يشعروا، فكيف يعرفون ذلك؟</h3>
+    <p>أجاب المحاضر أن خطوات معرفة النفس والخلوة بها (كما سبق شرحه) كفيلة بكشف ذلك تدريجيًا، إلا في حالة استثنائية واحدة: أن يصل الأمر لدرجة مرضية نفسية (كالذهان)، حيث يصدّق الشخص كذبته تمامًا ويراها حقيقة. وفي غير هذه الحالة المرضية، فالخلوة الصادقة تكشف الخداع الذاتي مع الوقت.</p>
+
+    <h3>س: بخصوص "مخادعات أهل التديّن" — من يعمل عملًا خيريًا كثيرًا وقد يظن نفسه أفضل من غيره</h3>
+    <p>أشار المحاضر إلى أن من زاد صدقه مع نفسه ازداد تواضعًا، مستشهدًا بمقولة لأحد السلف: "سُئل: ما غاية التواضع؟ قال: أن أخرج من بيتي فلا أرى أحدًا إلا وأظنني دونه"، وقصة أخرى لأحد السلف حين قيل له عن امرأة "إنها مومس (زانية)" فقال: "وما يدريك؟ لعلّ أسوأ ما فيها هو ما ظهر منها، وأسوأ ما فيّ هو ما بطن ولا تعرفه". أوضح أن هذا لا يعني احتقار الذات، بل عدم الجزم بأن النفس أفضل من غيرها.</p>
+
+    <h3>س: كيف أفرّق بين وسواس الشيطان وحديث النفس؟</h3>
+    <p>أجاب المحاضر أن هذا أمر غيبي لا يمكن التفريق فيه يقينًا (من أين جاءت الفكرة بالضبط)، والأهم عمليًا هو التعامل مع الخاطرة حسب ما يرشد إليه الشرع: إن كانت تقود لمهلكة أو ضرر فيجب التصدي لها بوسائل معروفة (الإعراض، الانشغال بالنافع، طلب الإجابة عند الشبهة، صحبة الصالحين)، بغض النظر عن مصدرها الدقيق.</p>
+
+    <h3>س: نفس النفوس مصنّفة (لوّامة، أمّارة بالسوء، مطمئنة) — هل هذا تصنيف ثابت للأشخاص؟</h3>
+    <p>صحّح المحاضر خطأ شائعًا: القرآن لم يصنّف الأشخاص، بل وصف <strong>أحوال</strong> النفس المتغيرة. فالإنسان الواحد يمرّ بحال "أمّارة بالسوء" في لحظة، و"لوّامة" في أخرى، و"مطمئنة" في ثالثة — خلال اليوم الواحد أحيانًا. فلا يصح أن يقول شخص "أنا نفسي مطمئنة" كتصنيف دائم، بل الصحيح الحديث عن "أحوال" متغيرة.</p>
+
+    <h3>س: عن ربط أحداث الحياة بالبيئة المادية (سؤال حول شخصية تاريخية أمريكية)</h3>
+    <p>علّق المحاضر أن بعض الأشخاص قد يتطرفون في اتجاه معين (كالتوجه الديني أو الفكري) كردة فعل هروبية من "الهاجس المادي" الذي عاشوا فيه، لا بالضرورة من إيمان عميق مستقر — وهذا لا ينفي صحة القناعة لاحقًا لكنه يستدعي وعيًا بدوافع النفس الحقيقية.</p>
+
+    <h3>س: عن اختلاف طبيعة "المجاملة" بين الثقافة العربية والغربية</h3>
+    <p>أوضح المحاضر أن المجاملة الشرقية (كالإصرار على الضيافة رغم الرفض المبدئي) غالبًا نابعة من حالة إنسانية تراحمية، بخلاف "الجفاف" الظاهر في بعض التعاملات الغربية، لكن أشار إلى أن لكل ثقافة أشكالها الخاصة من عدم الصدق الاجتماعي أيضًا.</p>
+
+    <h3>س: كيف أستفيد من هذا الكلام في منتصف العمر بعدما تشكلت شخصيتي؟</h3>
+    <p>لفت المحاضر الانتباه إلى أن السؤال نفسه انزلق من "معرفة النفس" إلى "الوظيفة الاجتماعية" (مقارنة الذات بالآخرين)، وأكد أن تحقيق الذات الكامل غير ممكن في الدنيا أصلًا، وأن كثيرًا من وعود "التنمية البشرية" بـ"تحقيق الذات التام" في الدنيا وهم، مشبّهًا الحياة الدنيا بخط "نبض القلب" المتصاعد والمتنازل باستمرار حتى الموت، وأن الرضا الكامل ("ما بعده سعادة") لا يتحقق إلا في الجنة برؤية الله سبحانه وتعالى.</p>
+  </section>
+
+  <div class="map-note">
+    🗺️ ملاحظة: هذه المحاضرة موضوعها نفسي/تربوي ولا تتضمن إشارات جغرافية أو تاريخية تستدعي خرائط توضيحية.
   </div>
 
-  <p>وربط الشيخ هذا بموضوع الحرية قائلاً إن هذا له علاقة بالموضوع، لأن الشيخ نفسه يقر أنه "إلى الآن لم يتحرر كفاية"، فما زال هناك ما يقيّد طريقة تفكيره ومشاعره، وهذا ما سيتحدث عنه في الدرس.</p>
-
-  <div class="definition-box">
-    <span class="term">مبدأ "المدخلات المتكررة" (من مادة اقرأ)</span>
-    المدخلات المتكررة دون وعي منا تجعلنا نحاكيها ونقلدها، ونحن نظن أن هذه اختياراتنا الحرة. مثال: الناس يظنون أنهم يشترون الأشياء لأنهم يحتاجونها، والحقيقة أن الإعلام أخبرهم (من خلال آلاف الإعلانات) أن هذا الشيء مهم في حياتهم، وهو ليس كذلك فعلًا.
+  <div class="anki-banner">
+    <p>وصلت لنهاية المحاضرة! راجع أهم النقاط ببطاقات الأنكي المجهّزة من محتوى الدرس.</p>
+    <button class="btn" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
   </div>
 
-  <h3>ماذا لو أعمل العمل ولا أدري ما نيّتي؟</h3>
-  <p>أجاب الشيخ أن هذا سيأتي تفصيله في "ضوابط الإخلاص".</p>
-
-  <h3>انشغال بالآخرين بسبب التأتأة (الأسباب النفسية للتأتأة)</h3>
-  <p>سؤال عن شخص يعاني من التأتأة منذ الطفولة بسبب موقف مرعب. أوضح الشيخ أن الأمر يحتاج تفصيلًا بين مسألتين: مسألة عامة ومسألة خاصة قد تحتاج استشارة أهل الاختصاص. وذكر أن للتأتأة أسبابًا متعددة:</p>
-  <ul class="flow-list">
-    <li>أسباب عضوية/بيولوجية</li>
-    <li>أسباب نفسية (وليست بالضرورة مرتبطة بصدمة معينة)</li>
-    <li>عدم وضوح الرؤية — وهذا سبب شائع جدًا</li>
-  </ul>
-
-  <div class="example-box">يضرب الشيخ مثالًا: بعض الأطفال الذين يتأتؤون عندما يُسألوا "ماذا فعلت اليوم؟" يتحدثون بطلاقة عن الأمور الواضحة لهم (مثل تصفيف شعرهم في الصباح)، لكن يتلعثمون عند الحديث عن أمور غير واضحة الرؤية لهم (كالخروج للمدرسة). ومثال آخر: حاول أن ترسم خطًا من نقطة إلى نقطة معلومة، ستجده منسابًا؛ لكن حاول أن ترسم من نفس النقطة إلى نقطة غير معلومة، ستجد الخط متعرجًا.</div>
-
-  <h3>علاج التعلق المرضي بالمعلّم والغيرة من الزملاء</h3>
-  <div class="definition-box">
-    <span class="term">الغيرة</span>
-    هي شعور بالتهديد من أن شيئًا تريده لنفسك سيخرج من حيازتك (كأن تريد الزوج لك وحدك، أو الابن، أو الوظيفة، أو المنصب لنفسك فقط). قدر معين من الغيرة مقبول، لكن حين يخرج عن حده يتحول إلى غيرة مرضية وتعلق مرضي.
-  </div>
-  <p>وأشار الشيخ أن علاج ذلك جزء من موضوع "التحرر" الذي سيُفصَّل، لكن الأساس أن يعلم الإنسان أن النفوس المحيطة به ليست مملوكة له، فكلنا مسخّرون لبعضنا ومملوكون لله وحده: "إنا لله وإنا إليه راجعون".</p>
-
-  <div class="quote-block">
-    ثلاث عورات لكم، لا يُفتح الباب على الوالدين بدون استئذان.
-    <span class="src">إشارة إلى الحديث الشريف حول أوقات الاستئذان على الوالدين</span>
-  </div>
-
-  <h3>أسئلة سريعة أخرى أجاب عنها الشيخ باختصار</h3>
-  <ul class="flow-list">
-    <li>كيف أوازن بين ما أريده وما ينفع سلامتي النفسية وبين عدم إيذاء الناس؟ — يحتاج علمًا بالحقوق والواجبات، وسيأتي تفصيله.</li>
-    <li>الخوف من العين بعد إصابة الابن المتفوق بوسواس قهري — نبّه الشيخ ألا يُعلَّق كل شيء على الغيبيات (كالعين)، فمعظم الحالات لها أسباب كسبية وتربوية، وهناك تقاطع كبير أحيانًا بين "الوسوسة" و"وهم الكمال".</li>
-    <li>قضية استحضار النية قبل كل عمل (حتى قبل إرسال رسالة) — قال الشيخ إنه صحيح إلى حد ما، لكن قد يتحول إلى وسواس؛ الأصل أن يتدرب الإنسان على استحضار النية في البداية حتى تصبح الأمور معتادة.</li>
-    <li>هل يوصف الفنان أو المغني الصادق في جانب معين بأنه "صادق" مطلقًا؟ — أوضح الشيخ الفرق بين "مطلق الصدق" (أي عنده قدر/طيف من الصدق) و"الصدق المطلق" (أي عنده كل الصدق)، وينبغي تخصيص التوصيف بدل التعميم.</li>
-  </ul>
-
-  <div class="story-card">
-    <h4>قصة: الزوجان اللذان تابعا الدروس معًا</h4>
-    <p>روى الشيخ رسالة وصلته من زوجين كانا يتابعان دروس فقه الإخلاص، كلٌّ في مكان مختلف. اكتشفا أن كل ما كانا يمارسانه من قبل كان "مخادعة"، وأنهما لم يواجها نفسيهما مواجهة صادقة. حين سُئلا عن الكلمة المفتاحية في استفادتهما، قالا: كان واضحًا أنهما كانا لا يريدان أن يتألما، فكانا يبحثان عن علاجات لا تؤلم ولا تُعلّم. وهذا ربط الشيخ به مبدأ: من لا يتألم لا يتعلم — وستُربط لاحقًا الحرية بالألم كما رُبط الصدق بالألم.</p>
-  </div>
-
-  <div class="key-point"><strong>خلاصة القسم:</strong> الاعتراف بالضعف مطلوب، لكنه قد يتحول إلى مخادعة إن تكرر دون توبة أو عمل حقيقي على التغيير ("أنا ضعيف... أنا ضعيف" فقط دون فعل شيء).</div>
-</section>
-
-<section class="block" id="sec2">
-  <h2>🌍 ثانيًا: لماذا الحديث عن الحرية؟</h2>
-  <p>انتقل الشيخ لموضوع اليوم: فقه الحرية، الجزء الثاني من "كيف أخلص: صدق وحرية". وأوضح العلاقة: الإخلاص الكامل يحتاج أمرين: <strong>الصدق</strong> و<strong>الحرية</strong>. فقد يكون الإنسان صادقًا لكنه غير متحرر.</p>
-
-  <div class="warning-box"><strong>تنبيه من الشيخ:</strong> العالم العولمي اليوم يحاول أن يسوّق لمفهوم مغلوط للحرية، بحيث يجعلك عبدًا وأنت تظن نفسك حرًّا — "أنا حرة" بينما أنتِ مستعبدة فعلًا.</div>
-
-  <p>ذكر الشيخ ثلاثة أسباب رئيسية لأهمية الحديث عن الحرية:</p>
-
-  <h3>السبب الأول: تحقيق غاية الخلق</h3>
-  <div class="definition-box">
-    <span class="term">العلاقة بين العبادة والحرية</span>
-    المسلم مخلوق لعبادة الله وحده. و"العبادة" هنا تعني التحرر مما سواه. فإذا لم يكن تعريف الحرية واضحًا عند الإنسان، فسيقع تلقائيًا في الانحراف عن غاية خلقه، فيصبح مستعبَدًا لغير من خلقه وهو يظن نفسه حرًّا.
-  </div>
-  <p>وللمخاطَب غير المسلم، اقترح الشيخ استبدال "تحقيق غاية الخلق" بـ"تسديد الهدف": مهما كان هدفك في الحياة، فإنك لتحقيقه تحتاج أن تتحرر أولًا، وإلا فأنت واقع في نوع من العبودية دون أن تدري.</p>
-
-  <h3>السبب الثاني: الحرية حاجة فطرية</h3>
-  <p>الإنسان مفطور على طلب الحرية. حتى الطفل الرضيع تراه يحاول أن يتفلّت، يريد أن يمسك الملعقة بنفسه، يريد أن يفعل الأشياء بنفسه. هذه فطرة نفسية في ذات الإنسان.</p>
-  <div class="key-point"><strong>أثر كونها فطرية:</strong> حصول الحرية = صحة نفسية. عدم حصولها = اضطراب نفسي. فالإنسان يحتاج أن يسعى لطلبها بالطريقة الصحيحة، وإلا شعر بالاضطراب.</div>
-
-  <h3>السبب الثالث: تحقيق العدل والمساواة في الآفاق والأنفس</h3>
-  <p>حين لا يفهم الإنسان مفهوم الحرية جيدًا، لا يبالي أن يستعبد آخرين من أجل شهوته الاستهلاكية الخاصة، بحجة أنه "حر" في ما يشتريه.</p>
-
-  <div class="example-box">لا يجد بعض الناس مشكلة في شراء مئات القمصان من ماركة معينة، رغم أن صناعتها تعتمد على استعباد عمال في سريلانكا أو السنغال أو مقاطعات في الصين، بحجة "أنا حر أشتري ما أشاء". الحقيقة أن هذا الشخص مستعبَد لشهوته، وتسبب في استعباد آخرين. مثال آخر ضربه الشيخ: صورة أطفال يأكلون شوكولاتة من ماركات معينة بجانب صورة أطفال في أفريقيا مستعبَدين في إنتاجها، بعضهم يموت من ضغط العمل — فمن العبد الحقيقي هنا؟ من أُكرِه على العمل، أم من ذهب بمزاجه ليشتري تلك الشوكولاتة بعد أن علم بحقيقتها؟</div>
-
-  <div class="key-point"><strong>أثر عملي في القيادة:</strong> ذكر الشيخ أنه لا يقبل أن يكون مديرًا يخاف منه موظفوه ("سعادة المدير" بابتسامة خوف)، لأنه لا يريد أن يكون على رأس "جيش من القطعان الخائفة". القائد الذي يفهم الحرية لا يريد أن يقود مستعبَدين.</div>
-</section>
-
-<section class="block" id="sec3">
-  <h2>👶 ثالثًا: الحرية حاجة فطرية — أين يظهر هذا في مواد فقه النفس؟</h2>
-  <p>أوضح الشيخ أن مفهوم الحرية يتقاطع مع عدة مواد ضمن سلسلة فقه النفس:</p>
-
-  <table class="comparison-table">
-    <tr><th>السياق</th><th>كيف يظهر مفهوم الحرية فيه</th></tr>
-    <tr><td>فقه التفكير والعقل</td><td>من أين تأتيك أفكارك ومشاعرك؟ هل من التربية، المدخلات المتكررة، العادات، الإعلام، الفلسفات (الرأسمالية، الاشتراكية، الوجودية، الشيوعية، النسوية)، أم من الدين؟</td></tr>
-    <tr><td>فقه النفس (المخلوقية)</td><td>أنت "مفعول" لست "فاعلًا" بالمطلق؛ فأنت مخلوق لم تختر ميلادك ولا والديك، فلا حرية مطلقة بهذا المعنى</td></tr>
-    <tr><td>المسخّرات والنعم</td><td>الله سخّر لك أمورًا كثيرة، لكن هذا يعني أنك محتاج لها، فلست حرًا بالمطلق منها، بل أنت مسخّر للآخرين كما هم مسخّرون لك</td></tr>
-    <tr><td>فقه الإبانة والتعبير</td><td>هل أنا حر في التعبير عن نفسي أم أخادع وأنافق خوفًا من كلام الناس؟</td></tr>
-    <tr><td>فقه التزكية والهجرة</td><td>"إذا أردت أن تُبحر فعليك أن تغادر الشاطئ" — إن كنت متعلقًا تعلقًا مرضيًا بما تريد هجره، فلست حرًا</td></tr>
-    <tr><td>فقه التعارف (مع الآخر)</td><td>هل أنت متحرر من الآخر أم الآخر مستعبدك؟ هل هو بالنسبة لك كالظهر واليد إن ذهبوا بقيت ثابتًا، أم كالمقعد إن ذهب سقطت؟</td></tr>
-  </table>
-
-  <div class="definition-box">
-    <span class="term">المخلوقية</span>
-    كون الإنسان مخلوقًا يفتح باب "المخلوق" ككائن مفعول به لا فاعل مطلق: هو محتاج، ضعيف، تحدّه الجاذبية الأرضية، يوقفه الجوع والعطش. كل هذا يجعله محدودًا وليس حرًّا بالمعنى المطلق للكلمة.
-  </div>
-
-  <div class="key-point"><strong>سؤال محوري:</strong> من أهم الأسئلة الوجودية التي ينبغي أن يسألها الإنسان لنفسه: "من أنا؟" و"لماذا أنا؟" — وأحد أهم تعريفات "من أنا؟" هو: هل أنت حر؟ فكيف تحكم على نفسك أنك حر أو مستعبَد إن لم يكن عندك تعريف واضح للحرية؟</div>
-
-  <div class="story-card">
-    <h4>قصة: ابنة إحدى الأخوات وجلسة "أنا حرة"</h4>
-    <p>أرسلت إحدى الأخوات تخبر الشيخ أن ابنتها عادت من جلسة لليافعات بعنوان "هل أنا حرة" وقالت لأمها: اكتشفت أن كثيرًا من الظواهر التي كنت أظنها حرية هي في الحقيقة عبودية، لكنها مزوّقة بشكل يبدو حرًّا. وهذا يوضح أن الإجابة عن سؤال "هل أنا حرة؟" تستلزم معرفة تعريف الحرية أولًا.</p>
-  </div>
-</section>
-
-<section class="block" id="sec4">
-  <h2>⚖️ رابعًا: تحقيق العدل والمساواة (الآفاق والأنفس)</h2>
-  <p>وسّع الشيخ الحديث عن السبب الثالث ليشمل مؤسسات المجتمع كلها، موضحًا كيف يتغلغل سوء فهم الحرية في كل زاوية من الحياة.</p>
-
-  <h3>الإعلام</h3>
-  <div class="warning-box">من كتابة السيناريو، إلى اختيار المخرج والممثلين، إلى تحقيق الأفلام ملايين الأرباح — هل صانعو هذا العمل أحرار حقًا؟ وهل المُشاهد حر وهو يدفع أمواله للسينما، أم أنه واقع بين إرادة الاستمتاع وإدراك أنه يُستَغفَل؟</div>
-
-  <h3>المؤتمرات الدولية (حقوق المرأة نموذجًا)</h3>
-  <div class="story-card">
-    <h4>قصة: مؤتمر تمكين المرأة السورية</h4>
-    <p>يحكي الشيخ أنه حضر مؤتمرًا عن "تمكين المرأة السورية" بعد الأحداث في سوريا. صعدت متحدثات من لبنان والأردن واليمن، وكان الحديث يتمحور حول أجندة معينة (حقوق الشواذ جنسيًا، زواج القاصرات) بدل التركيز على الدعم النفسي الحقيقي للنساء. لم يتحمل الشيخ الأمر وأخذ الميكروفون معلقًا أن هناك أجندة معينة مفروضة، وأن المرأة السورية العادية التي تعيش حياة مستقرة مع أسرتها أعرف بشؤون نفسها من هؤلاء المتحدثات. بعد المؤتمر، لحقت به سكرتيرتان من الجهة المنظِّمة وأخبرتاه أنه قال ما كانتا تتمنيان قوله لكن لا تملكان القدرة على ذلك داخل مؤسستهما. كذلك فوجئ الشيخ بأن صاحب فيلم وثائقي "عن تحرير المرأة" اعترف له لاحقًا أنه لا يملك هو نفسه القدرة على قول رأيه بصراحة.</p>
-  </div>
-
-  <h3>التاريخ</h3>
-  <p>دعا الشيخ للتأمل في تاريخ حقوق الإنسان والمرأة لفهم نسبية مفهوم "الحرية":</p>
-  <ul class="flow-list">
-    <li>قبل نحو 40-50 سنة، كان هناك عبيد سود مسجلون بأسماء بيض في أمريكا</li>
-    <li>قبل نحو 100 سنة، كانت المرأة تُباع في بريطانيا، وكان للزوج حق بيع زوجته</li>
-    <li>الهندوسية إلى الآن تفرض على المرأة أن تدفع هي المهر للزوج</li>
-  </ul>
-  <div class="key-point"><strong>خلاصة:</strong> حين تقرأ التاريخ تكتشف أن "الحريات" ليست كما كنت تتصورها؛ فما نراه اليوم بديهيًا كان غائبًا بالأمس، وما هو مقبول في ثقافة قد يكون مرفوضًا في أخرى — فمن يحدد "الحرية" الحقيقية؟</div>
-
-  <h3>التربية</h3>
-  <p>سؤال الشيخ: هل نحن نربي أبناءنا فعلًا على التحرر، أم نطلب منهم أن يكونوا أحرارًا بينما نحن أنفسنا نمارس النفاق والخوف من الناس أمامهم؟ "لن تتحرر الأمة وأنت تربي ابنك من الصغر على ألا يزعل منه أحد، ثم تطلب منه أن يكون حرًا".</p>
-
-  <h3>الزواج، الأكاديميا، المؤسسة الدينية، الثورات</h3>
-  <table class="comparison-table">
-    <tr><th>المجال</th><th>سؤال الشيخ حول الحرية فيه</th></tr>
-    <tr><td>الزواج</td><td>هل أنت حر حقًا في اختيار شريك حياتك، أم أن قرارك مرسوم مسبقًا بتأثير الأغاني والأفلام والرومانسيات؟</td></tr>
-    <tr><td>المدرسة والجامعة</td><td>هل تُحرَّر المدرسة الطالب، أم أن النمط "المصنعي" للمدرسة (الذي نشأ قبل 150-200 سنة) مصمَّم فقط لتخريج عمّال للمصانع وسوق العمل؟</td></tr>
-    <tr><td>المؤسسة الدينية</td><td>هل خطيب الجمعة يحرر الناس، أم يُخدَّرهم بخطاب لا يمس واقعهم؟ وهل بعض خطاب التصوف الغالي (كالحكم العطائية المسيئة الفهم) يُميت روح المبادرة عند الإنسان؟</td></tr>
-    <tr><td>الثورات (2010-2011)</td><td>هل قامت الثورات فعلًا بالتفكير بسوية والتعبير بحرية، أم كانت مجرد تعبير عن الغضب دون تحرر داخلي حقيقي من الشهوات والظلم الشخصي؟</td></tr>
-  </table>
-
-  <div class="story-card">
-    <h4>قصة: نشرة فقه الثورة في ميدان التحرير</h4>
-    <p>يروي الشيخ أنهم نشروا مادة "فقه الثورة" أيام ثورة ميدان التحرير في مصر، وأراد أحد الإخوة توزيع نسخة منها في الميدان، فسأل الشيخ: هل الثورة قامت حقًا؟ فرد عليه الأخ: "دكتور، إحنا ما بدنا نحبط الناس، إنت بهذه الطريقة بتحكي إنه ما في ثورة قامت". يعلّق الشيخ أنه الآن (بعد سنوات) بدأ الناس يدركون أن الثورة لم تقم فعليًا بالمعنى الكامل، بل كانت "شوية صيحات". ويضيف الشيخ نقطة جوهرية: إن كنت ذاهبًا إلى ميدان التحرير ولم تتحرر من الحشيش الذي تدخنه مع أصحابك في المقهى، أو من ظلمك لزوجتك أو أبنائك في البيت، فأنت لم تثُر فعليًا.</p>
-  </div>
-</section>
-
-<section class="block" id="sec5">
-  <h2>❓ خامسًا: إشكالية تعريف الحرية</h2>
-  <p>انتقل الشيخ لبيان سبب صعوبة تعريف الحرية، مما يُوقع الناس في توصيف أنفسهم توصيفًا مغلوطًا.</p>
-
-  <div class="key-point"><strong>حقيقة إحصائية:</strong> في الموسوعات، هناك أكثر من 200 تعريف مختلف لمفهوم الحرية!</div>
-
-  <div class="quote-block">
-    تعريف الحرية قيد.
-    <span class="src">مقولة تُستخدم للإشارة إلى أن أي تعريف يضع حدودًا لمفهوم الحرية، فيتناقض من يريد "الحرية المطلقة" مع نفسه بمجرد أن يحاول تعريفها</span>
-  </div>
-
-  <h3>مفارقة "الحرية المطلقة"</h3>
-  <p>يبين الشيخ تناقضًا منطقيًا: بمجرد أن تصف الحرية بـ"المطلقة" فأنت بذلك قد وضعت لها وصفًا وحدًا، فبطلت أن تكون "مطلقة" بالمعنى الحرفي. من يقول "أنا أؤمن بالحرية المطلقة" ويُسأل: ما تعريفك للحرية المطلقة؟ بمجرد أن يجيب، يكون قد حدّها بتعريفه.</p>
-
-  <div class="example-box">عبارة شهيرة يرددها كثير من الشباب المتأثرين بالفلسفة الغربية: "ما أجمل أن تكون طيرًا بلا قوانين تحدك" — ويعلق الشيخ: الفراشة أو الطائر نفسه محكوم بقوانين الجاذبية الأرضية، ومحكوم بحاجته للطعام، ومهدد بأن تأكله عصافير أخرى. حتى رواد الفضاء الذين وصلوا للمريخ لا يستطيعون الفكاك من قوانين الجاذبية.</div>
-
-  <h3>الأسباب الأربعة للتوصيف المغلوط للنفس</h3>
-  <p>عندما يكون مفهوم الحرية مشكلًا وغير واضح، يقع الناس في توصيف أنفسهم بالحرية أو العبودية توصيفًا خاطئًا. مثال: امرأة تقول "أنا حزينة، أنا عاطلة عن العمل" فيسألها الشيخ: ماذا تفعلين في يومك؟ فتجيب أنها تتنفس وتصحو وتمارس الرياضة وهي متزوجة، لكنها "عاطلة عن العمل" لأنها لا تتقاضى راتبًا. هذا تعريف مغلوط ربط "العمل" حصرًا براتب آخر الشهر.</p>
-</section>
-
-<section class="block" id="sec6">
-  <h2>🏠 سادسًا: أين يدخل مفهوم الحرية في الحياة اليومية؟</h2>
-  <p>عرض الشيخ أمثلة عديدة على تغلغل مفهوم الحرية المغلوط في تفاصيل الحياة، رتّبها بشكل شبه معجمي:</p>
-
-  <h3>النفس وشهواتها</h3>
-  <p>كثيرًا ما يكون الإنسان مستعبَدًا لشهوة معينة بينما يصف نفسه بأنه "حر"، وهو في غاية الغرق في تلك الشهوة.</p>
-
-  <h3>العلمانية والسلطة والطاعة</h3>
-  <div class="definition-box">
-    <span class="term">العلمانية (كما وصفها الشيخ)</span>
-    فكرة تقول للإنسان: هذا الخالق الذي خلقك ليس له علاقة بك، فأدِر شؤونك بنفسك. وهي داخلة في مفهوم الحرية بربطها الحرية بعدم الطاعة لأي سلطة عليا.
-  </div>
-
-  <div class="story-card">
-    <h4>قصة: المذيع ودبلة الزواج</h4>
-    <p>يحكي الشيخ أنه أيام الثورات العربية، ظهر مذيع مشهور يتحدث بحدّة عن "لماذا يدخل الله في السياسة؟" وأثناء حديثه أشار بيده فلمعت دبلة زواجه. فأوقف الشيخ المشهد وقال لزوجته: "ما أغباهم! الدبلة التي معك هذه دليل على أنك أدخلت الله في غرفة نومك" — فهو لم يستطع أن يمسّ زوجته إلا بعد أن أذن له خالقه عبر عقد الزواج، لكنه يرفض أن يُدخل الله في السياسة.</p>
-  </div>
-
-  <h3>العدل والمساواة (نموذج الرياضة والجنس)</h3>
-  <div class="warning-box">أشار الشيخ لظاهرة السماح لمن أجرى عملية "تحويل جنس" بالمنافسة في الرياضة النسائية رغم اختلاف بنيته العضلية، معتبرًا أن هذا ليس من العدل، لأنه مساواة بين غير متساويين.</div>
-
-  <h3>العولمة</h3>
-  <p>العولمة (عبر الستلايت واليوتيوب) تُدخل على الفتاة في قرية بسيطة صورًا لأنماط حياة مختلفة تمامًا عن واقعها، فتبدأ ترى نفسها "غير حرة" لأنها تقارن نفسها بثقافات لم تكن منفتحة عليها من قبل، فتطالب باشياء لم تكن تفكر فيها من قبل.</p>
-
-  <div class="story-card">
-    <h4>قصة: الفتاة السورية اللاجئة في "ذا فويس"</h4>
-    <p>يذكر الشيخ فتاة لاجئة سورية في مخيم بلبنان، كانت مكتئبة لأنها رُفضت من مسابقة غنائية (ذا فويس)، رغم أن صوتها لم يكن جيدًا والكلمات التي أرادت غناءها لم تكن مناسبة لحالها. فُتنت بحلم "الحرية" الذي بثته العولمة، بينما كان الأولى بها التركيز على واقعها.</p>
-  </div>
-
-  <h3>القوامة والقوانين والفن</h3>
-  <p>أوضح الشيخ أن مفهوم "الرجال قوّامون على النساء" له حدود وله حقوق وواجبات، وليس معناه أن الرجل يفعل ما يريد. كما تحدى الشيخ الحضور: "جيبوا لي حرية تخرج عن قانون" — فلا وجود لحرية بلا قانون يحكمها، حتى الفنون لها قواعد.</p>
-
-  <h3>النسوية والوطن</h3>
-  <div class="story-card">
-    <h4>قصة: طلب الزواج وسؤال "ما تعريف الوطن؟"</h4>
-    <p>يروي الشيخ أنه لما ذهب يخطب زوجته، كان عمّها (والدها) متوقفًا كثيرًا لأن الشيخ عراقي وجواز سفره "تعبان" (بلده تحت القصف وقتها). سأله الشيخ: "ما تعريف الوطن أصلًا؟" ثم بعد سنوات من الزواج، تبيّن أن عائلة زوجته (نازحة أصلًا من فلسطين ومقيمة في الأردن) توزعت بين أمريكا والخليج والمغرب، ولم يبقَ في الأردن سوى ابنته (زوجة الشيخ). ويستشهد الشيخ بأبيات الشاعر أحمد مطر عن الأوطان المحتلة فعليًا حين تُحتل الأرواح والأبدان، وتعود الأوطان لأوطانها "إن عاد إنسانًا بها الإنسان".</p>
-  </div>
-
-  <h3>الاستهلاك والاقتصاد والمهن</h3>
-  <div class="warning-box">تحدث الشيخ عن "الرأسمالية" التي تجعل الإنسان يشعر أنه حر بينما هو "معلّق له جزرة يلحق بها"، والشركات تمنحه ألقابًا ومزايا (بزنس كلاس، بطاقات مايلز) ليبقى مخلصًا وينتج لهم الملايين.</div>
-
-  <div class="example-box">مثال المدير الذي يخاف من غضب مديره حتى في القرارات البسيطة (كإخلاء موقف سيارات لضيف)، فهو "عبد مأمور" بحسب تعبير الشيخ رغم أنه لا يبدو كذلك ظاهريًا.</div>
-</section>
-
-<section class="block" id="sec7">
-  <h2>😔 سابعًا: لماذا تهاب النفوس الحرية؟ (الجهل والهوى)</h2>
-  <p>رغم أهمية الحرية وفطريتها، تجد بعض النفوس تخشاها ولا تسعى إليها. أرجع الشيخ ذلك إلى نفس الصوارف التي ذكرها في دروس سابقة: <strong>الجهل</strong>، <strong>الهوى</strong>، <strong>اللعب واللغو</strong>، و<strong>الغفلة</strong>.</p>
-
-  <h3>الجهل بأربعة مستويات</h3>
-  <ul class="flow-list">
-    <li>الجهل بمعنى الحرية نفسها (لا أعرف ما تعنيه أصلًا)</li>
-    <li>الجهل بأهمية الحرية (لا أدرك لماذا هي مهمة)</li>
-    <li>الجهل بكيفية الوصول إليها</li>
-    <li>الجهل بحالتي منها (هل أنا حر أصلًا أم لا؟)</li>
-  </ul>
-
-  <h3>الهوى: الحرية مؤلمة</h3>
-  <div class="key-point"><strong>المعضلة المحورية:</strong> الحرية مؤلمة، تمامًا كما أن الصدق مؤلم. والعبودية أسهل بكثير من الحرية — فمن الأسهل أن تكون مستعبَدًا لشهوة، أو لشخص آخر، أو لزوج أو زوجة، أو للمتابعين والمعجبين، من أن تكون حرًا حقًا.</p>
-  </div>
-  <p>يطرح الشيخ سؤالًا كان يسأله في دورات اليافعات: "أيهما أسهل: الحرية أم العبودية؟" والجواب: العبودية أسهل. ولو كانت الحرية بهذه السهولة، لما احتاجت البشرية لثورات فرنسية وبلشفية وحروب عالمية لتحصيلها.</p>
-
-  <h3>الغفلة</h3>
-  <p>أشار الشيخ إلى أن الحياة (باللعب واللغو) تأخذ الناس إلى درجة الغفلة عن معاني الحرية المهمة، حتى لو كانوا يعرفونها نظريًا، فلا يدركون مدى أهميتها في حياتهم الفعلية.</p>
-
-  <h3>السبب الأكبر: العالم العولمي والإعلام</h3>
-  <p>أكد الشيخ أن جزءًا كبيرًا من الصوارف عن الحرية هو "كسبي"، وعلى رأسه الإعلام والعالم العولمي، الذي يضخ في الإنسان مفهوم العبودية للاستهلاك (للدينار، للدرهم، للاقتصاد)، بينما يفتح له في المقابل أبواب الشهوات (الجنس، البغاء الرقمي، سوق الاستهلاك المستمر: "التلفون الذي معك، غيّره... الشاشة التي عندك، غيّرها").</p>
-
-  <div class="warning-box"><strong>ملاحظة اجتماعية:</strong> يلاحظ الشيخ أن الناس اليوم ينزعجون بسرعة من أي حديث "جادّ" يحاول أن يوقظهم، لأن اللحظة التي يبدأ فيها أحد بالحديث بمعانٍ جادة، يشعر الطرف الآخر أن الشيء الذي يستمتع به (كالشوكولاتة المرتبطة باستغلال العمال) لن يستطيع الاستمرار في تناوله بنفس الارتياح.</div>
-
-  <div class="story-card">
-    <h4>قصة: التغريبة الفلسطينية والعبودية الوراثية</h4>
-    <p>ضرب الشيخ مثالًا بجيل كامل نشأ في ظل "التغريبة الفلسطينية" بعد أحداث 67 (حيث قُتل من الصهاينة بضع مئات مقابل ما يقارب 14 ضعف ذلك من القوات العربية)، فنشأ جيل من الآباء والأمهات المستعبَدين لأثر هذه الأحداث، فربّوا أبناءهم على "اسكت شعورك" بحلم العودة والدبكات الفلسطينية، بينما لا يقدَّم لهم حلّ حقيقي.</p>
-  </div>
-
-  <div class="story-card">
-    <h4>قصة: الطريق المظلم في كاليفورنيا</h4>
-    <p>يروي الشيخ قصة شخصية: في عرسه، حضر قريب من أمريكا، وأثناء توصيله ليلًا في الأردن على طريق مظلم، علّق القريب بأن هذا الطريق "خطر" وأن هناك "مشكلة ثقافية" لأن الطريق ليس مضاءً كما ينبغي. وافقه الشيخ في حينها. وبعد سنتين، زار الشيخ وزوجته هذا القريب في كاليفورنيا، وضاعوا في طريق بأربعة مسارب في ظلام دامس تحذّر فيه لافتات من الغزلان، ورأوا غزالًا ميتًا فعلًا. حين عادوا وسُئلوا عن الرحلة، تذكّر الشيخ الموقف السابق وعلّق ساخرًا أن "لسان حالك لا يُسأل عما يفعل" — أي أن أمريكا حين يكون فيها نفس المشكلة (طريق مظلم) لا يُنتقد، بينما يُنتقد بلدنا لنفس السبب، فقط لأن الحكم مسبق ومتحيز.</p>
-  </div>
-</section>
-
-<section class="block" id="sec8">
-  <h2>💔 ثامنًا: قصة شيماء — الحرية المطلقة على المحك</h2>
-  <p>روى الشيخ قصة نقلها له صديق قديم (كي عمر) كان يكتب في مجلة الجامعة الأمريكية مقالًا بعنوان "حرية"، تتحدث عن زميلته "شيماء" في فرع الفلسفة.</p>
-
-  <div class="story-card">
-    <h4>القصة كاملة كما رواها الشيخ</h4>
-    <p><strong>شيماء</strong> كانت زميلة للكاتب في فرع الفلسفة، وكانت تتحدث كثيرًا عن الحرية، وتختم حديثها دائمًا بمقولة شيوعية معروفة: "إن الدين أفيون الشعوب" — بمعنى أن الدين هو ما يُخدّر الشعوب ويُضحك عليها. قبل تخرجها، كانت قد ألصقت صورة كبيرة فوق سريرها لـ"جيفارا" (رمز من رموز التحرر والشيوعية في أمريكا اللاتينية)، تتأملها وتضحك على أبيها الذي كان يستعد لأداء صلاة العشاء.</p>
-    <p>سافرت شيماء إلى فرنسا لنيل شهادة الماجستير. رسالتها الأخيرة التي أرسلتها لصديقها كانت قد كتبتها قبل ساعة من أن <strong>شنقت نفسها بسلك التلفزيون</strong> في المصحّ الذي أُدخلت إليه لتُعالَج من إدمان الفودكا.</p>
-    <p>آخر سطرين في رسالتها ذكّرا صديقها بأول مقالة كتبتها في مجلة الحائط بالجامعة، حيث كتبت: <em>"ما أجمل أن تكون طيرًا بلا قوانين تحدك"</em>. لكن في رسالتها الأخيرة كتبت: <em>"لكن كما شوقي للحرية، كما خوفي حين أنام: هل سأموت وأنتهي، أم أن هناك حياة أخرى تنتظرني؟ وكلما زاد التفكير زادت مساحة الفراغ. أخاف منك يا الله."</em></p>
-  </div>
-
-  <div class="quote-block">
-    انفرجت شفتاي قليلًا، لا سخرية منها، بل على هذا التراب الذي ندوس عليه. نحن ندوس على تراب أجسادنا. ما أحقرنا حين نظن أننا الله. ما أحقرنا حينما نظن أن ما حولنا الله. كلا، إن الإنسان ليطغى أن رآه استغنى.
-    <span class="src">تعليق صديق شيماء على رسالتها الأخيرة، مقتبسًا من الآية الكريمة (سورة العلق)</span>
-  </div>
-
-  <div class="key-point"><strong>العبرة التي استخلصها الشيخ:</strong> شيماء ظنت نفسها "حرة" وهي تضحك على والدها المصلي، بينما كانت في حقيقتها تسير نحو أشد أنواع العبودية (إدمان الفودكا، الخواء الوجودي)، حتى انتهت بها الحال منتحرة وهي تسأل في آخر لحظاتها: "هل سأموت وأنتهي؟" — فمن كان العبد المضحوك عليه حقًا؟</div>
-</section>
-
-<section class="block" id="sec9">
-  <h2>🗣️ تاسعًا: حوار الشيخ مع الشاب "الحر" (ممثل الشباب العربي في الأمم المتحدة)</h2>
-  <p>روى الشيخ حوارًا جرى قبل نحو سبع أو ثمان سنوات مع شاب طلبت منه إحدى الأخوات أن يتحدث معه (ابنها الذي كان يمثل الشباب العربي في الأمم المتحدة)، وكان يؤمن بـ"حقوق الشواذ" ويصف نفسه بـ"الحر".</p>
-
-  <div class="story-card">
-    <h4>الحوار كاملًا كما رواه الشيخ</h4>
-    <p>سأل الشيخ الشاب: ما تعريفك للحرية؟ فأجاب الشاب: "حريته تنتهي عندما تبدأ حرية الآخرين".</p>
-    <p><strong>المثال الأول - إشارة المرور:</strong> قال له الشيخ: أنا أريد أن أسوق السيارة بدون أن تقطعني إشارة حمراء، لأنني حر وسائق محترف (خبير) لا أُخطئ. فرد الشاب: لكن حرية الآخرين. فقال الشيخ: هذه مشكلتهم، يذهبون يتعلمون السواقة. فوافق الشاب (يمثّل "محامي الشيطان"): طيب، لا نريد إشارات حمراء والناس تتعلم. فرد الشيخ: لو افترضنا أن الجميع تعلّم، الإحصاءات تقول إن زيادة سرعة الناس واعتمادهم على حكمهم الشخصي في القيادة يزيد من حوادث السير، ولذلك ستضطر لوضع قوانين. فحاول الشاب التملص: خلونا نسوق في بلد لنا وحدنا. فقال الشيخ: ممتاز، ستحتاجون لسيارة توصلكم إلى تلك البلاد، وسيكون هناك قانون بيننا وبينكم، وحين تنقرضون لن نشتاق لكم ولا للإشارة الحمراء.</p>
-    <p><strong>المثال الثاني - جدران البيت:</strong> قال له الشيخ: فُتّ إلى بيتك الآن. سأله الشاب: أي بيت، بيتي؟ قال الشيخ: نعم، بيتك الذي له جدران. فرد الشاب: جدرانك هذه ليست قيدًا لحريتي! أنا أريد أن أمشي بلا جدران، فلماذا أجد جدارًا يعيق إبداعي؟ فقال له الشيخ: ممتاز، فُتّ بلا جدران. فسأل الشاب: كيف سيُحدَّد أنه بيتي؟ فقال الشيخ: بلا تحديد، ادخل أي مكان! ثم طلب منه الشيخ: انزع ملابسك (لتغييرها) بلا جدار يحميك من الأنظار. فتردد الشاب لأنه يريد جدارًا لخصوصيته. فقال له الشيخ: إذن، أنت تحتاج فعلًا للحاجز، وليس هذا تناقضًا مع الحرية بل شرطًا لها.</p>
-    <p><strong>المثال الثالث - النوم في الشارع:</strong> اقترح الشيخ عليه: لنمشِ في الشارع بلا حواجز، وننام حيثما ننام مثل عصور الهيبيز. فرفض الشاب مجددًا (يريد مكانًا آمنًا للنوم)، فأظهر الشيخ له أن كل ما طرحه من "حرية مطلقة بلا حدود" له في النهاية حدود يحتاجها هو نفسه.</p>
-    <p><strong>المثال الرابع - نظر الشباب للفتاة:</strong> سأل الشيخ الشاب: بنت تمشي في الشارع بلباس جاذب للنظر، فيرمقها الشباب بنظراتهم — هل هي حرة في اللباس والشباب أحرار في النظر؟ حين حاول الشاب أن يجيب بأن الطرفين أحرار، أوضح له الشيخ التناقض: هي رضيت أن تحدّ من حرية الشباب (لأنها لا تريد أن تُنظر إليها بشكل مسيء رغم لباسها)، بينما الدين طلب من الطرفين معًا (غض البصر من الرجل، والستر من المرأة) لضبط هذه العلاقة بشكل متكامل ومتناسق، بخلاف "حرية" كل طرف منفردًا التي تتناقض مع نفسها.</p>
-    <p><strong>المثال الخامس - المطار:</strong> ذكّره الشيخ: أنت حين تدخل المطار تخلع حزامك وحذاءك رغمًا عنك، وتدخل جهاز الأشعة رغمًا عنك، رغم عدم قناعتك، وأنت ذاهب إلى "بلاد الحرية" (أمريكا) وتقبل بهذا التفتيش دون اعتراض!</p>
-  </div>
-
-  <div class="key-point"><strong>الخلاصة من الحوار:</strong> كل ادعاءات "الحرية المطلقة بلا حدود" تنهار عند أول اختبار عملي، لأن الإنسان بطبعه يحتاج إلى حدود وحواجز تحميه، والتناقض يظهر في أن الشخص يرفض الحدود نظريًا بينما يطلبها عمليًا لنفسه.</div>
-</section>
-
-<section class="block" id="sec10">
-  <h2>🌐 عاشرًا: تناقضات مفهوم الحرية في الواقع الغربي</h2>
-  <p>ساق الشيخ سلسلة طويلة من الأمثلة الواقعية والقصص التي تكشف ازدواجية وتناقض تطبيق "الحرية" في الدول التي تدّعي حمل لوائها.</p>
-
-  <h3>قصص شخصية رواها الشيخ من عيادته وحياته</h3>
-
-  <div class="story-card">
-    <h4>قصة: الفتاة عند ماكينة الصراف والشباب "الذكوريين"</h4>
-    <p>يروي الشيخ أنه كان في مكان ينتظر فيه دوره، وكان هناك شباب واقفون يتغامزون وينظرون بطريقة "ذكورية هابلة" نحو فتاة تسحب المال من ماكينة الصراف، بسبب فتحة بسيطة في لباسها فوق الركبة. اقترب الشيخ من الفتاة بعد ذلك وعرّفها بنفسه، وسألها إن كانت لاحظت الموقف. حين واجهها بأن تصرف الشباب كان "حيوانيًا"، ردّت بأنهم "حيوانات"! فردّ عليها الشيخ: "الحيوان لا ينظر إلى ما يُثيره... أنتِ التي وصفتيهم كذلك، لكن حين تخرجين من البيت وتنظرين في المرآة، ألا تحسبين حساب هذه 'الحيوانات'؟"</p>
-  </div>
-
-  <div class="story-card">
-    <h4>قصة: الأم وابنتها في محل الملابس</h4>
-    <p>يروي الشيخ موقفًا مشابهًا مع أم وابنتها ترتدي "جينز ممزق فوق الفخذ"، حيث سأل الأم مباشرة: هل تعلمين أن ابنتك حين ترتدي هذا اللباس تعرف ماذا تقصد به، وأنتِ تعرفين أيضًا؟ فما تعريفك للحرية إذن؟</p>
-  </div>
-
-  <div class="story-card">
-    <h4>قصة: الممثلة العارية في إعلان فيرزاتشي</h4>
-    <p>ممثلة مشهورة صُوّرت في إعلان فستان من فيرزاتشي (ثلج وبرد) بينما كل الرجال حولها من طاقم العمل كانوا محتشمين. فضحت شركة فيرزاتشي القصة بنفسها عبر تغريدة رسمية، فغضبت الحركات النسوية من الممثلة نفسها لأنها "فضحتهم" وكانت الوحيدة المتشحة بينما بقية الزملاء كانوا "بردانين" (محتشمين). القصة تكشف أن الممثلة كانت مستعبدة للأجر الذي تتقاضاه، وليست حرة كما تدّعي الصورة.</p>
-  </div>
-
-  <div class="story-card">
-    <h4>قصة: تسريب صور الممثلة (أيقونة الثورات) واكتئابها لاحقًا</h4>
-    <p>ممثلة كانت أيقونة للثورات العربية عند بعض صانعي الأفلام، تم اختراق هاتفها ونشر صور خاصة لها ولصديقاتها في أماكن التصوير. بعد أيام من هذه الحادثة، ظهرت الممثلة نفسها وهي تعاني من اكتئاب شديد وتتلقى علاجًا. يتساءل الشيخ: أين الحرية التي وُعدت بها داخل هوليوود؟</p>
-  </div>
-
-  <h3>ظواهر مقارنة بين اليابان والغرب</h3>
-  <table class="comparison-table">
-    <tr><th>الظاهرة</th><th>الوصف</th></tr>
-    <tr><td>تسرّب الفتيات من المدارس في اليابان</td><td>فتيات يهربن من المدرسة للعمل في مكاتب تلبسهن أزياء "أنمي" ليرافقن سياحًا أو رجالًا مسنين مقابل 7 دولارات في الساعة</td></tr>
-    <tr><td>ظاهرة مقابلة في الغرب</td><td>فتيات صغيرات يرافقن كبار السن من الرجال مقابل أجر، دون زواج، ثم يُتحدث لاحقًا عن رفض "زواج القاصرات"!</td></tr>
-    <tr><td>معدلات الانتحار وظاهرة "كاروشي" في اليابان</td><td>الموت من ضغط العمل، وترتفع النسبة بين الفتيات بشكل خاص</td></tr>
-  </table>
-
-  <h3>مظاهرات ومهرجانات متناقضة</h3>
-  <ul class="flow-list">
-    <li>مظاهرة نادلات بعنوان "لست من قائمة الطعام" احتجاجًا على إجبارهن على ارتداء كعب عالٍ (وصور لأقدام مصابة نازفة من الأحذية الضيقة) — رغم أن "الحرية" هي ما دفعتهن لهذا العمل أساسًا</li>
-    <li>مضيفات الطيران: أعلى نسبة تحرش بين المهن في أمريكا، رغم "التحليق في السماء" الذي يبدو حرية ظاهرية</li>
-    <li>حافلات مخصصة للنساء فقط في بعض الدول بسبب كثرة حالات التحرش — وفي فرنسا تحديدًا، نسبة التحرش في الحافلات بلغت 100% حسب الإحصاء الرسمي الذي ذكره الشيخ</li>
-    <li>السويد: منع مهرجان موسيقي سنوي (شبيه بمهرجان جرش) بسبب كثرة حالات الاغتصاب الجماعي فيه، ثم أُطلق مهرجان بديل "خالٍ من الرجال" بعد حملة تبرعات قامت بها كوميدية سويدية</li>
-  </ul>
-
-  <h3>تناقضات قانونية عبر التاريخ الأمريكي والغربي (سرد زمني ذكره الشيخ)</h3>
-  <table class="comparison-table">
-    <tr><th>السنة</th><th>القانون / الحدث</th></tr>
-    <tr><td>1950</td><td>كان ممنوعًا في أمريكا ممارسة الجنس مع الحيوانات؛ اليوم بعض الولايات الأمريكية وكندا وأستراليا تسمح بذلك رسميًا بشرط "موافقة" الحيوان</td></tr>
-    <tr><td>1961</td><td>القانون الأمريكي لا يسمح للملاحدة بالترشح للرئاسة (لا يزال قائمًا نظريًا)</td></tr>
-    <tr><td>1988</td><td>بعض المدارس الأمريكية منعت الرقص المختلط في حفلات التخرج</td></tr>
-    <tr><td>1999</td><td>السويد تمنع البغاء قانونيًا، بينما ألمانيا (بجانبها) لديها رسميًا نحو 400 ألف عاملة في البغاء المرخّص</td></tr>
-    <tr><td>2009</td><td>بعض الولايات الأمريكية منعت المرأة من القفز بالمظلة وحدها، واشترطت وجود رجل معها</td></tr>
-    <tr><td>2014</td><td>ولاية فرجينيا منعت ممارسة العلاقة الجنسية خارج إطار الزواج</td></tr>
-    <tr><td>2016</td><td>ولاية كارولاينا الجنوبية فرضت غرامة 600 دولار على من "ينزل" (يعرض) عضوه عبر تطبيقات المواعدة</td></tr>
-    <tr><td>2019</td><td>نيويورك تسمح بزواج الأقارب من الدرجة الأولى (زواج المحارم) في حالات معينة</td></tr>
-  </table>
-  <div class="key-point"><strong>تعليق الشيخ:</strong> أغلب هذه القوانين ليست مبنية على اعتبارات أخلاقية بالمطلق، بل على اعتبارات عملية (كالتأمين الصحي أو السلامة)، مما يكشف ازدواجية معيار "الحرية" في الخطاب الغربي نفسه.</div>
-
-  <div class="story-card">
-    <h4>قصة: المغنية والفستان الشفاف في الطائرة</h4>
-    <p>يروي الشيخ أنه شهد في إحدى رحلاته من أمريكا موقفًا لمغنية صعدت الطائرة بفستان يشبه الشفاف (أندرويد الشكل)، فطُلب منها النزول وتغيير ملابسها، ثم اشترت تنورة من السوق وعادت لتصعد الطائرة مجددًا. يعلّق الشيخ: رغم وجود هذا "القانون" في بلد يدّعي الحرية، إلا أن ساقيها ظلتا مكشوفتين حتى بالتنورة الجديدة، مما يكشف أن القانون نفسه مبني على معايير غير متسقة.</p>
-  </div>
-
-  <h3>أمثلة إضافية على التناقض الشخصي</h3>
-  <div class="story-card">
-    <h4>قصة: الشاب المدمن على الألعاب الرقمية</h4>
-    <p>جاء للشيخ ولد مع والدته، مدمن على الألعاب الرقمية (هاكر وبرمجة ألعاب)، مفتخر بأنه يحقق "سكورز" عالية. سأله الشيخ إن كان مقتنعًا أنه "بطل"، فأجاب بنعم. فأوضح له الشيخ أنه في الحقيقة "ترس في عجلة" صنعها آخرون يتحكمون به عبر منحه نقاطًا وهمية، وأنهم "ضاحكون عليه" بينما يستغلون وقته ومشاهداته.</p>
-  </div>
-
-  <div class="story-card">
-    <h4>قصة: محطة البنزين والعاملة التي بكت من الاحترام</h4>
-    <p>دخل الشيخ مرة بالغلط إلى محطة بنزين وجد فيها عاملة وحيدة تجلس بمفردها بعيدًا عن زملائها الرجال. لما شعرت أن الشيخ وأسرته يعاملونها باحترام (ولا يختلطون معها كما يفعل آخرون)، بدأت تبكي من شدة التأثر بهذا الاحترام، مما يوضح حجم الإهانات اليومية التي تتعرض لها في "عملها الحر".</p>
-  </div>
-</section>
-
-<section class="block" id="sec11">
-  <h2>🕊️ حادي عشر: خلاصة ووقفة أخيرة</h2>
-  <p>ختم الشيخ المجلس بالتأكيد أن كل ما سبق كان تمهيدًا لبيان "أهمية الحديث عن الحرية" ولبيان "وهم تعريف الحرية" الشائع، دون الدخول بعد في التعريف العلمي الدقيق للحرية نفسه، والذي وعد بتفصيله في المجلس القادم.</p>
-
-  <div class="key-point"><strong>الخلاصة الجامعة للمحاضرة:</strong> الحرية الحقيقية ليست غياب كل قيد، بل معرفة القيود الصحيحة (الشرعية والفطرية والاجتماعية) التي تحرر الإنسان فعليًا من العبوديات الخفية (الشهوة، الإعلام، العولمة، الاستهلاك، الخوف من الناس)، بينما "الحرية المطلقة" التي يروّج لها الخطاب العولمي غالبًا ما تكون قناعًا لعبودية أعمق.</div>
-
-  <div class="quote-block">
-    والعصر، إن الإنسان لفي خسر، إلا الذين آمنوا وعملوا الصالحات وتواصوا بالحق وتواصوا بالصبر.
-    <span class="src">سورة العصر — ختم بها الشيخ المجلس</span>
-  </div>
-</section>
-
-</main>
-
-<footer class="bottom">
-  <p>رب اشرح لي صدري ويسر لي أمري، اللهم اجعلنا من جند الخير، دلّنا عليك، أرشدنا إليك، وأعذنا من مضلات الفتن ما أحييتنا</p>
-  <button class="anki-btn anki-bottom" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+</div>
+
+<footer>
+  <p class="dua">اللهم اجعلنا من الصادقين مع أنفسنا قبل أن نكون صادقين مع خلقك،<br>واجعل ظاهرنا موافقًا لباطننا، وباطننا خيرًا من ظاهرنا</p>
+  <p>محاضرة فقه النفس — الصدق ومراتبه | تم إعداد هذا الملخص التعليمي لخدمة طالب العلم</p>
 </footer>
 
 <script>
 const ankiCards = [
-["ما الطريقان اللذان فُطر الإنسان على التعلم منهما؟", "الفطرة، والكسب (التلقي من الآفاق والأنفس من حوله: المحيط، التربية، الإعلام، الوالدين)"],
-["لماذا يميل الإنسان للتقليد في بدايات تعلّمه؟", "لأن هذا جزء طبيعي من التعلم؛ يقلّد في البداية حتى يتكوّن له أسلوب وهوية خاصة به، ثم يبدأ بالتحرر تدريجيًا"],
-["ما تعريف 'المدخلات المتكررة' كما ورد في مادة اقرأ؟", "المدخلات المتكررة دون وعي منا تجعلنا نحاكيها ونقلدها، ونحن نظن أن هذه اختياراتنا الحرة"],
-["ما تعريف الغيرة كما ذكره الشيخ؟", "شعور بالتهديد من أن شيئًا تريده لنفسك سيخرج من حيازتك، وقد تتحول إلى غيرة مرضية إذا خرجت عن حدها المقبول"],
-["أكمل: 'من لا يتألم لا ___'", "يتعلم"],
-["ما الفرق بين 'مطلق الصدق' و'الصدق المطلق'؟", "مطلق الصدق: عنده قدر أو طيف من الصدق في جانب معين. الصدق المطلق: عنده كل الصدق في كل شيء"],
-["ما الأمران اللذان يحتاجهما التعريف الكامل للإخلاص؟", "الصدق والحرية"],
-["ما السبب الأول الذي ذكره الشيخ لأهمية الحديث عن الحرية؟", "تحقيق غاية الخلق: المسلم مخلوق لعبادة الله، والعبادة تعني التحرر مما سواه"],
-["كيف يمكن صياغة 'تحقيق غاية الخلق' لمخاطبة غير المسلم؟", "بديل: تسديد الهدف — لتحقيق أي هدف في الحياة يحتاج الإنسان أن يتحرر أولًا"],
-["ما السبب الثاني لأهمية الحديث عن الحرية؟", "أن الحرية حاجة فطرية في الإنسان؛ حصولها يعني صحة نفسية وعدم حصولها يعني اضطرابًا"],
-["ما السبب الثالث لأهمية الحديث عن الحرية؟", "تحقيق العدل والمساواة الحقّة في الآفاق والأنفس؛ فحين لا أفهم الحرية جيدًا قد أتسبب باستعباد آخرين من أجل شهوتي"],
-["ما المثال الذي ضربه الشيخ عن شراء القمصان وعلاقته بمفهوم الحرية المغلوط؟", "شراء مئات القمصان من ماركة تستغل عمالًا في سريلانكا أو السنغال أو الصين بحجة 'أنا حر أشتري ما أشاء' هو استعباد للآخرين بدافع الشهوة"],
-["ما تعريف 'المخلوقية' كما شرحها الشيخ؟", "كون الإنسان مخلوقًا مفعولًا به لا فاعلًا مطلقًا: محتاج، ضعيف، تحدّه الجاذبية، يوقفه الجوع والعطش، فهو محدود وليس حرًا بالمعنى المطلق"],
-["ما علاقة 'المسخّرات والنعم' بمفهوم الحرية؟", "الله سخّر لك أمورًا كثيرة، لكن هذا يعني أنك محتاج إليها، فلست حرًا منها بالمطلق، وأنت أيضًا مسخّر للآخرين كما هم مسخّرون لك"],
-["ما السؤالان الوجوديان اللذان دعا الشيخ لسؤالهما لأنفسنا؟", "من أنا؟ ولماذا أنا؟"],
-["كم عدد تعريفات الحرية الموجودة في الموسوعات بحسب الشيخ؟", "أكثر من 200 تعريف"],
-["ما التناقض المنطقي في مقولة 'أنا أؤمن بالحرية المطلقة'؟", "بمجرد أن تصف الحرية بوصف (مطلقة) وتحاول تعريفها، تكون قد حددتها ووضعت لها قيدًا، فبطلت أن تكون مطلقة"],
-["ما مثال الطائر/الفراشة الذي رد به الشيخ على عبارة 'ما أجمل أن تكون طيرًا بلا قوانين تحدك'؟", "الطائر والفراشة محكومان بقوانين الجاذبية الأرضية والحاجة للطعام وخطر افتراسهما، فلا وجود لكائن بلا قوانين تحده"],
-["ماذا حدث في المؤتمر الذي حضره الشيخ عن 'تمكين المرأة السورية'؟", "ركزت المتحدثات على أجندة معينة (حقوق الشواذ، زواج القاصرات) بدل الدعم النفسي الحقيقي، فاعترض الشيخ علنًا، وشكرته سكرتيرتان من المنظمين لاحقًا لأنهما لا تستطيعان قول ما قاله"],
-["بحسب الشيخ، ما حال العبيد في أمريكا قبل نحو 40-50 سنة؟", "كان هناك عبيد سود مسجلون بأسماء بيض"],
-["ما تعليق الشيخ على من يذهب للثورة دون تحرر شخصي؟", "من لم يتحرر من إدمانه الشخصي (كالحشيش) أو من ظلمه لأهل بيته، فهو لم يثُر فعليًا مهما شارك في المظاهرات"],
-["كيف وصفت ابنة إحدى الأخوات ما تعلمته في جلسة 'هل أنا حرة'؟", "اكتشفت أن كثيرًا من الظواهر التي كانت تظنها حرية هي عبودية، لكنها مزوّقة بشكل يبدو حرًا"],
-["كيف وصف الشيخ العلمانية في سياق حديثه عن الحرية؟", "فكرة تقول للإنسان إن الخالق الذي خلقك ليس له علاقة بك، فأدر شؤونك بنفسك؛ وهي ترتبط بالحرية عبر رفض أي سلطة عليا"],
-["ما القصة التي رواها الشيخ عن مذيع ودبلة الزواج؟", "مذيع انتقد بحدة دخول الدين في السياسة، بينما أشار بيده فلمعت دبلة زواجه، فعلّق الشيخ أنه أدخل الله في غرفة نومه (بالزواج الشرعي) لكنه يرفض إدخاله في السياسة"],
-["تحدّى الشيخ الحضور بعبارة معينة حول القوانين والحرية، ما هي؟", "'جيبوا لي حرية تخرج عن قانون' — أي لا وجود لحرية بلا قانون يحكمها"],
-["ما السؤال الذي كان الشيخ يطرحه على اليافعات: أيهما أسهل؟", "أيهما أسهل: الحرية أم العبودية؟ والجواب: العبودية أسهل"],
-["ما الأربعة مستويات للجهل بالحرية كما فصّلها الشيخ؟", "الجهل بمعنى الحرية، الجهل بأهميتها، الجهل بكيفية الوصول إليها، الجهل بحالتي منها (هل أنا حر أم لا)"],
-["ما علاقة الحرية بالألم بحسب الشيخ؟", "الحرية مؤلمة تمامًا كالصدق؛ والعبودية أسهل بكثير من الحرية، ولو كانت الحرية سهلة لما احتاجت البشرية لثورات وحروب لتحصيلها"],
-["كيف تسبب الإعلام والعالم العولمي في صرف الناس عن الحرية بحسب الشيخ؟", "بضخّ مفهوم العبودية للاستهلاك (المال، السلع) مع فتح أبواب الشهوات في المقابل (الجنس، البغاء الرقمي، تحديث المنتجات المستمر)"],
-["ما مضمون قصة 'التغريبة الفلسطينية' التي ذكرها الشيخ؟", "جيل نشأ في ظل عبودية النكبة والخيانات، فربّى آباؤه أبناءهم على السكوت وكبت المشاعر بحلم العودة دون حل حقيقي للمشكلة"],
-["ما مغزى قصة الطريق المظلم في كاليفورنيا التي رواها الشيخ؟", "قريبه انتقد طريقًا مظلمًا في الأردن كـ'مشكلة ثقافية'، لكن حين وُجدت نفس المشكلة في أمريكا لم يُنتقد؛ مما يوضح ازدواجية الحكم على الشعوب"],
-["من هي شيماء في القصة التي رواها الشيخ؟", "زميلة دراسة في فرع الفلسفة، كانت تتحدث كثيرًا عن الحرية، وتضع صورة جيفارا فوق سريرها وتضحك على أبيها المصلي"],
-["بماذا كانت شيماء تختم حديثها عن الحرية دائمًا؟", "بمقولة شيوعية: 'إن الدين أفيون الشعوب'"],
-["كيف انتهت قصة شيماء؟", "شنقت نفسها بسلك التلفزيون في مصحّ كانت تُعالَج فيه من إدمان الفودكا، بعد أن أرسلت رسالة أخيرة تسأل فيها بخوف عن الموت والحياة الأخرى"],
-["ماذا كتبت شيماء في أول مقال لها، وماذا كتبت في رسالتها الأخيرة قبل وفاتها؟", "الأولى: 'ما أجمل أن تكون طيرًا بلا قوانين تحدك'. الأخيرة: تعبير عن الخوف من الموت والسؤال عن وجود حياة أخرى، وخوفها من الله"],
-["في حوار الشيخ مع الشاب 'الحر'، ما تعريف الشاب الأول للحرية؟", "'حريته تنتهي عندما تبدأ حرية الآخرين'"],
-["في مثال إشارة المرور، كيف فنّد الشيخ ادعاء الشاب أنه لا يحتاج قانونًا لأنه سائق محترف؟", "بيّن أن زيادة اعتماد الجميع على حكمهم الشخصي في القيادة تزيد حوادث السير إحصائيًا، مما يستلزم وجود قانون يحكم الجميع"],
-["في مثال جدران البيت، ما التناقض الذي كشفه الشيخ للشاب؟", "الشاب رفض الجدران نظريًا كقيد على حريته، لكنه احتاجها فعليًا عند تغيير ملابسه، فأثبت أن الحدود ضرورة وليست تناقضًا مع الحرية"],
-["في مثال الفتاة ذات اللباس الجاذب، ما التناقض الذي أظهره الشيخ للشاب؟", "الفتاة تريد ألا يُنظر إليها بإساءة رغم لباسها، أي أنها تحدّ من 'حرية' نظر الشباب، بينما الدين يطلب من الطرفين معًا (غض البصر والستر) لتنظيم العلاقة بتكامل"],
-["ما المثال الأخير الذي ضربه الشيخ للشاب عن تناقضه في تطبيق الحرية عمليًا؟", "خلع الحزام والحذاء في المطار والخضوع للتفتيش رغمًا عنه، حتى في 'بلاد الحرية' (أمريكا)، دون اعتراض"],
-["ماذا كشفت قصة إعلان فيرزاتشي عن الممثلة العارية في الثلج؟", "فضحتها الشركة نفسها بتغريدة أن باقي الطاقم كانوا محتشمين؛ فغضبت منها الحركات النسوية، مما يكشف أنها كانت مستعبدة للأجر لا حرة كما تبدو"],
-["ما نسبة التحرش في الحافلات في فرنسا كما ذكرها الشيخ؟", "100% بحسب الإحصاء الرسمي الذي استشهد به"],
-["لماذا مُنع مهرجان موسيقي سنوي في السويد يشبه مهرجان جرش؟", "بسبب كثرة حالات الاغتصاب الجماعي فيه، ثم أُطلق مهرجان بديل خالٍ من الرجال بعد حملة تبرعات"],
-["ماذا حدث في أمريكا عام 1950 مقارنة ببعض الولايات اليوم بخصوص الحيوانات؟", "1950: كان ممنوعًا ممارسة الجنس مع الحيوانات. اليوم: بعض الولايات وكندا وأستراليا تسمح بذلك رسميًا بشرط 'موافقة' الحيوان"],
-["ماذا يسمح به قانون ولاية نيويورك منذ 2019 كما ذكر الشيخ؟", "زواج الأقارب من الدرجة الأولى (زواج المحارم) في حالات معينة"],
-["ما تعليق الشيخ العام على القوانين الغربية المتناقضة التي سردها؟", "أغلبها ليس مبنيًا على اعتبارات أخلاقية مطلقة، بل على اعتبارات عملية كالتأمين الصحي والسلامة، مما يكشف ازدواجية معيار الحرية في الخطاب الغربي"],
-["ماذا تعلّم الشيخ من قصة الشاب المدمن على الألعاب الرقمية؟", "أوضح له أنه 'ترس في عجلة' يتحكم به صانعو اللعبة عبر نقاط وهمية بينما يستغلون وقته، وليس بطلًا حرًا كما ظن"],
-["ما مضمون قصة العاملة في محطة البنزين التي بكت؟", "بكت من التأثر لأن الشيخ وأسرته عاملوها باحترام، بخلاف المعاملة المهينة المعتادة التي تتلقاها في 'عملها الحر'"],
-["بأي سورة ختم الشيخ المجلس؟", "سورة العصر"],
-["ما الخلاصة الجامعة لمحاضرة فقه الحرية؟", "الحرية الحقيقية ليست غياب كل قيد، بل معرفة القيود الصحيحة التي تحرر الإنسان من العبوديات الخفية، بينما 'الحرية المطلقة' التي يروجها الخطاب العولمي غالبًا قناع لعبودية أعمق"],
+["ما معنى «المخادعات» كما استخدمه المحاضر؟", "قوالب جاهزة في ذهن السامع يحكم من خلالها على المتحدث بناءً على شكله أو هيئته لا على مضمون كلامه، فتمنعه من الانتفاع بالحق."],
+["ما أهمية الحديث عن الصدق حسب المحاضر رغم أنه أمر بديهي؟", "كما يحتاج الناس اليوم لمن يذكّرهم بأهمية شرب الماء النقي رغم بداهته، فالصدق من باب أولى يحتاج لمن يحاضر فيه لأن الناس ابتعدوا عنه رغم ادعائهم الحاجة إليه."],
+["بأي كلمة واحدة اختصر المحاضر أهمية الصدق مع الآخرين؟", "الأمان."],
+["ما الإشكال الأعمق الذي أشار إليه المحاضر متعلقًا بالصدق مع النفس؟", "أننا غالبًا نتجاوز صدقنا مع أنفسنا وننشغل بالحكم على صدق الآخرين، فنقع في الكذب مع الذات حتى لو كنا صادقين مع من حولنا."],
+["لماذا الصدق مع الله مرتبط بالإيمان والإخلاص؟", "لأن الصدق هو الذي يجعل الإنسان يؤمن حقًا، ومن أهم شروط الإخلاص الصدق؛ فبدونه قد تبطل الأعمال رغم صحتها الظاهرية."],
+["ماذا تعني القاعدة اللغوية «صاد يساوي صاد» التي ذكرها المحاضر؟", "أن حرف الصاد في «صعب» هو نفسه في «صح»، أي أن الصح غالبًا صعب، بينما الهدم والرسوب (بداية بحرف السين) أسهل من البناء والنجاح."],
+["ما معنى الصدق في اللغة العربية؟", "القوة والشدة، يُقال «صدق العود» أي اشتدّ."],
+["لماذا سُمّي «الصداق» (المهر) بهذا الاسم؟", "لأنه ميثاق قوي وغليظ بين الرجل والمرأة."],
+["ما الفرق بين «الصحبة« و«الصداقة« كما بيّنه المحاضر؟", "الصحبة ملازمة وقتية لشخص، أما الصداقة فعلاقة تقوّي الطرفين باستمرار حتى في أوقات الجد لا فقط أوقات الفراغ."],
+["ما معنى الصدق في الاصطلاح؟", "موافقة الظاهر للباطن، وموافقة القول للعمل."],
+["لماذا الإنسان الذي ظاهره ليس كباطنه يعيش في توتر دائم؟", "لأنه يحمل عبء إخفاء باطنه الحقيقي في كل موقف، بخلاف من يتطابق ظاهره مع باطنه فيكون كجسم واحد متماسك."],
+["اذكر الأسباب الثلاثة التي ذكرها المحاضر لضرورة معرفة مراتب الصدق.", "١) تشخيص النفس ٢) رحمة النفس (عدم جلد الذات) ٣) رحمة الآخرين."],
+["ما المرتبة الأولى من مراتب الصدق؟", "معرفة النفس."],
+["ما الفرق بين الجهل البسيط والجهل المركّب؟", "الجهل البسيط أن تعرف أنك لا تعلم، والجهل المركّب أن تجهل الشيء وتجهل أيضًا أنك تجهله فتتحدث بثقة دون علم."],
+["اذكر خطوتين عمليتين ذكرهما المحاضر لمعرفة النفس.", "إطفاء المشتتات، ثم الخلوة اليومية بالنفس مع ورقة وقلم لتسجيل ما يطفو على السطح كما هو."],
+["ماذا ينصح المحاضر بفعله بعد تسجيل الأفكار الأولى في الخلوة؟", "الانتظار يومين أو ثلاثة (حسب الشخص) حتى يهدأ ما كان «يغلي« بالداخل وتظهر أفكار أكثر توازنًا."],
+["بم حذّر المحاضر فيما يخص اختبارات الشخصية على الإنترنت؟", "حذّر من الاختبارات النفسية التجارية لأنها تبحث عن آراء لا عن حقائق."],
+["ما المرتبة الثانية من مراتب الصدق؟", "عدم الهروب من النفس."],
+["ما علامة الهروب من النفس كما بيّنها المحاضر؟", "أن يكون الإنسان منشغلًا مع الكل إلا مع نفسه، فيتجنب أي حديث يقترب من مشاعره الحقيقية."],
+["ما المرتبة الثالثة من مراتب الصدق؟", "مواجهة النفس."],
+["اشرح استعارة «السرداب« التي استخدمها المحاضر.", "شبّه النفس بأنها في سرداب مغلق منذ الصغر؛ الهروب هو البقاء بعيدًا عن الباب، والمواجهة هي فتح الباب ومشاهدة ما بداخله فعلًا."],
+["اذكر وسيلتين يوميتين ذكرهما المحاضر لمواجهة النفس.", "الصلاة بطمأنينة، وأذكار الصباح والمساء (وخصوصًا سيد الاستغفار)."],
+["ما المرتبة الرابعة من مراتب الصدق؟", "عدم الانشغال بالآخر."],
+["من هم «الملامية« (الملاماتية) وما الخطأ في منهجهم؟", "طائفة من غلاة المتصوفة تعمّدوا ارتكاب المعاصي أمام الناس لإثبات عدم اكتراثهم برأي الخلق، لكن هذا في الحقيقة انشغال شديد بالآخر بصورة معكوسة."],
+["ما المرتبة الخامسة من مراتب الصدق؟", "الإبانة والتعبير عن النفس بحق."],
+["ما الفرق بين «الحقيقة« و«الحق« في اصطلاح المحاضر؟", "الحقيقة: مجرد وقوع الشيء فعليًا. الحق: الحكم الشرعي أو العقلي على جواز الفعل أو الطريقة الصحيحة للتعامل معه."],
+["ما المرتبة السادسة من مراتب الصدق؟", "الصدق إذا سُئل الإنسان عن أمر يخصّه، دون فضح تفاصيل غير لائقة ودون إنكار كامل للحقيقة."],
+["ما المرتبة السابعة (الأخيرة) من مراتب الصدق؟", "السعي الفعلي نحو تحقيق الحق، لا الاكتفاء بالاعتراف اللفظي بالتقصير."],
+["ما الفرق بين «الحيلة« النافعة و«المخادعة«؟", "الحيلة وسيلة مؤقتة للتعامل مع موقف ضاغط، والمخادعة هي تحوّل هذه الوسيلة إلى هروب دائم مستمر من الواقع."],
+["بم حذّر المحاضر فيما يخص مواد «التنمية البشرية« التحفيزية؟", "أشار إلى دراسات تفيد أن معظمها كلام لا يحقق أثرًا حقيقيًا، وقد يزيد صاحبها نكدًا حين لا يحقق الوعود المقدَّمة له."],
+["أكمل: اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك...", "وأنا على عهدك ووعدك ما استطعت، أعوذ بك من شر ما صنعت، أبوء لك بنعمتك علي، وأبوء بذنبي، فاغفر لي فإنه لا يغفر الذنوب إلا أنت (سيد الاستغفار)."],
+["ما فضل دعاء سيد الاستغفار كما ورد في الحديث؟", "من قاله موقنًا به حين يصبح فمات من يومه دخل الجنة، ومن قاله حين يمسي فمات من ليلته دخل الجنة."],
+["ماذا قال النبي صلى الله عليه وسلم لحنظلة رضي الله عنه حين رآه يبكي وأخبره بحاله؟", "ساعة وساعة — أي أن تفاوت الأحوال بين الإقبال والانشغال بالدنيا أمر طبيعي وليس نفاقًا."],
+["ماذا قال بعض الأنصار بعد توزيع غنائم حنين على قريش دون الأنصار؟", "غفر الله لرسول الله، يعطي قريشًا ولا يعطينا ونحن أصحاب السيوف التي تقطر من دمائنا؟"],
+["كيف ردّ النبي صلى الله عليه وسلم على الأنصار حين عاتبوه في قصة غنائم حنين؟", "أترضون أن يرجع الناس بالشاة والبعير، وترجعون أنتم برسول الله صلى الله عليه وسلم؟"],
+["لخّص قصة الفتاة الأمريكية التي أسلمت كما رواها المحاضر.", "تعرّفت على شاب مسلم مبتعد عن دينه، طلبت مساعدته للبحث في الأديان، فأحضر لها القرآن مترجمًا وقرأ لها منه فبكت، ثم أسلمت وتحجّبت بعد أيام، وبقيت معه حتى رجع هو أيضًا لدينه، واتفقا على العودة لبلاد المسلمين لتربية أولادهما."],
+["بماذا أجاب المحاضر طالبة سألته عن زواجها الإجباري؟", "بأن الدين لا يُحلّ لولي الأمر أن يزوّج ابنته رغمًا عنها."],
+["ما القاعدة التي صحّحها المحاضر بخصوص تصنيف النفوس (أمّارة، لوّامة، مطمئنة) في القرآن؟", "القرآن لم يصنّف الأشخاص بل وصف أحوال النفس المتغيرة؛ فالإنسان الواحد قد يمرّ بأكثر من حالة في اليوم نفسه."],
+["ما رأي المحاضر في حالة نادرة يصعب فيها على الإنسان اكتشاف خداعه لنفسه؟", "الحالة المرضية النفسية (كالذهان) التي يصدّق فيها الشخص كذبته تمامًا ويراها حقيقة."],
+["بم أجاب المحاضر عن التفريق بين وسواس الشيطان وحديث النفس؟", "هذا أمر غيبي لا يمكن الجزم فيه، والمهم عمليًا التعامل مع الخاطرة وفق ما يرشد إليه الشرع بصرف النظر عن مصدرها."],
+["اذكر توصيتين من الوصايا الختامية للمحاضر لتحقيق الصدق.", "الابتعاد عن عالم الوهم (المسلسلات والأنمي والمبالغات)، ومصاحبة الصادقين الذين ينصحون بلباقة."],
+["ماذا حذّر المحاضر بخصوص وعود «تحقيق الذات« الكامل في الدنيا؟", "أن هذا وهم تروّجه بعض مواد التنمية البشرية، لأن الرضا الكامل («ما بعده سعادة«) لا يتحقق إلا في الجنة برؤية الله سبحانه وتعالى."]
 ];
 
 function downloadAnkiDeck() {
@@ -777,12 +746,13 @@ function downloadAnkiDeck() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'بطاقات_أنكي_فقه_الحرية_محاضرة8.txt';
+  a.download = 'بطاقات_أنكي_الصدق_ومراتبه.txt';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
 </script>
+
 </body>
 </html>

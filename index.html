@@ -244,13 +244,13 @@
 <header>
   <div class="kicker">مكتبة الدروس</div>
   <h1>سلسلة فقه الإخلاص</h1>
-  <p class="desc">ثلاثون حلقة في رحلة فهم أصل من أعظم أصول الدين — من فقه الفكرة، إلى معناها في اللسان والوحي، إلى معوقاتها، إلى أثرها في تفاصيل الحياة اليومية.</p>
+  <p class="desc">سلسلة حلقات في رحلة فهم أصل من أعظم أصول الدين — من فقه الفكرة، إلى معناها في اللسان والوحي، إلى معوقاتها، إلى أثرها في تفاصيل الحياة اليومية.</p>
   <div class="header-ornament">﴾ ۝ ﴿</div>
 </header>
 
 <div class="progress-wrap">
   <div class="progress-card">
-    <span class="txt">١ من ٣٠ حلقة متاحة</span>
+    <span class="txt">جارٍ التحميل...</span>
     <div class="progress-track"><div class="progress-fill"></div></div>
   </div>
 </div>
@@ -265,24 +265,62 @@
 </footer>
 
 <script>
-const episodesData = [
-  { num: 1, title: "الدرس الأول: لماذا فقه الإخلاص؟", available: true, file: "حلقات/حلقة_01.html" },
+/* ============================================================
+   ⭐ المصدر الوحيد للحقيقة: أضف/احذف/رتّب هنا فقط.
+   العداد الكلي، نسبة الشريط، وترقيم الحلقات كلها تُحسب
+   تلقائيًا من طول وترتيب هذه المصفوفة — مفيش أرقام ثابتة
+   في أي مكان تاني بالملف.
+   
+   لإضافة حلقة جديدة: زوّد سطر جديد في المكان المناسب من
+   القائمة (بالترتيب اللي تحب تظهر بيه)، وحدّد available.
+   ============================================================ */
+const episodesList = [
+  { title: "الدرس الأول: لماذا فقه الإخلاص؟", available: true,  file: "حلقات/حلقة_01.html" },
+  { title: "الحلقة الثانية",                    available: false, file: "حلقات/حلقة_02.html" },
+  { title: "الحلقة الثالثة",                     available: false, file: "حلقات/حلقة_03.html" },
+  { title: "الحلقة الرابعة",                     available: false, file: "حلقات/حلقة_04.html" },
+  { title: "الحلقة الخامسة",                     available: false, file: "حلقات/حلقة_05.html" },
+  { title: "الحلقة السادسة",                     available: false, file: "حلقات/حلقة_06.html" },
+  { title: "الحلقة السابعة",                     available: false, file: "حلقات/حلقة_07.html" },
+  { title: "الصدق ومراتبه",                      available: true,  file: "حلقات/حلقة_08.html" },
+  { title: "الحلقة التاسعة",                     available: false, file: "حلقات/حلقة_09.html" },
+  { title: "الحلقة العاشرة",                     available: false, file: "حلقات/حلقة_10.html" },
+  { title: "الحلقة الحادية عشرة",                available: false, file: "حلقات/حلقة_11.html" },
+  { title: "الحلقة الثانية عشرة",                available: false, file: "حلقات/حلقة_12.html" },
+  { title: "الحلقة الثالثة عشرة",                available: false, file: "حلقات/حلقة_13.html" },
+  { title: "الحلقة الرابعة عشرة",                available: false, file: "حلقات/حلقة_14.html" },
+  { title: "الحلقة الخامسة عشرة",                available: false, file: "حلقات/حلقة_15.html" },
+  { title: "الحلقة السادسة عشرة",                available: false, file: "حلقات/حلقة_16.html" },
+  { title: "الحلقة السابعة عشرة",                available: false, file: "حلقات/حلقة_17.html" },
+  { title: "الحلقة الثامنة عشرة",                available: false, file: "حلقات/حلقة_18.html" },
+  { title: "الحلقة التاسعة عشرة",                available: false, file: "حلقات/حلقة_19.html" },
+  { title: "الحلقة العشرون",                     available: false, file: "حلقات/حلقة_20.html" },
+  { title: "الحلقة الحادية والعشرون",            available: false, file: "حلقات/حلقة_21.html" },
+  { title: "الحلقة الثانية والعشرون",            available: false, file: "حلقات/حلقة_22.html" },
+  { title: "الحلقة الثالثة والعشرون",            available: false, file: "حلقات/حلقة_23.html" },
+  { title: "الحلقة الرابعة والعشرون",            available: false, file: "حلقات/حلقة_24.html" },
+  { title: "الحلقة الخامسة والعشرون",            available: false, file: "حلقات/حلقة_25.html" },
+  { title: "الحلقة السادسة والعشرون",            available: false, file: "حلقات/حلقة_26.html" },
+  { title: "الحلقة السابعة والعشرون",            available: false, file: "حلقات/حلقة_27.html" },
+  { title: "الحلقة الثامنة والعشرون",            available: false, file: "حلقات/حلقة_28.html" },
+  { title: "الحلقة التاسعة والعشرون",            available: false, file: "حلقات/حلقة_29.html" },
+  { title: "الحلقة الثلاثون",                    available: false, file: "حلقات/حلقة_30.html" },
+  { title: "الحلقة الحادية والثلاثون",           available: false, file: "حلقات/حلقة_31.html" },
 ];
-
-// توليد باقي الحلقات (2-30) تلقائيًا كحلقات فارغة
-for (let i = 2; i <= 30; i++) {
-  episodesData.push({
-    num: i,
-    title: `الحلقة ${arabicNumeral(i)}`,
-    available: false,
-    file: `حلقات/حلقة_${String(i).padStart(2,'0')}.html`
-  });
-}
 
 function arabicNumeral(n){
   const map = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
   return String(n).split("").map(d => map[parseInt(d)]).join("");
 }
+
+// ✅ الترقيم يُحسب تلقائيًا من ترتيب العناصر في المصفوفة (index + 1)
+const episodesData = episodesList.map((ep, idx) => ({
+  num: idx + 1,
+  ...ep
+}));
+
+// ✅ العدد الكلي = طول المصفوفة نفسها (يتحدث تلقائيًا عند الإضافة/الحذف)
+const totalCount = episodesData.length;
 
 const grid = document.getElementById('episodes-grid');
 episodesData.forEach(ep => {
@@ -297,9 +335,11 @@ episodesData.forEach(ep => {
   grid.appendChild(a);
 });
 
+// ✅ عدد المتاح ونسبة الشريط كلها محسوبة تلقائيًا من totalCount
 const availableCount = episodesData.filter(e => e.available).length;
-document.querySelector('.progress-fill').style.width = (availableCount / 30 * 100) + '%';
-document.querySelector('.progress-card .txt').textContent = `${arabicNumeral(availableCount)} من ٣٠ حلقة متاحة`;
+document.querySelector('.progress-fill').style.width = (availableCount / totalCount * 100) + '%';
+document.querySelector('.progress-card .txt').textContent =
+  `${arabicNumeral(availableCount)} من ${arabicNumeral(totalCount)} حلقة متاحة`;
 </script>
 
 </body>
